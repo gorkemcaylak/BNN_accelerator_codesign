@@ -22,7 +22,7 @@ OCL_KERNEL_H = ./src/host/typedefs.h
 # Set opencl kernel arguments
 OCL_KERNEL_ARGS = --max_memory_ports all --report system
 
-VPATH = /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include:/opt/Xilinx/SDx/2017.1.op/include
+
 
 #-------------------------
 # Leave the rest to harness
