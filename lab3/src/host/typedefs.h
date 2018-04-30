@@ -9,7 +9,7 @@
 #ifndef __TYPEDEFS_H__
 #define __TYPEDEFS_H__
 
-#include "/opt/Xilinx/SDx/2017.1.op/include/ap_int.h"
+#include "ap_int.h"
 
 typedef ap_uint<4> bit4_t;  // label type: 0-9
 typedef ap_uint<6> bit6_t;  // distance type: 0-49
