@@ -8,13 +8,16 @@
 
 #include "../host/typedefs.h"
 
-// Number of iterations
-
-#ifdef FIXED_TYPE // Fixed-point settings
 
 // Include the Vivado HLS ap_int & ap_fixed headers
 #include "ap_fixed.h"
 #include "ap_int.h"
+
+// Number of iterations
+
+#ifdef FIXED_TYPE // Fixed-point settings
+
+
 
 // Note: For the sake of simplicity, we use the same 
 // bitwidth configuration for theta and cos_sin types.

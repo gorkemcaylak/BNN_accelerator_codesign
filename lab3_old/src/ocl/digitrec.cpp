@@ -5,10 +5,6 @@
 
 
 #include "../host/typedefs.h"
-#include "../host/digitrec.h"
-#include <math.h>
-#include <iostream>
-
 
 extern "C" 
 {
