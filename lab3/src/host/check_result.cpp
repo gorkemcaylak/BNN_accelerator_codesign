@@ -14,15 +14,15 @@ void check_results(bit4_t * result, const bit4_t * expected, int cnt)
   int correct_cnt = 0;
 
   bit4_t b = 1;
-  printf("%s\n", b);
+  printf("%u\n", b.V);
+  printf("%d\n", b.V);
 
   for (int i = 0; i < cnt; i ++ )
   {
-  	printf("%s\n", expected[i] );
-    // if (result[i] != expected[i])
-    //   printf("Test %d: expected = %d, result = %d\n", i, expected[i], result[i]);
-    // else
-    //   correct_cnt ++;
+    if (result[i] != expected[i])
+      printf("Test %d: expected = %d, result = %d\n", i, expected[i], result[i]);
+    else
+      correct_cnt ++;
   }
 
   printf("\n\t %d / %d correct!\n", correct_cnt, cnt);  
