@@ -4,12 +4,13 @@
 // @brief: A k-nearest-neighbor implementation for digit recognition (k=1)
 
 
-#include "../host/typedefs.h"
-void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
-bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
 
 extern "C" 
 {
+  
+  #include "../host/typedefs.h"
+  void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
+  bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
   //----------------------------------------------------------
   // Digitrec
   //----------------------------------------------------------
