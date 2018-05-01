@@ -12,7 +12,6 @@
 //#include "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include/ap_int.h"
 
 // Include the Vivado HLS ap_int & ap_fixed headers
-#include "ap_fixed.h"
 #include "ap_int.h"
 
 typedef ap_uint<4> bit4_t;  // label type: 0-9
@@ -25,6 +24,8 @@ typedef ap_uint<49> digit; // data type: training_data and testing_data
 #define TRAINING_SIZE 1800
 // how many tests
 #define NUM_TEST 180
+#define K_CONST 3
+
 
 #ifdef OCL
   #include <string>
