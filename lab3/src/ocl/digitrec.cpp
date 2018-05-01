@@ -5,6 +5,9 @@
 
 
 #include "../host/typedefs.h"
+void Digitrec( digit* training_data, digit* testing_data, bit4_t* results);
+void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
+bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
 
 //extern "C" 
 //{
