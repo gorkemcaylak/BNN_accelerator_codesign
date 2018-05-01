@@ -69,7 +69,7 @@ bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
 
     bit6_t dist = 0;
     // Count the number of set bits
-    for ( int i = 0; i < 64; ++i ) { 
+    for ( int i = 0; i < 49; ++i ) { 
       dist += diff[i];
     }
 

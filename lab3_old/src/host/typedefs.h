@@ -18,7 +18,7 @@ typedef ap_uint<4> bit4_t;  // label type: 0-9
 typedef ap_uint<6> bit6_t;  // distance type: 0-49
 typedef ap_uint<32> bit32_t;
 typedef ap_uint<64> bit64_t;
-typedef ap_uint<64> digit; // data type: training_data and testing_data
+typedef ap_uint<49> digit; // data type: training_data and testing_data
 
 // training size
 #define TRAINING_SIZE 1800
