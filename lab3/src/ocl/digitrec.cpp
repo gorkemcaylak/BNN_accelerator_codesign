@@ -70,7 +70,7 @@ extern "C"
 
     bit6_t dist = 0;
     // Count the number of set bits
-    for ( int i = 0; i < 63; i++ ) { 
+    for ( int i = 2; i < 40; i++ ) { 
       dist += diff[i];
     }
 
