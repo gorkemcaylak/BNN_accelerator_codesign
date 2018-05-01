@@ -129,8 +129,6 @@ extern "C"
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
 
-
-
     // for each of the test data
     L180: for ( int k = 0 ; k < NUM_TEST; k++){
       digit testing_instance = testing_data[k];
