@@ -21,7 +21,7 @@
   // void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
   // bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
 
-  
+
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] )
   {
     // Compute the difference using XOR
@@ -29,7 +29,7 @@
 
     bit6_t dist = 0;
     // Count the number of set bits
-    for ( int i = 30; i < 40; i++ ) { 
+    for ( int i = 0; i < 64; i++ ) { 
       dist += diff[i];
     }
 
@@ -122,7 +122,7 @@ extern "C"
   //----------------------------------------------------------
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
-  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
+  void DigitRec( digit* training_data, digit** testing_data, bit4_t* results) 
   { 
     #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
