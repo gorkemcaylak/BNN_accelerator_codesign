@@ -5,7 +5,6 @@
 
 
 #include "../host/typedefs.h"
-void Digitrec( digit* training_data, digit* testing_data, bit4_t* results);
 void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
 bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
 
@@ -16,7 +15,7 @@ bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
   //----------------------------------------------------------
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
-  void Digitrec( digit* training_data, digit* testing_data, bit4_t* results) 
+  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
   { 
     #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
