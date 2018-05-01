@@ -15,7 +15,7 @@
 #define NUM_TEST 180
 
 const digit testing_data[NUM_TEST] = {
-  #include "../../data/test_set.dat"
+  #include "../../data/testing_set.dat"
 };
 
 const bit4_t expected[NUM_TEST] = {
