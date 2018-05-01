@@ -66,7 +66,7 @@ int main(int argc, char ** argv)
     CLKernel DigitRec(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
 
     // create mem objects
-    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING , CL_MEM_READ_ONLY);
+    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
     CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     , CL_MEM_READ_ONLY);
     CLMemObj result_mem   ( (void*)result       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
 
