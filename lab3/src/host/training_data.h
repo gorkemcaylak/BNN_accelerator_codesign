@@ -13,9 +13,20 @@
 
 #include "typedefs.h"
 
-#define NUM_TRAINING 1800
+// const DigitType training_data[NUM_TRAINING * DIGIT_WIDTH] = {
+//   #include "../../196data/training_set_0.dat" 
+//   #include "../../196data/training_set_1.dat" 
+//   #include "../../196data/training_set_2.dat" 
+//   #include "../../196data/training_set_3.dat" 
+//   #include "../../196data/training_set_4.dat" 
+//   #include "../../196data/training_set_5.dat" 
+//   #include "../../196data/training_set_6.dat" 
+//   #include "../../196data/training_set_7.dat" 
+//   #include "../../196data/training_set_8.dat" 
+//   #include "../../196data/training_set_9.dat"
+// };
 
-const digit training_data[10][NUM_TRAINING] = {
+const digit training_data[10 *NUM_TRAINING] = {
     {
     #include "../../data/training_set_0.dat" 
     }, 
@@ -50,17 +61,5 @@ const digit training_data[10][NUM_TRAINING] = {
 
 #endif
 
-// const DigitType training_data[NUM_TRAINING * DIGIT_WIDTH] = {
-//   #include "../../196data/training_set_0.dat" 
-//   #include "../../196data/training_set_1.dat" 
-//   #include "../../196data/training_set_2.dat" 
-//   #include "../../196data/training_set_3.dat" 
-//   #include "../../196data/training_set_4.dat" 
-//   #include "../../196data/training_set_5.dat" 
-//   #include "../../196data/training_set_6.dat" 
-//   #include "../../196data/training_set_7.dat" 
-//   #include "../../196data/training_set_8.dat" 
-//   #include "../../196data/training_set_9.dat"
-// };
 
 // #endif

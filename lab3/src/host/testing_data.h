@@ -12,7 +12,6 @@
 
 #include "typedefs.h"
 
-#define NUM_TEST 180
 
 const digit testing_data[NUM_TEST] = {
   #include "../../data/testing_set.dat"
