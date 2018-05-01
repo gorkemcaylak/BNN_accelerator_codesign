@@ -5,7 +5,6 @@
 
  #include "../host/typedefs.h"
 
-
   //-----------------------------------------------------------------------
   // update_knn function
   //-----------------------------------------------------------------------
@@ -147,6 +146,7 @@ extern "C"
       } 
       // collect the results
       results[k] = knn_vote(knn_set);
+      std::cout << results[k];
     }
   }
 
