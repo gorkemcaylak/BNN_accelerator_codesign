@@ -116,7 +116,7 @@ int main(int argc, char ** argv)
   // cleanup
   #ifdef OCL
     digit_rec_world.releaseWorld();
-    delete []result;
+    delete []results;
   #endif
 
 
