@@ -136,9 +136,11 @@ extern "C"
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
 
+
+
     // for each of the test data
     L180: for ( int k = 0 ; k < NUM_TEST; k++){
-      std::cout << "in L180\n";
+      //std::cout << "in L180\n";
       digit testing_instance = testing_data[k];
       // Initialize the knn set
       for ( int i = 0; i < 10 * K_CONST; i++ )
@@ -147,21 +149,23 @@ extern "C"
 
       // for each training set
       L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
-        std::cout << "in L1800\n";
+        //std::cout << "in L1800\n";
         // for each of the trainging data
         L10: for ( int j = 0; j < 10; j++ ){
-        std::cout << "in L10\n";
-        std::cout <<  j* NUM_TRAINING + i <<"\n";
-        std::cout << training_data[j* NUM_TRAINING + i] << "\n";
+        //std::cout << "in L10\n";
+        //std::cout <<  j* NUM_TRAINING + i <<"\n";
+        //std::cout << training_data[j* NUM_TRAINING + i] << "\n";
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
-        std::cout << "running " << i << " & " << j << "\n" ;
+        //std::cout << "running " << i << " & " << j << "\n" ;
         update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
       } 
       // collect the results
       std::cout << "before knn_vote\n";
+      std::cout << k << "\n";
       results[k] = knn_vote(knn_set);
+      std::cout << "after knn_vote\n";
     }
   }
 
