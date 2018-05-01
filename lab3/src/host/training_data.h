@@ -13,9 +13,9 @@
 
 #include "typedefs.h"
 
-#define TRAINING_SIZE 1800
+#define NUM_TRAINING 1800
 
-const digit training_data[10][TRAINING_SIZE] = {
+const digit training_data[10][NUM_TRAINING] = {
     {
     #include "../../data/training_set_0.dat" 
     }, 

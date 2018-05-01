@@ -66,9 +66,9 @@ int main(int argc, char ** argv)
     CLKernel DigitRec(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
 
     // create mem objects
-    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * DIGIT_WIDTH, CL_MEM_READ_ONLY);
-    CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     * DIGIT_WIDTH, CL_MEM_READ_ONLY);
-    CLMemObj result_mem   ( (void*)result       ,  sizeof(bit4_t), NUM_TEST,                   CL_MEM_WRITE_ONLY);
+    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING , CL_MEM_READ_ONLY);
+    CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     , CL_MEM_READ_ONLY);
+    CLMemObj result_mem   ( (void*)result       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
 
     // start timer
     gettimeofday(&start, 0);
@@ -103,60 +103,7 @@ int main(int argc, char ** argv)
     gettimeofday(&end, 0);
   #endif
 
-  // sdsoc version host code
-  #ifdef SDSOC
-    // allocate space for hardware function
-    Wholedigit* training_in0 = (Wholedigit*)sds_alloc(sizeof(Wholedigit) * NUM_TRAINING / 2);
-    Wholedigit* training_in1 = (Wholedigit*)sds_alloc(sizeof(Wholedigit) * NUM_TRAINING / 2);
-    Wholedigit* test_in      = (Wholedigit*)sds_alloc(sizeof(Wholedigit) * NUM_TEST);
-  
-    // pack the data into a wide datatype
-    for (int i = 0; i < NUM_TRAINING / 2; i ++ )
-    {
-      training_in0[i].range(63 , 0  ) = training_data[i*DIGIT_WIDTH+0];
-      training_in0[i].range(127, 64 ) = training_data[i*DIGIT_WIDTH+1];
-      training_in0[i].range(191, 128) = training_data[i*DIGIT_WIDTH+2];
-      training_in0[i].range(255, 192) = training_data[i*DIGIT_WIDTH+3];
-    }
-    for (int i = 0; i < NUM_TRAINING / 2; i ++ )
-    {
-      training_in1[i].range(63 , 0  ) = training_data[(NUM_TRAINING / 2 + i)*DIGIT_WIDTH+0];
-      training_in1[i].range(127, 64 ) = training_data[(NUM_TRAINING / 2 + i)*DIGIT_WIDTH+1];
-      training_in1[i].range(191, 128) = training_data[(NUM_TRAINING / 2 + i)*DIGIT_WIDTH+2];
-      training_in1[i].range(255, 192) = training_data[(NUM_TRAINING / 2 + i)*DIGIT_WIDTH+3];
-    }
-  
-    for (int i = 0; i < NUM_TEST; i ++ )
-    {
-      test_in[i].range(63 , 0  ) = testing_data[i*DIGIT_WIDTH+0];
-      test_in[i].range(127, 64 ) = testing_data[i*DIGIT_WIDTH+1];
-      test_in[i].range(191, 128) = testing_data[i*DIGIT_WIDTH+2];
-      test_in[i].range(255, 192) = testing_data[i*DIGIT_WIDTH+3];
-    }
 
-    // create space for result
-    bit4_t* result = (bit4_t*)sds_alloc(sizeof(bit4_t) * NUM_TEST);
-
-    // run the hardware function
-    // first call: transfer data
-    DigitRec(training_in0, test_in, result, 0);
-
-    // second call: execute
-    gettimeofday(&start, NULL);
-    DigitRec(training_in1, test_in, result, 1);
-    gettimeofday(&end, NULL);
-  #endif
-
-  // sw version host code
-  #ifdef SW
-    // create space for the result
-    bit4_t* result = new bit4_t[NUM_TEST];
-
-    // software version
-    gettimeofday(&start, NULL);
-    DigitRec_sw(training_data, testing_data, result);
-    gettimeofday(&end, NULL);
-  #endif
 
   // check results
   printf("Checking results:\n");
