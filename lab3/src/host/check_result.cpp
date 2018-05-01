@@ -2,13 +2,15 @@
 /*                                                               */
 /*                       check_result.cpp                        */
 /*                                                               */
-/*      Software evaluation of training and test error rate      */
+/*      Compare result and expected label to get error rate      */
 /*                                                               */
 /*===============================================================*/
 
 #include <cstdio>
 #include "typedefs.h"
 
+// compare the results with the expected labels, print the errors
+// and calculate the overall error rate
 void check_results(bit4_t * result, const bit4_t * expected, int cnt)
 {
   int correct_cnt = 0;

@@ -41,12 +41,6 @@ int main(int argc, char ** argv)
     std::string kernelFile("");
     parse_sdaccel_command_line_args(argc, argv, kernelFile);
   #endif
-  // sw and sdsoc version have no additional command line arguments
-
-  // for this benchmark, data is already included in arrays:
-  //   training_data: contains 18000 training samples, with 1800 samples for each digit class
-  //   testing_data:  contains 2000 test samples
-  //   expected:      contains labels for the test samples
 
   // timers
   struct timeval start, end;
@@ -66,15 +60,15 @@ int main(int argc, char ** argv)
     CLKernel DigitRec(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
 
     // create mem objects
-    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
-    CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     , CL_MEM_READ_ONLY);
-    CLMemObj result_mem   ( (void*)results       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
+    CLMemObj training_mem ( (void*)training_data,  sizeof(digit),  NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
+    CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit),  NUM_TEST          , CL_MEM_READ_ONLY);
+    CLMemObj result_mem   ( (void*)results      ,  sizeof(bit4_t), NUM_TEST          , CL_MEM_WRITE_ONLY);
 
     // start timer
     gettimeofday(&start, 0);
 
     // add them to the world
-    // added in sequence, each of them can be referenced by an index
+    // added in correct order, each of them can be referenced by an index
     digit_rec_world.addMemObj(training_mem);
     digit_rec_world.addMemObj(testing_mem);
     digit_rec_world.addMemObj(result_mem);
@@ -93,7 +87,7 @@ int main(int argc, char ** argv)
     digit_rec_world.setMemKernelArg(0, 1, 1);
     digit_rec_world.setMemKernelArg(0, 2, 2);
 
-    // run!
+    // run
     digit_rec_world.runKernels();
 
     // read the data back
@@ -102,7 +96,6 @@ int main(int argc, char ** argv)
     // end timer
     gettimeofday(&end, 0);
   #endif
-
 
 
   // check results

@@ -1,14 +1,14 @@
 //==========================================================================
-//digitrec.cpp
+// digitrec.cpp
 //==========================================================================
-// @brief: A k-nearest-neighbor implementation for digit recognition (k=1)
+// @brief: A k-nearest-neighbor kernel for digit recognition 
 
  #include "../host/typedefs.h"
 
   //-----------------------------------------------------------------------
   // update_knn function
   //-----------------------------------------------------------------------
-  // Given the test instance and a (new) training instance, this
+  // Given a test instance and a training instance, this
   // function maintains/updates an array of K minimum
   // distances per training set.
 
@@ -17,65 +17,50 @@
   // @param[in/out] : min_distances[K_CONST] - the array that stores the current
   //                  K_CONST minimum distance values per training set
 
-  // void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
-  // bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
-
-
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] )
   {
     // Compute the difference using XOR
     digit diff = test_inst ^ train_inst;
-
-    bit6_t dist = 0;
     // Count the number of set bits
+    // Note that we use ap_uint 64 to store the training data
+    // but only 49 bits are used.
+    bit6_t dist = 0;
     for ( int i = 0; i < 64; i++ ) { 
       dist += diff[i];
     }
+    // Find the max distance and its index
     bit6_t max_dist = 0;
     int max_dist_id = K_CONST+1; 
-
-    // Find the max distance
     for ( int k = 0; k < K_CONST; k++ ) {
       if ( min_distances[k] > max_dist ) {
         max_dist = min_distances[k];
         max_dist_id = k;
       }
     }
-    
-    // for( int i = 0 ; i < K_CONST; i++){
-
-    // }
-
-
-    // Replace the entry with the max distance
+    // Replace the max entry with the new min distance
     if ( dist < max_dist )
       min_distances[max_dist_id] = dist;
-
   }
 
 
   //-----------------------------------------------------------------------
   // knn_vote function
   //-----------------------------------------------------------------------
-  // Given 10xK minimum distance values, this function 
+  // Given 10 * K minimum distance values, this function 
   // finds the actual K nearest neighbors and determines the
   // final output based on the most common digit represented by 
   // these nearest neighbors (i.e., a vote among KNNs). 
   //
-  // @param[in] : knn_set - 10xK_CONST min distance values
-  // @return : the recognized digit
-  // 
-
+  // @param[in] : knn_set - 10 * K_CONST min distance values
+  // @return : the digit label with most votes
   bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
   { 
-    bit4_t min_index = 0;
-    // This array keeps keeps of the occurences
-    // of each digit in the knn_set
+    // This array keeps the occurences of each label(votes)
     int score[10]; 
-
     // Initialize score array  
     for ( int i = 0; i < 10; i++ )
         score[i] = 0; 
+
     // Find the K nearest neighbors
     for ( int k = 0; k < K_CONST; k++ ) { 
       bit6_t min_dist = 50;
@@ -99,6 +84,7 @@
 
     // Calculate the maximum score
     int max_score = 0; 
+    bit4_t min_index = 0;
     for ( int i = 0; i < 10; ++i ) {
       if ( score[i] > max_score ) {
         max_score = score[i];
@@ -109,11 +95,15 @@
   }
 
 
+
 extern "C" 
 {
   //----------------------------------------------------------
   // Digitrec
   //----------------------------------------------------------
+  // The is the top function of the kernel, reads in the training 
+  // data and testing data, return an array of the recognized labels
+  //
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
   void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
@@ -137,9 +127,8 @@ extern "C"
           // Note that the max distance is 49
           knn_set[i] = 50; 
 
-      // for each training set
+      // for each of the training data
       L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
-        // for each of the trainging data
         L10: for ( int j = 0; j < 10; j++ ){
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
@@ -150,8 +139,5 @@ extern "C"
       results[k] = knn_vote(knn_set);
     }
   }
-
-
-
 
 }
