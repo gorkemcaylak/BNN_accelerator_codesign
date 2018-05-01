@@ -68,7 +68,7 @@ int main(int argc, char ** argv)
     // create mem objects
     CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
     CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     , CL_MEM_READ_ONLY);
-    CLMemObj result_mem   ( (void*)result       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
+    CLMemObj result_mem   ( (void*)results       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
 
     // start timer
     gettimeofday(&start, 0);
