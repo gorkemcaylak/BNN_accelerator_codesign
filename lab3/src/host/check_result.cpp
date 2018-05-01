@@ -14,8 +14,8 @@ void check_results(bit4_t * result, const bit4_t * expected, int cnt)
   int correct_cnt = 0;
 
   bit4_t b = 1;
-  printf("%u\n", b.V);
-  printf("%d\n", b.V);
+  printf("%d\n", (int)b);
+
 
   for (int i = 0; i < cnt; i ++ )
   {
