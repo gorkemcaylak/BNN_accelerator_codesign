@@ -7,7 +7,7 @@
 
 extern "C" 
 {
-  
+
  
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
   bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
@@ -70,7 +70,7 @@ extern "C"
 
     bit6_t dist = 0;
     // Count the number of set bits
-    for ( int i = 0; i < 64; ++i ) { 
+    for ( int i = 0; i < 64; i++ ) { 
       dist += diff[i];
     }
 
