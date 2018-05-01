@@ -43,6 +43,11 @@
       }
     }
     
+    for( int i = 0 ; i < K_CONST; i++){
+
+    }
+
+
     // Replace the entry with the max distance
     if ( dist < max_dist )
       min_distances[max_dist_id] = dist;
@@ -129,6 +134,7 @@ extern "C"
 
     // for each of the test data
     L180: for ( int k = 0 ; k < NUM_TEST; k++){
+      std::cout << "in L180";
       digit testing_instance = testing_data[k];
       // Initialize the knn set
       for ( int i = 0; i < 10 * K_CONST; i++ )
@@ -137,11 +143,12 @@ extern "C"
 
       // for each training set
       L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
+        std::cout << "in L1800";
         // for each of the trainging data
         L10: for ( int j = 0; j < 10; j++ ){
+        std::cout << "in L10";
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
-        std::cout << "before update_knn\n";
         std::cout << "running " << i << " & " << j << "\n" ;
         update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
