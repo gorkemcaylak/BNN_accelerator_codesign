@@ -6,7 +6,7 @@
  #include "../host/typedefs.h"
 
 //extern "C" 
-{
+//{
 
  
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
@@ -149,5 +149,5 @@
     return min_index;
   }
 
-}
+//}
 
