@@ -6,8 +6,8 @@
 
 #include "../host/typedefs.h"
 
-extern "C" 
-{
+//extern "C" 
+//{
   //----------------------------------------------------------
   // Digitrec
   //----------------------------------------------------------
@@ -43,7 +43,7 @@ extern "C"
         }
       } 
       // collect the results
-      result[k] = knn_vote(knn_set);
+      results[k] = knn_vote(knn_set);
     }
   }
 
@@ -146,5 +146,5 @@ extern "C"
     return min_index;
   }
 
-}
+//}
 
