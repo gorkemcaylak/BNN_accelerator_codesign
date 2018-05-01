@@ -13,9 +13,12 @@ void check_results(bit4_t * result, const bit4_t * expected, int cnt)
 {
   int correct_cnt = 0;
 
+  bit4_t b = 1;
+  printf("%d\n", b);
+
   for (int i = 0; i < cnt; i ++ )
   {
-  	printf("%d\n", expected[i] );
+  	printf("%u\n", expected[i] );
     // if (result[i] != expected[i])
     //   printf("Test %d: expected = %d, result = %d\n", i, expected[i], result[i]);
     // else
