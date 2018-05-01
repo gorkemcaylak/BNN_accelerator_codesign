@@ -91,7 +91,7 @@
       // find the min distance in knn_set[10 * K_CONST]
       for ( int i = 0; i < 10; i++ ) {
         std::cout << "i";
-        for (int j = 0; j < K_CONST; i++ ) {
+        for (int j = 0; j < K_CONST; j++ ) {
           std::cout << "j";
           if ( knn_set[i* K_CONST + j] < min_dist ) {
             min_dist = knn_set[i* K_CONST + j];
