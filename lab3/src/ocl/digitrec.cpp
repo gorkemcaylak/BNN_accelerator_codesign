@@ -143,12 +143,13 @@ extern "C"
         L10: for ( int j = 0; j < 10; j++ ){
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
+        std::cout << "before update_knn";
         update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
       } 
       // collect the results
+      std::cout << "before knn_vote";
       results[k] = knn_vote(knn_set);
-      std::cout << results[k];
     }
   }
 
