@@ -122,7 +122,7 @@ extern "C"
   //----------------------------------------------------------
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
-  void DigitRec( digit** training_data, digit* testing_data, bit4_t* results) 
+  void DigitRec( digit* training_data, digit** testing_data, bit4_t* results) 
   { 
     #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
