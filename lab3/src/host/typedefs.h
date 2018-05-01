@@ -31,7 +31,7 @@ typedef ap_uint<64> digit; // data type: training_data and testing_data
   #include <string>
   // target device
   // change here to map to a different device
-  const std::string TARGET_DEVICE = "xilinx:aws-OCL_KERNEL_SRC-f1:4ddr-xpr-2pr:4.0";
+  const std::string TARGET_DEVICE = "xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0";
 #endif
 
 // // dataset information
