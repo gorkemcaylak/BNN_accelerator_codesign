@@ -37,7 +37,7 @@
     int max_dist_id = K_CONST+1; 
 
     // Find the max distance
-    for ( int k = 0; k < K_CONST; ++k ) {
+    for ( int k = 0; k < K_CONST; k++ ) {
       if ( min_distances[k] > max_dist ) {
         max_dist = min_distances[k];
         max_dist_id = k;
@@ -62,10 +62,9 @@
   // @return : the recognized digit
   // 
 
-  bit4_t knn_vote( bit6_t knn_set )
+  bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
   {
     bit4_t min_index = 0;
-
     // This array keeps keeps of the occurences
     // of each digit in the knn_set
     int score[10]; 
@@ -81,11 +80,11 @@
       int  min_dist_record = K_CONST + 1;
       // find the min distance in knn_set[10 * K_CONST]
       for ( int i = 0; i < 10; i++ ) {
-        for (int k = 0; k < K_CONST; i++ ) {
-          if ( knn_set[i* K_CONST + k] < min_dist ) {
-            min_dist = knn_set[i* K_CONST + k];
+        for (int j = 0; j < K_CONST; i++ ) {
+          if ( knn_set[i* K_CONST + j] < min_dist ) {
+            min_dist = knn_set[i* K_CONST + j];
             min_dist_id = i;
-            min_dist_record = k;
+            min_dist_record = j;
           }
         }
       }
@@ -109,12 +108,6 @@
   }
 
 
-
-
-
-
-
-
 extern "C" 
 {
   //----------------------------------------------------------
@@ -135,19 +128,21 @@ extern "C"
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
 
-    // Initialize the knn set
-    for ( int i = 0; i < 10 * K_CONST; i++ )
-        // Note that the max distance is 49
-        knn_set[i] = 50; 
-
     // for each of the test data
     L180: for ( int k = 0 ; k < NUM_TEST; k++){
+      digit testing_instance = testing_data[k];
+      // Initialize the knn set
+      for ( int i = 0; i < 10 * K_CONST; i++ )
+          // Note that the max distance is 49
+          knn_set[i] = 50; 
+
       // for each training set
-      L10: for ( int i = 0; i < 10; i++ ) {
+      L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
         // for each of the trainging data
-        L1800: for ( int j = 0; j < NUM_TRAINING; j++ ) {
-          // Update the KNN set
-          update_knn( testing_data[k], training_data[i* NUM_TRAINING + j], &knn_set[i * K_CONST] );
+        L10: for ( int j = 0; j < 10; j++ ){
+        digit training_instance =  training_data[j* NUM_TRAINING + i];
+        // Update the KNN set
+        update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
       } 
       // collect the results
