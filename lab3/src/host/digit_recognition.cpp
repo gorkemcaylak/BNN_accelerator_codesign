@@ -54,7 +54,7 @@ int main(int argc, char ** argv)
   // opencl version host code
   #ifdef OCL
     // create space for the result
-    bit4_t* result = new bit4_t[NUM_TEST];
+    bit4_t* results = new bit4_t[NUM_TEST];
 
     // create OpenCL world
     CLWorld digit_rec_world = CLWorld(TARGET_DEVICE, CL_DEVICE_TYPE_ACCELERATOR);
