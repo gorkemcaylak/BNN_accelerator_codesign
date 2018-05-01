@@ -124,8 +124,6 @@ extern "C"
     #pragma HLS INTERFACE s_axilite port=results bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-    std::cout << "started";
-
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
 
@@ -143,12 +141,13 @@ extern "C"
         L10: for ( int j = 0; j < 10; j++ ){
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
-        std::cout << "before update_knn";
+        std::cout << "before update_knn\n";
+        std::cout << "running " << i << " & " << j << "\n" ;
         update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
       } 
       // collect the results
-      std::cout << "before knn_vote";
+      std::cout << "before knn_vote\n";
       results[k] = knn_vote(knn_set);
     }
   }
