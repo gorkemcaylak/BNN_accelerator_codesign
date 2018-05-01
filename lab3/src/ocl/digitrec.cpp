@@ -71,7 +71,8 @@
   // 
 
   bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
-  {
+  { 
+    std::cout << "0";
     bit4_t min_index = 0;
     // This array keeps keeps of the occurences
     // of each digit in the knn_set
@@ -80,15 +81,18 @@
     // Initialize score array  
     for ( int i = 0; i < 10; i++ )
         score[i] = 0; 
-
+    std::cout << "1";
     // Find the K nearest neighbors
     for ( int k = 0; k < K_CONST; k++ ) { 
+    std::cout << "k";
       bit6_t min_dist = 50;
       bit4_t min_dist_id = 10;
       int  min_dist_record = K_CONST + 1;
       // find the min distance in knn_set[10 * K_CONST]
       for ( int i = 0; i < 10; i++ ) {
+        std::cout << "i";
         for (int j = 0; j < K_CONST; i++ ) {
+          std::cout << "j";
           if ( knn_set[i* K_CONST + j] < min_dist ) {
             min_dist = knn_set[i* K_CONST + j];
             min_dist_id = i;
@@ -96,13 +100,15 @@
           }
         }
       }
+      std::cout << "2";
       // record this neighbor's label
       score[min_dist_id]++;
       // Erase the minimum difference entry once it's recorded
       knn_set[min_dist_id * K_CONST + min_dist_record] = 50;
+      std::cout << "3";
     }
 
-
+    std::cout << "4";
     // Calculate the maximum score
     int max_score = 0; 
     for ( int i = 0; i < 10; ++i ) {
@@ -111,7 +117,7 @@
         min_index = i;
       }
     }
-
+    std::cout << "5";
     return min_index;
   }
 
