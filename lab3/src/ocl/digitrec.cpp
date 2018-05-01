@@ -18,6 +18,10 @@
   // @param[in/out] : min_distances[K_CONST] - the array that stores the current
   //                  K_CONST minimum distance values per training set
 
+  // void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
+  // bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
+
+  
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] )
   {
     // Compute the difference using XOR
@@ -113,10 +117,6 @@
 
 extern "C" 
 {
-
- 
-  void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] );
-  bit4_t knn_vote( bit6_t knn_set[10][K_CONST] );
   //----------------------------------------------------------
   // Digitrec
   //----------------------------------------------------------
