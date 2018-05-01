@@ -5,7 +5,7 @@
 
  #include "../host/typedefs.h"
 
-extern "C" 
+//extern "C" 
 {
 
  
@@ -72,7 +72,6 @@ extern "C"
     // Count the number of set bits
     for ( int i = 30; i < 40; i++ ) { 
       dist += diff[i];
-      printf("%d\n", diff[i]);
     }
 
     bit6_t max_dist = 0;
