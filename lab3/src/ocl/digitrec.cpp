@@ -23,7 +23,6 @@
 
   void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST] )
   {
-    //std::cout << "0";
     // Compute the difference using XOR
     digit diff = test_inst ^ train_inst;
 
@@ -32,7 +31,6 @@
     for ( int i = 0; i < 64; i++ ) { 
       dist += diff[i];
     }
-    //std::cout << "1";
     bit6_t max_dist = 0;
     int max_dist_id = K_CONST+1; 
 
@@ -44,7 +42,6 @@
       }
     }
     
-    //std::cout << "2";
     // for( int i = 0 ; i < K_CONST; i++){
 
     // }
@@ -54,7 +51,6 @@
     if ( dist < max_dist )
       min_distances[max_dist_id] = dist;
 
-    //std::cout << "3";
   }
 
 
@@ -72,7 +68,6 @@
 
   bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
   { 
-    std::cout << "0";
     bit4_t min_index = 0;
     // This array keeps keeps of the occurences
     // of each digit in the knn_set
@@ -81,18 +76,14 @@
     // Initialize score array  
     for ( int i = 0; i < 10; i++ )
         score[i] = 0; 
-    std::cout << "1";
     // Find the K nearest neighbors
     for ( int k = 0; k < K_CONST; k++ ) { 
-    std::cout << "k";
       bit6_t min_dist = 50;
       bit4_t min_dist_id = 10;
       int  min_dist_record = K_CONST + 1;
       // find the min distance in knn_set[10 * K_CONST]
       for ( int i = 0; i < 10; i++ ) {
-        std::cout << "i";
         for (int j = 0; j < K_CONST; j++ ) {
-          std::cout << "j";
           if ( knn_set[i* K_CONST + j] < min_dist ) {
             min_dist = knn_set[i* K_CONST + j];
             min_dist_id = i;
@@ -100,15 +91,12 @@
           }
         }
       }
-      std::cout << "2";
       // record this neighbor's label
       score[min_dist_id]++;
       // Erase the minimum difference entry once it's recorded
       knn_set[min_dist_id * K_CONST + min_dist_record] = 50;
-      std::cout << "3";
     }
 
-    std::cout << "4";
     // Calculate the maximum score
     int max_score = 0; 
     for ( int i = 0; i < 10; ++i ) {
@@ -117,7 +105,6 @@
         min_index = i;
       }
     }
-    std::cout << "5";
     return min_index;
   }
 
@@ -146,7 +133,6 @@ extern "C"
 
     // for each of the test data
     L180: for ( int k = 0 ; k < NUM_TEST; k++){
-      //std::cout << "in L180\n";
       digit testing_instance = testing_data[k];
       // Initialize the knn set
       for ( int i = 0; i < 10 * K_CONST; i++ )
@@ -155,23 +141,15 @@ extern "C"
 
       // for each training set
       L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
-        //std::cout << "in L1800\n";
         // for each of the trainging data
         L10: for ( int j = 0; j < 10; j++ ){
-        //std::cout << "in L10\n";
-        //std::cout <<  j* NUM_TRAINING + i <<"\n";
-        //std::cout << training_data[j* NUM_TRAINING + i] << "\n";
         digit training_instance =  training_data[j* NUM_TRAINING + i];
         // Update the KNN set
-        //std::cout << "running " << i << " & " << j << "\n" ;
         update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
         }
       } 
       // collect the results
-      std::cout << "before knn_vote\n";
-      std::cout << k << "\n";
       results[k] = knn_vote(knn_set);
-      std::cout << "after knn_vote\n";
     }
   }
 
