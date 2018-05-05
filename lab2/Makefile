@@ -1,26 +1,31 @@
-#==========================================================================
-# Makefile
-#==========================================================================
-# @brief: A makefile the compiles and runs the digitrec program
-#
-# @desc: 1. Enter "make" to compile & execute the digitrec program
-#        2. Enter "make clean" to clean up the directory (before submission)
+# Set kernel name
+KERNEL_NAME = DigitRec
+
+# Set host source and headers
+HOST_SRC_CPP = ./src/host/digit_recognition.cpp ./src/host/utils.cpp ./src/host/check_result.cpp
+HOST_SRC_H   = ./src/host/utils.h ./src/host/check_result.h ./src/host/typedefs.h ./src/host/testing_data.h \
+               ./src/host/training_data.h
+DATA         = ./data/*.dat
+
+# Set host code include paths
+HOST_INC = -I$(XILINX_SDX)/Vivado_HLS/include 
+HOST_LIB = -L$(XILINX_SDX)/Vivado_HLS/lib
+
+# Set kernel file
+OCL_KERNEL_SRC = ./src/ocl/digitrec.cpp
+OCL_KERNEL_H = ./src/host/typedefs.h
+# SDSOC_KERNEL_SRC = ./src/sdsoc/digitrec.cpp
+# SDSOC_KERNEL_H = ./src/host/typedefs.h
+# SW_KERNEL_SRC = ./src/sw/digitrec_sw.cpp
+# SW_KERNEL_H = ./src/host/typedefs.h ./src/sw/digitrec_sw.h
+
+# Set opencl kernel arguments
+OCL_KERNEL_ARGS = --max_memory_ports all --report system
 
 
-# Extract Vivado HLS include path
-VHLS_PATH := $(dir $(shell which vivado_hls))/..
-VHLS_INC ?= ${VHLS_PATH}/include
 
-# Specify compilation flags
-CFLAGS = -g -I${VHLS_INC} -DK_CONST=3
+#-------------------------
+# Leave the rest to harness
+#-------------------------
+include ../harness/harness.mk
 
-# Compile & run digitrec implementation
-all: digitrec.cpp digitrec_test.cpp
-	@echo "Compiling & executing the digit recogintion program ..."
-	g++ ${CFLAGS} digitrec.cpp digitrec_test.cpp -o digitrec
-	./digitrec
-
-# Clean up the directory before submission
-clean:
-	@echo "Clean up output files"
-	rm -rf digitrec vivado_hls.log *nn.prj result out.dat *~
