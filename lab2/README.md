@@ -12,5 +12,5 @@ To execute or simulate the design, do
 
 
 <END>
-<END>1
+<END>
 
