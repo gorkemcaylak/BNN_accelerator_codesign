@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-testtest
-
-=======
 test
 second line
->>>>>>> kyle
