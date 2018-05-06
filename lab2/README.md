@@ -10,3 +10,4 @@ To execute or simulate the design, do
 `./Digitrec_host.exe -f <path_to_xclbin_file>`
 
 
+
