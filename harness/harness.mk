@@ -121,7 +121,6 @@ ocl: $(OCL_HOST_EXE) $(XCLBIN)
 
 # ocl secondary rule: host executable
 $(OCL_HOST_EXE): $(HOST_SRC_CPP) $(HOST_SRC_H) $(OCL_HARNESS_SRC_CPP) $(OCL_HARNESS_SRC_H) $(DATA)
-	echo $(K_CONST)
 	$(OCL_CXX) $(OCL_HOST_FLAGS) -o $@ $(HOST_SRC_CPP) $(OCL_HARNESS_SRC_CPP) 
 
 # ocl secondary rule: xclbin 
