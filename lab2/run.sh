@@ -7,6 +7,10 @@
 # export  XCL_EMULATION_MODE=true
 # emconfigutil --platform=$AWS_PLATFORM
 
+
+echo ""
+echo ""
+echo ""
 echo "#################################################"
 echo "Compiling project..."
 echo "#################################################"
