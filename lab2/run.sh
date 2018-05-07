@@ -7,20 +7,28 @@
 # export  XCL_EMULATION_MODE=true
 # emconfigutil --platform=$AWS_PLATFORM
 
+mkdir results
 
-echo ""
-echo ""
-echo ""
-echo "#################################################"
-echo "Compiling project..."
-echo "#################################################"
-make clean
-make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=5
+for index in 1 2
+do 
+	echo ""; echo ""; echo "" ; echo ""
+	echo "######################################################"
+	echo " Compiling project..."
+	echo "######################################################"
+	make clean
+	make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=$index
 
-echo ""
-echo ""
-echo ""
-echo "#################################################"
-echo "executing DigitRec"
-echo "#################################################"
-./DigitRec_host.exe -f DigitRec.sw_emu.xclbin 
+	echo ""; echo ""; echo "" ; echo ""
+	echo "######################################################"
+	echo " Executing DigitRec"
+	echo "######################################################"
+	./DigitRec_host.exe -f DigitRec.sw_emu.xclbin 
+
+	echo "######################################################"
+	echo -e "Result for K_CONST=$index"
+	echo "######################################################"
+	cat system_estimate.xtxt >> ./results/estimates_summary.xtxt
+	echo "" >>./results/estimates_summary.xtxt 
+	echo "" >>./results/estimates_summary.xtxt 
+	echo "" >>./results/estimates_summary.xtxt 
+done

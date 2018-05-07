@@ -146,7 +146,7 @@ sw: $(HOST_SRC_CPP) $(HOST_SRC_H) $(SW_KENREL_SRC) $(SW_KERNEL_H) $(DATA)
 
 # cleanup
 clean:
-	echo "Cleaning old files"
+	@echo "Cleaning old files"
 	rm -rf *.exe
 	rm -rf *.elf
 	rm -rf *.xclbin
