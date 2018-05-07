@@ -55,7 +55,11 @@ OCL_HARNESS_SRC_CPP = $(OCL_HARNESS_DIR)/CLKernel.cpp $(OCL_HARNESS_DIR)/CLMemOb
 OCL_HARNESS_SRC_H   = $(OCL_HARNESS_DIR)/CLKernel.h   $(OCL_HARNESS_DIR)/CLMemObj.h   $(OCL_HARNESS_DIR)/CLWorld.h
 
 # host compilation flags
-OCL_HOST_FLAGS = -DOCL -g -lxilinxopencl -I$(OPENCL_INC) $(HOST_INC) -L$(OPENCL_LIB) $(HOST_LIB) -I$(OCL_HARNESS_DIR) -DK_CONST=$(K_CONST)
+OCL_HOST_FLAGS = -DOCL -g -lxilinxopencl -I$(OPENCL_INC) $(HOST_INC) -L$(OPENCL_LIB) $(HOST_LIB) -I$(OCL_HARNESS_DIR) 
+
+ifdef K_CONST
+ OCL_HOST_FLAGS += -DK_CONST=$(K_CONST)
+endif
 
 # xclbin compilation flags
 XCLBIN_FLAGS = -s -t $(OCL_TARGET) -g 
@@ -70,8 +74,12 @@ else
   XCLBIN_FLAGS += --platform $(OCL_PLATFORM)
 endif
 
+ifdef K_CONST
+ XCLBIN_FLAGS += -DK_CONST=$(K_CONST)
+endif
+
 XCLBIN_FLAGS += $(OCL_KERNEL_ARGS)
-XCLBIN_FLAGS += -DK_CONST=$(K_CONST)
+
 
 # host exe
 OCL_HOST_EXE        = $(KERNEL_NAME)_host.exe
