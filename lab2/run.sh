@@ -12,7 +12,7 @@
 
 # set up emulation configuration
 echo "#################################################"
-echo "Setting emulation configuration..."
+echo " Setting emulation configuration..."
 echo "#################################################"
 export  XCL_EMULATION_MODE=true
 emconfigutil --platform=$AWS_PLATFORM
@@ -36,7 +36,7 @@ do
 	# create some blank-line space for easy readability
 	echo ""; echo ""; echo "" ; echo ""
 	echo "####################################################"
-	echo " Compiling project..."
+	echo " Compiling project with K_CONST=$index"
 	echo "####################################################"
 	make clean
 	make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=$index
@@ -44,13 +44,13 @@ do
 	### EXECUTION
 	echo ""; echo ""; echo "" ; echo ""
 	echo "####################################################"
-	echo " Executing DigitRec"
+	echo " Executing DigitRec with K_CONST=$index"
 	echo "####################################################"
 	./DigitRec_host.exe -f DigitRec.sw_emu.xclbin 
 
 	### COLLECTING RESULTS
 	echo "####################################################" >> ./results/estimates_summary.xtxt
-	echo -e "Estimate Report for K_CONST=$index" >> ./results/estimates_summary.xtxt
+	echo -e "Estimate Report with K_CONST=$index" >> ./results/estimates_summary.xtxt
 	echo "####################################################" >> ./results/estimates_summary.xtxt
 	cat system_estimate.xtxt >> ./results/estimates_summary.xtxt
 	echo "" >>./results/estimates_summary.xtxt 
