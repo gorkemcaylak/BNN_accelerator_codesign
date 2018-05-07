@@ -35,6 +35,7 @@
 int main(int argc, char ** argv) 
 {
   printf("Digit Recognition Application\n");
+  printf("K_CONST is set to %d\n", K_CONST);
 
   #ifdef OCL
     // parse command line arguments for opencl version

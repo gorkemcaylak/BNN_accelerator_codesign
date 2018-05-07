@@ -10,7 +10,7 @@ emconfigutil --platform=$AWS_PLATFORM
 echo "#################################################"
 echo "Compiling project..."
 echo "#################################################"
-make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM
+make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM -DK_CONST=4
 
 echo "#################################################"
 echo "executing DigitRec"
