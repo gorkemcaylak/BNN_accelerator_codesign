@@ -26,6 +26,11 @@ typedef ap_uint<64> digit;
 #define NUM_TEST 180
 // #define K_CONST 
 
+#ifndef K_CONST
+	#define K_CONST 3
+#endif
+
+
 #ifdef OCL
   #include <string>
   // target device
