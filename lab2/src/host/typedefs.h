@@ -24,7 +24,7 @@ typedef ap_uint<64> digit;
 // training size and testing size
 #define NUM_TRAINING 1800
 #define NUM_TEST 180
-#define K_CONST 3
+//#define K_CONST 3
 
 #ifdef OCL
   #include <string>
