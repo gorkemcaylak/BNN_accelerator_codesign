@@ -1,8 +1,0 @@
-knn_vote_score
-DigitRec_mac_muladd_4ns_12ns_11ns_15_1
-DigitRec_knn_set_V
-DigitRec_control_s_axi
-DigitRec_gmem_m_axi
-update_knn
-knn_vote
-DigitRec

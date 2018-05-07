@@ -1,2 +1,0 @@
-performing high-level synthesis for kernel: DigitRec
-Log file:/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/vivado_hls.log
