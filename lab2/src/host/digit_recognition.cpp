@@ -44,7 +44,7 @@
 
 int main(int argc, char ** argv) 
 {
-  p();
+  //p();
   printf("Digit Recognition Application\n");
   printf("K_CONST is set to %d\n", K_CONST);
 
