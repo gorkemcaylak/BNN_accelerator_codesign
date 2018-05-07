@@ -16,10 +16,10 @@ echo "Compiling project..."
 echo "#################################################"
 make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=4
 
-echo ""
-echo ""
-echo ""
-echo "#################################################"
-echo "executing DigitRec"
-echo "#################################################"
-./DigitRec_host.exe -f DigitRec.sw_emu.xclbin 
+# echo ""
+# echo ""
+# echo ""
+# echo "#################################################"
+# echo "executing DigitRec"
+# echo "#################################################"
+# ./DigitRec_host.exe -f DigitRec.sw_emu.xclbin 

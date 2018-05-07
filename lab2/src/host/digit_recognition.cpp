@@ -31,6 +31,7 @@
   void p(){
     printf("K_CONST is not defined!!!!!!!!!!!!!!!!!!");
   }
+  #defined K_CONST
 #endif
 
 // other headers
