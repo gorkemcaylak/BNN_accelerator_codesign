@@ -1,0 +1,50 @@
+INFO: [HLS 200-0] Workspace /home/centos/src/project_data/AWS_Projects/lab2/solution/1-nn.prj/solution1 opened at Mon Apr 30 17:47:31 UTC 2018
+INFO: [HLS 200-100] Command   open_solution returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute   create_clock -period 10 
+INFO: [HLS 200-100] Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-100] Command     config_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Command   create_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Execute   set_directive_inline -off update_knn 
+INFO: [HLS 200-0] Setting directive 'INLINE' off=positionBoolean1 
+INFO: [HLS 200-100] Command   set_directive_inline returned 0; 0 sec.
+INFO: [HLS 200-100] Execute   set_directive_inline -off knn_vote 
+INFO: [HLS 200-0] Setting directive 'INLINE' off=positionBoolean1 
+INFO: [HLS 200-0] Setting directive 'INLINE' off=positionBoolean1 
+INFO: [HLS 200-100] Command   set_directive_inline returned 0; 0 sec.
+INFO: [HLS 200-100] Execute   csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+INFO: [HLS 200-100] Execute     is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/solution/digitrec_test.cpp 
+INFO: [HLS 200-100] Command     is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     is_xip /home/centos/src/project_data/AWS_Projects/lab2/solution/digitrec_test.cpp 
+INFO: [HLS 200-100] Command     is_xip returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/solution/digitrec.cpp 
+INFO: [HLS 200-100] Command     is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     is_xip /home/centos/src/project_data/AWS_Projects/lab2/solution/digitrec.cpp 
+INFO: [HLS 200-100] Command     is_xip returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     source run_sim.tcl 
+INFO: [HLS 200-100] Command     ap_source returned 0; 7.07 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-100] Command   csim_design returned 0; 21.01 sec.
+INFO: [HLS 200-100] Execute   csynth_design 
+INFO: [HLS 200-100] Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+ERROR: [HLS 200-70] 'csynth_design' failed due to missing target device. Please use command 'set_part' to specify the target device.
+INFO: [HLS 200-100] Command     elaborate returned 2; 0 sec.
+INFO: [HLS 200-100] Command   csynth_design returned 2; 0 sec.
+INFO: [HLS 200-100] Command ap_source returned 1; 21.03 sec.
+Elaboration failed: no synthesis library found.
+    while executing
+"source run.tcl"
+    invoked from within
+"hls::main run.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
+INFO: [HLS 200-100] Execute cleanup_all 
+INFO: [HLS 200-100] Command cleanup_all returned 0; 0 sec.

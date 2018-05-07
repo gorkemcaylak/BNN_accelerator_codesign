@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="DigitRec" xd:componentRef="DigitRec" xd:initiationInterval="12985922" xd:clockPeriod="4.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(training_data)" xd:originalName="training_data" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="63:60" xd:dataWidth="4" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(testing_data)" xd:originalName="testing_data" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="63:60" xd:dataWidth="4" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(results)" xd:originalName="results" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="63:60" xd:dataWidth="4" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="training_data_V" xd:originalName="training_data_V" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem" xd:dataWidth="64" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="testing_data_V" xd:originalName="testing_data_V" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem" xd:dataWidth="64" xd:offset="0x1C" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="results_V" xd:originalName="results_V" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem" xd:dataWidth="64" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="12985921" xd:worst-case="12985921" xd:average-case="12985921"/>
+  <xd:resourceEstimates xd:LUT="4807" xd:FF="2632" xd:BRAM="5" xd:DSP="1"/>
+</xd:acceleratorMap>

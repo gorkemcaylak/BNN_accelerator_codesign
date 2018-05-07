@@ -1,0 +1,1379 @@
+INFO: [HLS 200-0] Workspace /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0 opened at Mon May 07 01:22:25 UTC 2018
+INFO: [HLS 200-100] Command     open_solution returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     set_part xcvu9p-flgb2104-2-i 
+INFO: [HLS 200-100] Execute       add_library xilinx/virtexuplus/virtexuplus:xcvu9p:-flgb2104:-2-i 
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         license_isbetapart xcvu9p 
+INFO: [HLS 200-100] Command         license_isbetapart returned 1; 0.03 sec.
+INFO: [HLS 200-100] Execute         open_platform DefaultPlatform 
+INFO: [HLS 200-100] Command         open_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         import_lib /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.lib 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/xilinx_interface.lib 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.lib 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_old.lib 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_vivado.lib 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/dsp48e2.hlp 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           get_default_platform 
+INFO: [HLS 200-100] Command           get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           config_chip_info -quiet -resource  {SLICE 98520}  {LUT 788160}    {FF 1576320} {DSP48E 4560}  {BRAM 2880} {URAM 640}  
+INFO: [HLS 200-100] Command           config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           config_chip_info -quiet -speed medium 
+INFO: [HLS 200-100] Command           config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         import_lib returned 0; 0.04 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.09 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.13 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.14 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.14 sec.
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         config_chip_info -quiet -resource  {SLICE 147780} {LUT 1182240}   {FF 2364480} {DSP48E 6840}  {BRAM 4320} {URAM 960}  
+INFO: [HLS 200-100] Command         config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         config_chip_info -quiet -speed medium 
+INFO: [HLS 200-100] Command         config_chip_info returned 0; 0 sec.
+INFO: [HLS 200-100] Command       add_library returned 0; 0.21 sec.
+INFO: [HLS 200-100] Execute       add_library xilinx/virtexuplus/virtexuplus_fpv7 
+INFO: [HLS 200-100] Execute         get_default_platform 
+INFO: [HLS 200-100] Command         get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         open_platform DefaultPlatform 
+INFO: [HLS 200-100] Command         open_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         import_lib /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv7.lib 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_hp.lib 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv.hlp 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.hlp 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/target_info.tcl 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/xilinx_interface.hlp 
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.hlp 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.hlp 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.hlp 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_hp.hlp 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         import_lib returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command       add_library returned 0; 0.04 sec.
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flgb2104-2-i'
+INFO: [HLS 200-100] Execute       get_default_platform 
+INFO: [HLS 200-100] Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-100] Command     set_part returned 0; 0.29 sec.
+INFO: [HLS 200-100] Execute     create_clock -period 250MHz -name default 
+INFO: [HLS 200-100] Execute       config_clock -quiet -name default -period 4.0 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4ns.
+INFO: [HLS 200-100] Command       config_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Command     create_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     set_clock_uncertainty 1.080000 
+INFO: [HLS 200-100] Execute       config_clock -quiet -name default -uncertainty 1.080000 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.08ns.
+INFO: [HLS 200-100] Command       config_clock returned 0; 0 sec.
+INFO: [HLS 200-100] Command     set_clock_uncertainty returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     config_rtl -register_reset 
+INFO: [HLS 200-100] Command     config_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     config_interface -m_axi_addr64 
+INFO: [HLS 200-100] Command     config_interface returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     config_schedule -relax_ii_for_timing 
+Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-100] Command     config_schedule returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     config_compile -pipeline_loops 64 
+INFO: [XFORM 203-1171] Pipeline the innermost loop with trip count more than 64 or its parent loop when its trip count is less than or equal 64.
+INFO: [HLS 200-100] Command     config_compile returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute     config_compile -name_max_length 256 
+INFO: [XFORM 203-1161] The maximum of name length is set into 256.
+INFO: [HLS 200-100] Command     config_compile returned 0; 0 sec.
+INFO: [HLS 200-100] Execute     csynth_design 
+INFO: [HLS 200-100] Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file '/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp' ... 
+INFO: [HLS 200-0] Compiling one TU...
+INFO: [HLS 200-100] Execute         is_m_axi_addr64 
+INFO: [HLS 200-100] Command         is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp as C++
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc" -hls  -g  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__   -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/systemc/include" -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include" -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include/ap_sysc" -fexceptions -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp"  -o "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.00.o" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc -hls -g -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/systemc/include -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/include/ap_sysc -fexceptions -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot -include etc/autopilot_ssdm_op.h /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.00.o
+INFO: [HLS 200-100] Command         clang returned 0; 0.85 sec.
+INFO: [HLS 200-100] Execute         is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.00.o 
+INFO: [HLS 200-100] Command         is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp"   -g  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot" -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -CC -E /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp -g -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp
+INFO: [HLS 200-100] Command         clang returned 0; 0.11 sec.
+INFO: [HLS 200-0] GCC PP time: 0 seconds per iteration
+INFO: [HLS 200-100] Execute         list_core -type functional_unit 
+INFO: [HLS 200-100] Command         list_core returned 0; 0.01 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+INFO: [HLS 200-100] Execute         cdt  "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp.ap-line.cpp"  -m "DigitRec" -o "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/solution_OCL_REGION_0.directive --source /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp --error /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db --ca --es --gf --pd --p2d /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db --sd --scff /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+INFO: [HLS 200-100] Command         cdt returned 0; 7.25 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pp.0.cpp.ap-cdt.cpp /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.0.cpp /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/pragma.status.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.1.cpp"   -g  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot" -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -CC -E /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.1.cpp -g -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.2.cpp
+INFO: [HLS 200-100] Command         clang returned 0; 0.07 sec.
+INFO: [HLS 200-0] Processing labels
+INFO: [HLS 200-100] Execute         clang  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.2.cpp"  -g  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot" -I "/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.pragma.2.cpp -g -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot -I /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -g -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.g.bc
+INFO: [HLS 200-100] Command         clang returned 0; 0.66 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/ve_warning.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/pragma.status.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 442.652 ; gain = 16.715 ; free physical = 29002 ; free virtual = 67397
+INFO: [HLS 200-0] Linking Release ...
+INFO: [HLS 200-100] Execute         llvm-ld /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.bc -disable-opt -L/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/lib -lm_basic -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o 
+INFO: [HLS 200-100] Command         llvm-ld returned 0; 0.09 sec.
+INFO: [HLS 200-100] Execute         disassemble /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o 
+INFO: [HLS 200-100] Execute           is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.bc 
+INFO: [HLS 200-100] Command           is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command         disassemble returned 0; 0.06 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+INFO: [HLS 200-100] Execute         llvm-ld /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/digitrec.g.bc -disable-opt -L/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/lib -lm_basic -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g 
+INFO: [HLS 200-100] Command         llvm-ld returned 0; 0.07 sec.
+INFO: [HLS 200-100] Execute         disassemble /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g 
+INFO: [HLS 200-100] Execute           is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.bc 
+INFO: [HLS 200-100] Command           is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command         disassemble returned 0; 0.06 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 442.652 ; gain = 16.715 ; free physical = 28987 ; free virtual = 67396
+INFO: [HLS 200-100] Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 
+INFO: [HLS 200-100] Execute           cleanup_all_models 
+INFO: [HLS 200-100] Command           cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-100] Execute           transform -promote-dbg-pointer /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.pp.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.pp.0.bc -f 
+INFO: [HLS 200-100] Command           transform returned 0; 0.03 sec.
+INFO: [HLS 200-100] Execute           llvm-ld /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/SDx/2017.1.op/Vivado_HLS/lnx64/lib -lfloatconversion -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.0 
+INFO: [HLS 200-100] Command           llvm-ld returned 0; 0.08 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+INFO: [HLS 200-100] Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top DigitRec -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.0.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-100] Command           transform returned 0; 0.05 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1 /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1 
+INFO: [HLS 200-100] Execute             is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.06 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 443.000 ; gain = 17.062 ; free physical = 28963 ; free virtual = 67385
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+INFO: [HLS 200-100] Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [HLS 200-100] Command           transform returned 0; 0.06 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+INFO: [HLS 200-100] Execute           transform -syn-check /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.2.prechk.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:29: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-100] Command           transform returned 0; 0.03 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:25 ; elapsed = 00:00:13 . Memory (MB): peak = 443.000 ; gain = 17.062 ; free physical = 28958 ; free virtual = 67381
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.1.bc to /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+INFO: [HLS 200-100] Execute           transform -hls -tmp /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.1.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65) in function 'knn_vote' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88) in function 'knn_vote' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'L10' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:132) in function 'DigitRec' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2.1' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:126) in function 'DigitRec' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65) in function 'knn_vote' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_knn' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:20).
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:70) in function 'knn_vote' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1.1' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:71) in function 'knn_vote' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:28) in function 'update_knn' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:34) in function 'update_knn' completely.
+INFO: [HLS 200-100] Command           transform returned 0; 0.25 sec.
+INFO: [HLS 200-0] Presyn 2...
+INFO: [HLS 200-100] Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.1.tmp.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'update_knn' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:20)...95 expression(s) balanced.
+INFO: [HLS 200-100] Command           transform returned 0; 0.17 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.2 /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.2 
+INFO: [HLS 200-100] Execute             is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.2.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.05 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 570.648 ; gain = 144.711 ; free physical = 28928 ; free virtual = 67354
+INFO: [HLS 200-0] Building ssdm...
+INFO: [HLS 200-100] Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -interface-gen -deadargelim -directive-preproc -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.2.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'L1800' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:131:47) in function 'DigitRec'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L180' (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:123:43) in function 'DigitRec' : 
+                         more than one sub loop.
+INFO: [HLS 200-100] Command           transform returned 0; 0.27 sec.
+INFO: [HLS 200-100] Execute           disassemble /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.3 /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.3 
+INFO: [HLS 200-100] Execute             is_encrypted /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.o.3.bc 
+INFO: [HLS 200-100] Command             is_encrypted returned 0; 0 sec.
+INFO: [HLS 200-100] Command           disassemble returned 0; 0.04 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 570.648 ; gain = 144.711 ; free physical = 28914 ; free virtual = 67340
+INFO: [HLS 200-0] Finish building internal data model.
+INFO: [HLS 200-100] Command         opt_and_import_c returned 0; 4.2 sec.
+INFO: [HLS 200-100] Command       elaborate returned 0; 14.63 sec.
+INFO: [HLS 200-100] Execute       autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'DigitRec' ...
+INFO: [HLS 200-100] Execute         ap_set_top_model DigitRec 
+INFO: [HLS 200-100] Command         ap_set_top_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         get_model_list DigitRec -filter all-wo-channel -topdown 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         preproc_iomode -model DigitRec 
+INFO: [HLS 200-100] Command         preproc_iomode returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         preproc_iomode -model knn_vote 
+INFO: [HLS 200-100] Command         preproc_iomode returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         preproc_iomode -model update_knn 
+INFO: [HLS 200-100] Command         preproc_iomode returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         get_model_list DigitRec -filter all-wo-channel 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: update_knn knn_vote DigitRec
+INFO: [HLS 200-0] Configuring Module : update_knn ...
+INFO: [HLS 200-100] Execute         set_default_model update_knn 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         apply_spec_resource_limit update_knn 
+INFO: [HLS 200-100] Command         apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : knn_vote ...
+INFO: [HLS 200-100] Execute         set_default_model knn_vote 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         apply_spec_resource_limit knn_vote 
+INFO: [HLS 200-100] Command         apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : DigitRec ...
+INFO: [HLS 200-100] Execute         set_default_model DigitRec 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         apply_spec_resource_limit DigitRec 
+INFO: [HLS 200-100] Command         apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for preprocess: update_knn knn_vote DigitRec
+INFO: [HLS 200-0] Preprocessing Module: update_knn ...
+INFO: [HLS 200-100] Execute         set_default_model update_knn 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         cdfg_preprocess -model update_knn 
+INFO: [HLS 200-100] Command         cdfg_preprocess returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess update_knn 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: knn_vote ...
+INFO: [HLS 200-100] Execute         set_default_model knn_vote 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         cdfg_preprocess -model knn_vote 
+INFO: [HLS 200-100] Command         cdfg_preprocess returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess knn_vote 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: DigitRec ...
+INFO: [HLS 200-100] Execute         set_default_model DigitRec 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         cdfg_preprocess -model DigitRec 
+INFO: [HLS 200-100] Command         cdfg_preprocess returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess DigitRec 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for synthesis: update_knn knn_vote DigitRec
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_knn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         set_default_model update_knn 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         schedule -model update_knn 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'update_knn'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:42) of variable 'dist_V_s', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:29 on array 'min_distances_V' and 'load' operation ('min_distances_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:35) on array 'min_distances_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:42) of variable 'dist_V_s', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:29 on array 'min_distances_V' and 'load' operation ('min_distances_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:35) on array 'min_distances_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:42) of variable 'dist_V_s', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:29 on array 'min_distances_V' and 'load' operation ('min_distances_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:35) on array 'min_distances_V'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 4, Depth: 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-100] Command         schedule returned 0; 0.08 sec.
+INFO: [HLS 200-111]  Elapsed time: 15.44 seconds; current allocated memory: 101.299 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.sched.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish scheduling update_knn.
+INFO: [HLS 200-100] Execute         set_default_model update_knn 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         bind -model update_knn 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=update_knn
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-100] Command         bind returned 0; 0.06 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 102.021 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.verbose.bind.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.1 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.bind.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish binding update_knn.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'knn_vote' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         set_default_model knn_vote 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         schedule -model knn_vote 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' and 'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' and 'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' and 'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' and 'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)
+   between 'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' and 'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('knn_set_V_load_6', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'knn_set_V'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 17, Depth: 18.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-100] Command         schedule returned 0; 0.38 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.5 seconds; current allocated memory: 103.141 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.sched.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish scheduling knn_vote.
+INFO: [HLS 200-100] Execute         set_default_model knn_vote 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         bind -model knn_vote 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=knn_vote
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-100] Command         bind returned 0; 0.1 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 104.100 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.verbose.bind.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.23 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.bind.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish binding knn_vote.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DigitRec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         set_default_model DigitRec 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         schedule -model DigitRec 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L180.1'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+INFO: [SCHED 204-61] Pipelining loop 'L1800_L10'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 4, Depth: 15.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-100] Command         schedule returned 0; 0.07 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 104.828 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.06 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.sched.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish scheduling DigitRec.
+INFO: [HLS 200-100] Execute         set_default_model DigitRec 
+INFO: [HLS 200-100] Command         set_default_model returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         bind -model DigitRec 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=DigitRec
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-100] Command         bind returned 0; 0.26 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 105.514 MB.
+INFO: [HLS 200-100] Execute         report -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.verbose.bind.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.37 sec.
+INFO: [HLS 200-100] Execute         db_write -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.bind.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish binding DigitRec.
+INFO: [HLS 200-100] Execute         get_model_list DigitRec -filter all-wo-channel 
+INFO: [HLS 200-100] Command         get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess update_knn 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess knn_vote 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         rtl_gen_preprocess DigitRec 
+INFO: [HLS 200-100] Command         rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL generation: update_knn knn_vote DigitRec
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_knn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         create_rtl_model update_knn -vendor xilinx -mg_file /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_knn'.
+INFO: [HLS 200-100] Command         create_rtl_model returned 0; 0.02 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 106.908 MB.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl update_knn -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/systemc/update_knn -synmodules update_knn knn_vote DigitRec 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl update_knn -style xilinx -f -lang vhdl -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/vhdl/update_knn 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl update_knn -style xilinx -f -lang vlog -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/verilog/update_knn 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_tb_info update_knn -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn -p /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db 
+INFO: [HLS 200-100] Command         gen_tb_info returned 0; 0.04 sec.
+INFO: [HLS 200-100] Execute         report -model update_knn -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/update_knn_csynth.rpt -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.03 sec.
+INFO: [HLS 200-100] Execute         report -model update_knn -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/update_knn_csynth.xml -f -x 
+INFO: [HLS 200-100] Command         report returned 0; 0.04 sec.
+INFO: [HLS 200-100] Execute         report -model update_knn -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.verbose.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.14 sec.
+INFO: [HLS 200-100] Execute         db_write -model update_knn -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.11 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'knn_vote' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         create_rtl_model knn_vote -vendor xilinx -mg_file /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'knn_vote'.
+INFO: [HLS 200-100] Command         create_rtl_model returned 0; 0.06 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.46 seconds; current allocated memory: 111.572 MB.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl knn_vote -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/systemc/knn_vote -synmodules update_knn knn_vote DigitRec 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl knn_vote -style xilinx -f -lang vhdl -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/vhdl/knn_vote 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl knn_vote -style xilinx -f -lang vlog -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/verilog/knn_vote 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         gen_tb_info knn_vote -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote -p /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db 
+INFO: [HLS 200-100] Command         gen_tb_info returned 0; 0.07 sec.
+INFO: [HLS 200-100] Execute         report -model knn_vote -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/knn_vote_csynth.rpt -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute         report -model knn_vote -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/knn_vote_csynth.xml -f -x 
+INFO: [HLS 200-100] Command         report returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute         report -model knn_vote -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.verbose.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.31 sec.
+INFO: [HLS 200-100] Execute         db_write -model knn_vote -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.2 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DigitRec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-100] Execute         create_rtl_model DigitRec -vendor xilinx -mg_file /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'DigitRec/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DigitRec/training_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DigitRec/testing_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'DigitRec/results_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'DigitRec' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'training_data_V', 'testing_data_V' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'DigitRec_mac_muladd_4ns_12ns_11ns_15_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DigitRec'.
+INFO: [HLS 200-100] Command         create_rtl_model returned 0; 0.04 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 117.150 MB.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         gen_rtl DigitRec -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/systemc/DigitRec -synmodules update_knn knn_vote DigitRec 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         gen_rtl DigitRec -istop -style xilinx -f -lang vhdl -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/vhdl/DigitRec 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.05 sec.
+INFO: [HLS 200-100] Execute         gen_rtl DigitRec -istop -style xilinx -f -lang vlog -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/verilog/DigitRec 
+INFO: [HLS 200-100] Command         gen_rtl returned 0; 0.03 sec.
+INFO: [HLS 200-100] Execute         export_constraint_db -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl -f -tool general 
+INFO: [HLS 200-100] Command         export_constraint_db returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         report -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.design.xml -verbose -f -dv 
+INFO: [HLS 200-100] Command         report returned 0; 0.27 sec.
+INFO: [HLS 200-100] Execute         report -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.sdaccel.xml -verbose -f -sdaccel 
+INFO: [HLS 200-100] Command         report returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute         gen_tb_info DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec -p /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db 
+INFO: [HLS 200-100] Command         gen_tb_info returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         report -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/DigitRec_csynth.rpt -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.03 sec.
+INFO: [HLS 200-100] Execute         report -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/syn/report/DigitRec_csynth.xml -f -x 
+INFO: [HLS 200-100] Command         report returned 0; 0.03 sec.
+INFO: [HLS 200-100] Execute         report -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.verbose.rpt -verbose -f 
+INFO: [HLS 200-100] Command         report returned 0; 0.39 sec.
+INFO: [HLS 200-100] Execute         db_write -model DigitRec -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.adb -f 
+INFO: [HLS 200-100] Command         db_write returned 0; 0.13 sec.
+INFO: [HLS 200-100] Execute         sc_get_clocks DigitRec 
+INFO: [HLS 200-100] Command         sc_get_clocks returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         sc_get_portdomain DigitRec 
+INFO: [HLS 200-100] Command         sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: update_knn knn_vote DigitRec
+INFO: [HLS 200-0] Handling components in module [update_knn] ... 
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [knn_vote] ... 
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-0] Found component knn_vote_score.
+INFO: [HLS 200-0] Append model knn_vote_score
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [DigitRec] ... 
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-0] Found component DigitRec_mac_muladd_4ns_12ns_11ns_15_1.
+INFO: [HLS 200-0] Append model DigitRec_mac_muladd_4ns_12ns_11ns_15_1
+INFO: [HLS 200-0] Found component DigitRec_knn_set_V.
+INFO: [HLS 200-0] Append model DigitRec_knn_set_V
+INFO: [HLS 200-0] Found component DigitRec_control_s_axi.
+INFO: [HLS 200-0] Append model DigitRec_control_s_axi
+INFO: [HLS 200-0] Found component DigitRec_gmem_m_axi.
+INFO: [HLS 200-0] Append model DigitRec_gmem_m_axi
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Append model update_knn
+INFO: [HLS 200-0] Append model knn_vote
+INFO: [HLS 200-0] Append model DigitRec
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: knn_vote_score DigitRec_mac_muladd_4ns_12ns_11ns_15_1 DigitRec_knn_set_V DigitRec_control_s_axi DigitRec_gmem_m_axi update_knn knn_vote DigitRec
+INFO: [HLS 200-0] To file: write model knn_vote_score
+INFO: [HLS 200-0] To file: write model DigitRec_mac_muladd_4ns_12ns_11ns_15_1
+INFO: [HLS 200-0] To file: write model DigitRec_knn_set_V
+INFO: [HLS 200-0] To file: write model DigitRec_control_s_axi
+INFO: [HLS 200-0] To file: write model DigitRec_gmem_m_axi
+INFO: [HLS 200-0] To file: write model update_knn
+INFO: [HLS 200-0] To file: write model knn_vote
+INFO: [HLS 200-0] To file: write model DigitRec
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+INFO: [HLS 200-100] Execute         export_ssdm /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.export.ll 
+INFO: [HLS 200-100] Command         export_ssdm returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute                 source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command                 ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'knn_vote_score_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.02 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'DigitRec_knn_set_V_ram (RAM)' using block RAMs.
+INFO: [HLS 200-100] Execute           source ./control.slave.tcl 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.07 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 570.648 ; gain = 144.711 ; free physical = 28883 ; free virtual = 67318
+INFO: [SYSC 207-301] Generating SystemC RTL for DigitRec.
+INFO: [VHDL 208-304] Generating VHDL RTL for DigitRec.
+INFO: [VLOG 209-307] Generating Verilog RTL for DigitRec.
+INFO: [HLS 200-100] Command       autosyn returned 0; 4.44 sec.
+INFO: [HLS 200-100] Command     csynth_design returned 0; 19.08 sec.
+INFO: [HLS 200-100] Execute     export_design -format ipxact -kernel_drc -sdaccel 
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute         source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.09 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.rtl_wrap.cfg.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.tbgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Generating Kernel XML ...
+INFO: [HLS 200-100] Execute       transform -hls -top=DigitRec -xcl-target=hls -xcl-xmlinfo=/home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/../../../kernel.xml -xcl-profiletype=none -mem2reg -hlskernelxml /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.g.bc -o /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/a.cl.xml.bc -f 
+INFO: [HLS 200-100] Command       transform returned 0; 0.05 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.09 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.12 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/update_knn.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/knn_vote.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.compgen.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/DigitRec.constraint.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/common.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/APCoreGen.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/op_simcore.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/generic/autopilot/interface.gen 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/virtex.gen 
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx.gen 
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/plb46.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/fsl.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/axi4.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/nativeAXI4.gen 
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/saxilite.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute               source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/maxi.gen 
+INFO: [HLS 200-100] Command               ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/scripts/xilinxcoregen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.01 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/dds_compiler.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/util.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfft.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0.08 sec.
+INFO: [HLS 200-100] Execute             source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/ip/xfir.gen 
+INFO: [HLS 200-100] Command             ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command           ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute           source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/dsp48.gen 
+INFO: [HLS 200-100] Command           ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command         ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0.11 sec.
+INFO: [HLS 200-100] Execute       source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+INFO: [HLS 200-100] Execute         source /opt/Xilinx/SDx/2017.1.op/Vivado_HLS/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-100] Command         ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Execute       source /home/centos/src/project_data/AWS_Projects/lab2/_xocc_digitrec_DigitRec.sw_emu.dir/impl/kernels/DigitRec/DigitRec/solution_OCL_REGION_0/.autopilot/db/global.setting.tcl 
+INFO: [HLS 200-100] Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-100] Command     export_design returned 0; 31.46 sec.
+INFO: [HLS 200-100] Execute     close_project 
+INFO: [HLS 200-100] Command     close_project returned 0; 0 sec.
+Vivado HLS completed successfully
+INFO: [HLS 200-100] Execute     cleanup_all 
+INFO: [HLS 200-100] Command     cleanup_all returned 0; 0 sec.

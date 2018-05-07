@@ -1,0 +1,1213 @@
+
+
+================================================================
+== Vivado HLS Report for 'knn_vote'
+================================================================
+* Date:           Mon May  7 01:22:41 2018
+
+* Version:        2017.1 (Build 1846317 on Fri Jul 14 12:21:14 MDT 2017)
+* Project:        DigitRec
+* Solution:       solution_OCL_REGION_0
+* Product family: virtexuplus
+* Target device:  xcvu9p-flgb2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      2.67|        1.08|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   76|   76|   76|   76|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   10|   10|         1|          -|          -|    10|    no    |
+        |- Loop 2  |   51|   51|        18|         17|          1|     3|    yes   |
+        |- Loop 3  |   10|   10|         2|          1|          1|    10|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 17, depth = 18
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 24
+* Pipeline: 2
+  Pipeline-0: II = 17, D = 18, States = { 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 }
+  Pipeline-1: II = 1, D = 2, States = { 22 23 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!exitcond2)
+	3  / (exitcond2)
+3 --> 
+	21  / (exitcond3)
+	4  / (!exitcond3)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	3  / true
+21 --> 
+	22  / true
+22 --> 
+	24  / (exitcond)
+	23  / (!exitcond)
+23 --> 
+	22  / true
+24 --> 
+* FSM state operations: 
+
+ <State 1>: 0.60ns
+ST_1: score (2)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:59
+:0  %score = alloca [10 x i32], align 16
+
+ST_1: StgValue_26 (3)  [1/1] 0.60ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61
+:1  br label %1
+
+
+ <State 2>: 0.71ns
+ST_2: i (5)  [1/1] 0.00ns
+:0  %i = phi i4 [ 0, %0 ], [ %i_1, %2 ]
+
+ST_2: exitcond2 (6)  [1/1] 0.66ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61
+:1  %exitcond2 = icmp eq i4 %i, -6
+
+ST_2: empty (7)  [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_2: i_1 (8)  [1/1] 0.71ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61
+:3  %i_1 = add i4 %i, 1
+
+ST_2: StgValue_31 (9)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61
+:4  br i1 %exitcond2, label %.preheader118.preheader, label %2
+
+ST_2: tmp (11)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:62
+:0  %tmp = zext i4 %i to i64
+
+ST_2: score_addr (12)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:62
+:1  %score_addr = getelementptr inbounds [10 x i32]* %score, i64 0, i64 %tmp
+
+ST_2: StgValue_34 (13)  [1/1] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:62
+:2  store i32 0, i32* %score_addr, align 4
+
+ST_2: StgValue_35 (14)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61
+:3  br label %1
+
+ST_2: knn_set_V_addr (16)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:0  %knn_set_V_addr = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 0
+
+ST_2: knn_set_V_addr_1 (17)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:1  %knn_set_V_addr_1 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 1
+
+ST_2: knn_set_V_addr_2 (18)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:2  %knn_set_V_addr_2 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 2
+
+ST_2: knn_set_V_addr_3 (19)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:3  %knn_set_V_addr_3 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 3
+
+ST_2: knn_set_V_addr_4 (20)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:4  %knn_set_V_addr_4 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 4
+
+ST_2: knn_set_V_addr_5 (21)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:5  %knn_set_V_addr_5 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 5
+
+ST_2: knn_set_V_addr_6 (22)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:6  %knn_set_V_addr_6 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 6
+
+ST_2: knn_set_V_addr_7 (23)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:7  %knn_set_V_addr_7 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 7
+
+ST_2: knn_set_V_addr_8 (24)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:8  %knn_set_V_addr_8 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 8
+
+ST_2: knn_set_V_addr_9 (25)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:9  %knn_set_V_addr_9 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 9
+
+ST_2: knn_set_V_addr_10 (26)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:10  %knn_set_V_addr_10 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 10
+
+ST_2: knn_set_V_addr_11 (27)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:11  %knn_set_V_addr_11 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 11
+
+ST_2: knn_set_V_addr_12 (28)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:12  %knn_set_V_addr_12 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 12
+
+ST_2: knn_set_V_addr_13 (29)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:13  %knn_set_V_addr_13 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 13
+
+ST_2: knn_set_V_addr_14 (30)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:14  %knn_set_V_addr_14 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 14
+
+ST_2: knn_set_V_addr_15 (31)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:15  %knn_set_V_addr_15 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 15
+
+ST_2: knn_set_V_addr_16 (32)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:16  %knn_set_V_addr_16 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 16
+
+ST_2: knn_set_V_addr_17 (33)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:17  %knn_set_V_addr_17 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 17
+
+ST_2: knn_set_V_addr_18 (34)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:18  %knn_set_V_addr_18 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 18
+
+ST_2: knn_set_V_addr_19 (35)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:19  %knn_set_V_addr_19 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 19
+
+ST_2: knn_set_V_addr_20 (36)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:20  %knn_set_V_addr_20 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 20
+
+ST_2: knn_set_V_addr_21 (37)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:21  %knn_set_V_addr_21 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 21
+
+ST_2: knn_set_V_addr_22 (38)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:22  %knn_set_V_addr_22 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 22
+
+ST_2: knn_set_V_addr_23 (39)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:23  %knn_set_V_addr_23 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 23
+
+ST_2: knn_set_V_addr_24 (40)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:24  %knn_set_V_addr_24 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 24
+
+ST_2: knn_set_V_addr_25 (41)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:25  %knn_set_V_addr_25 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 25
+
+ST_2: knn_set_V_addr_26 (42)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:26  %knn_set_V_addr_26 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 26
+
+ST_2: knn_set_V_addr_27 (43)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:27  %knn_set_V_addr_27 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 27
+
+ST_2: knn_set_V_addr_28 (44)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:28  %knn_set_V_addr_28 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 28
+
+ST_2: knn_set_V_addr_29 (45)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader118.preheader:29  %knn_set_V_addr_29 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 29
+
+ST_2: StgValue_66 (46)  [1/1] 0.60ns
+.preheader118.preheader:30  br label %.preheader118
+
+
+ <State 3>: 0.59ns
+ST_3: k (48)  [1/1] 0.00ns
+.preheader118:0  %k = phi i2 [ %k_1, %.preheader.preheader.0 ], [ 0, %.preheader118.preheader ]
+
+ST_3: exitcond3 (49)  [1/1] 0.34ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65
+.preheader118:1  %exitcond3 = icmp eq i2 %k, -1
+
+ST_3: k_1 (50)  [1/1] 0.44ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65
+.preheader118:2  %k_1 = add i2 %k, 1
+
+ST_3: StgValue_70 (51)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65
+.preheader118:3  br i1 %exitcond3, label %.preheader3.preheader, label %.preheader.preheader.0
+
+ST_3: knn_set_V_load (55)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:2  %knn_set_V_load = load i6* %knn_set_V_addr, align 1
+
+ST_3: knn_set_V_load_1 (58)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:5  %knn_set_V_load_1 = load i6* %knn_set_V_addr_1, align 1
+
+
+ <State 4>: 2.67ns
+ST_4: knn_set_V_load (55)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:2  %knn_set_V_load = load i6* %knn_set_V_addr, align 1
+
+ST_4: tmp_9 (56)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:3  %tmp_9 = icmp ult i6 %knn_set_V_load, -14
+
+ST_4: p_080_2 (57)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:4  %p_080_2 = select i1 %tmp_9, i6 %knn_set_V_load, i6 -14
+
+ST_4: knn_set_V_load_1 (58)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:5  %knn_set_V_load_1 = load i6* %knn_set_V_addr_1, align 1
+
+ST_4: tmp_9_0_1 (59)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:6  %tmp_9_0_1 = icmp ult i6 %knn_set_V_load_1, %p_080_2
+
+ST_4: knn_set_V_load_1_080_2 (60)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:7  %knn_set_V_load_1_080_2 = select i1 %tmp_9_0_1, i6 %knn_set_V_load_1, i6 %p_080_2
+
+ST_4: knn_set_V_load_2 (65)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:12  %knn_set_V_load_2 = load i6* %knn_set_V_addr_2, align 1
+
+ST_4: knn_set_V_load_3 (68)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:15  %knn_set_V_load_3 = load i6* %knn_set_V_addr_3, align 1
+
+
+ <State 5>: 2.67ns
+ST_5: knn_set_V_load_2 (65)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:12  %knn_set_V_load_2 = load i6* %knn_set_V_addr_2, align 1
+
+ST_5: tmp_9_0_2 (66)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:13  %tmp_9_0_2 = icmp ult i6 %knn_set_V_load_2, %knn_set_V_load_1_080_2
+
+ST_5: p_080_2_0_2 (67)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:14  %p_080_2_0_2 = select i1 %tmp_9_0_2, i6 %knn_set_V_load_2, i6 %knn_set_V_load_1_080_2
+
+ST_5: knn_set_V_load_3 (68)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:15  %knn_set_V_load_3 = load i6* %knn_set_V_addr_3, align 1
+
+ST_5: tmp_9_1 (69)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:16  %tmp_9_1 = icmp ult i6 %knn_set_V_load_3, %p_080_2_0_2
+
+ST_5: p_080_2_1 (70)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:17  %p_080_2_1 = select i1 %tmp_9_1, i6 %knn_set_V_load_3, i6 %p_080_2_0_2
+
+ST_5: knn_set_V_load_4 (76)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:23  %knn_set_V_load_4 = load i6* %knn_set_V_addr_4, align 1
+
+ST_5: knn_set_V_load_5 (79)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:26  %knn_set_V_load_5 = load i6* %knn_set_V_addr_5, align 1
+
+
+ <State 6>: 2.67ns
+ST_6: knn_set_V_load_4 (76)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:23  %knn_set_V_load_4 = load i6* %knn_set_V_addr_4, align 1
+
+ST_6: tmp_9_1_1 (77)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:24  %tmp_9_1_1 = icmp ult i6 %knn_set_V_load_4, %p_080_2_1
+
+ST_6: knn_set_V_load_4_080_2_1 (78)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:25  %knn_set_V_load_4_080_2_1 = select i1 %tmp_9_1_1, i6 %knn_set_V_load_4, i6 %p_080_2_1
+
+ST_6: knn_set_V_load_5 (79)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:26  %knn_set_V_load_5 = load i6* %knn_set_V_addr_5, align 1
+
+ST_6: tmp_9_1_2 (80)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:27  %tmp_9_1_2 = icmp ult i6 %knn_set_V_load_5, %knn_set_V_load_4_080_2_1
+
+ST_6: p_080_2_1_2 (81)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:28  %p_080_2_1_2 = select i1 %tmp_9_1_2, i6 %knn_set_V_load_5, i6 %knn_set_V_load_4_080_2_1
+
+ST_6: knn_set_V_load_6 (85)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:32  %knn_set_V_load_6 = load i6* %knn_set_V_addr_6, align 1
+
+ST_6: knn_set_V_load_7 (88)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:35  %knn_set_V_load_7 = load i6* %knn_set_V_addr_7, align 1
+
+
+ <State 7>: 2.67ns
+ST_7: knn_set_V_load_6 (85)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:32  %knn_set_V_load_6 = load i6* %knn_set_V_addr_6, align 1
+
+ST_7: tmp_9_2 (86)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:33  %tmp_9_2 = icmp ult i6 %knn_set_V_load_6, %p_080_2_1_2
+
+ST_7: p_080_2_2 (87)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:34  %p_080_2_2 = select i1 %tmp_9_2, i6 %knn_set_V_load_6, i6 %p_080_2_1_2
+
+ST_7: knn_set_V_load_7 (88)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:35  %knn_set_V_load_7 = load i6* %knn_set_V_addr_7, align 1
+
+ST_7: tmp_9_2_1 (89)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:36  %tmp_9_2_1 = icmp ult i6 %knn_set_V_load_7, %p_080_2_2
+
+ST_7: knn_set_V_load_7_080_2_2 (90)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:37  %knn_set_V_load_7_080_2_2 = select i1 %tmp_9_2_1, i6 %knn_set_V_load_7, i6 %p_080_2_2
+
+ST_7: knn_set_V_load_8 (97)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:44  %knn_set_V_load_8 = load i6* %knn_set_V_addr_8, align 1
+
+ST_7: knn_set_V_load_9 (100)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:47  %knn_set_V_load_9 = load i6* %knn_set_V_addr_9, align 1
+
+
+ <State 8>: 2.67ns
+ST_8: knn_set_V_load_8 (97)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:44  %knn_set_V_load_8 = load i6* %knn_set_V_addr_8, align 1
+
+ST_8: tmp_9_2_2 (98)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:45  %tmp_9_2_2 = icmp ult i6 %knn_set_V_load_8, %knn_set_V_load_7_080_2_2
+
+ST_8: p_080_2_2_2 (99)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:46  %p_080_2_2_2 = select i1 %tmp_9_2_2, i6 %knn_set_V_load_8, i6 %knn_set_V_load_7_080_2_2
+
+ST_8: knn_set_V_load_9 (100)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:47  %knn_set_V_load_9 = load i6* %knn_set_V_addr_9, align 1
+
+ST_8: tmp_9_3 (101)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:48  %tmp_9_3 = icmp ult i6 %knn_set_V_load_9, %p_080_2_2_2
+
+ST_8: p_080_2_3 (102)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:49  %p_080_2_3 = select i1 %tmp_9_3, i6 %knn_set_V_load_9, i6 %p_080_2_2_2
+
+ST_8: knn_set_V_load_10 (108)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:55  %knn_set_V_load_10 = load i6* %knn_set_V_addr_10, align 1
+
+ST_8: knn_set_V_load_11 (111)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:58  %knn_set_V_load_11 = load i6* %knn_set_V_addr_11, align 1
+
+
+ <State 9>: 2.67ns
+ST_9: tmp_5 (61)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:8  %tmp_5 = or i1 %tmp_9_0_1, %tmp_9
+
+ST_9: p_072_2 (62)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_2)
+.preheader.preheader.0:9  %p_072_2 = select i1 %tmp_5, i4 0, i4 -6
+
+ST_9: min_dist_record_2_cast (63)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_1_2)
+.preheader.preheader.0:10  %min_dist_record_2_cast = zext i1 %tmp_9_0_1 to i3
+
+ST_9: p_min_dist_record_2 (64)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_1_2)
+.preheader.preheader.0:11  %p_min_dist_record_2 = select i1 %tmp_5, i3 %min_dist_record_2_cast, i3 -4
+
+ST_9: p_072_2_0_2 (71)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_2)
+.preheader.preheader.0:18  %p_072_2_0_2 = zext i1 %tmp_9_1 to i4
+
+ST_9: tmp_6 (72)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:19  %tmp_6 = or i1 %tmp_9_1, %tmp_9_0_2
+
+ST_9: p_072_2_1 (73)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_2)
+.preheader.preheader.0:20  %p_072_2_1 = select i1 %tmp_6, i4 %p_072_2_0_2, i4 %p_072_2
+
+ST_9: min_dist_record_2_0_2_cast_cast (74)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_1_2)
+.preheader.preheader.0:21  %min_dist_record_2_0_2_cast_cast = select i1 %tmp_9_1, i3 0, i3 2
+
+ST_9: min_dist_record_2_1 (75)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_1_2)
+.preheader.preheader.0:22  %min_dist_record_2_1 = select i1 %tmp_6, i3 %min_dist_record_2_0_2_cast_cast, i3 %p_min_dist_record_2
+
+ST_9: tmp_7 (82)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:29  %tmp_7 = or i1 %tmp_9_1_2, %tmp_9_1_1
+
+ST_9: p_min_dist_record_2_1_cast_cast (83)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_1_2)
+.preheader.preheader.0:30  %p_min_dist_record_2_1_cast_cast = select i1 %tmp_9_1_2, i3 2, i3 1
+
+ST_9: min_dist_record_2_1_2 (84)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:31  %min_dist_record_2_1_2 = select i1 %tmp_7, i3 %p_min_dist_record_2_1_cast_cast, i3 %min_dist_record_2_1
+
+ST_9: tmp_8 (91)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:38  %tmp_8 = or i1 %tmp_9_2_1, %tmp_9_2
+
+ST_9: p_072_2_1_2_cast (92)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_2)
+.preheader.preheader.0:39  %p_072_2_1_2_cast = select i1 %tmp_8, i4 2, i4 1
+
+ST_9: tmp_10 (93)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_2)
+.preheader.preheader.0:40  %tmp_10 = or i1 %tmp_8, %tmp_7
+
+ST_9: p_072_2_2 (94)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:41  %p_072_2_2 = select i1 %tmp_10, i4 %p_072_2_1_2_cast, i4 %p_072_2_1
+
+ST_9: min_dist_record_2_2_cast (95)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_3)
+.preheader.preheader.0:42  %min_dist_record_2_2_cast = zext i1 %tmp_9_2_1 to i3
+
+ST_9: p_min_dist_record_2_2 (96)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_3)
+.preheader.preheader.0:43  %p_min_dist_record_2_2 = select i1 %tmp_8, i3 %min_dist_record_2_2_cast, i3 %min_dist_record_2_1_2
+
+ST_9: tmp_11 (104)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:51  %tmp_11 = or i1 %tmp_9_3, %tmp_9_2_2
+
+ST_9: min_dist_record_2_2_2_cast_cast (106)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_3)
+.preheader.preheader.0:53  %min_dist_record_2_2_2_cast_cast = select i1 %tmp_9_3, i3 0, i3 2
+
+ST_9: min_dist_record_2_3 (107)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:54  %min_dist_record_2_3 = select i1 %tmp_11, i3 %min_dist_record_2_2_2_cast_cast, i3 %p_min_dist_record_2_2
+
+ST_9: knn_set_V_load_10 (108)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:55  %knn_set_V_load_10 = load i6* %knn_set_V_addr_10, align 1
+
+ST_9: tmp_9_3_1 (109)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:56  %tmp_9_3_1 = icmp ult i6 %knn_set_V_load_10, %p_080_2_3
+
+ST_9: knn_set_V_load_10_080_2_3 (110)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:57  %knn_set_V_load_10_080_2_3 = select i1 %tmp_9_3_1, i6 %knn_set_V_load_10, i6 %p_080_2_3
+
+ST_9: knn_set_V_load_11 (111)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:58  %knn_set_V_load_11 = load i6* %knn_set_V_addr_11, align 1
+
+ST_9: tmp_9_3_2 (112)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:59  %tmp_9_3_2 = icmp ult i6 %knn_set_V_load_11, %knn_set_V_load_10_080_2_3
+
+ST_9: p_080_2_3_2 (113)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:60  %p_080_2_3_2 = select i1 %tmp_9_3_2, i6 %knn_set_V_load_11, i6 %knn_set_V_load_10_080_2_3
+
+ST_9: knn_set_V_load_12 (117)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:64  %knn_set_V_load_12 = load i6* %knn_set_V_addr_12, align 1
+
+ST_9: knn_set_V_load_13 (120)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:67  %knn_set_V_load_13 = load i6* %knn_set_V_addr_13, align 1
+
+
+ <State 10>: 2.67ns
+ST_10: knn_set_V_load_12 (117)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:64  %knn_set_V_load_12 = load i6* %knn_set_V_addr_12, align 1
+
+ST_10: tmp_9_4 (118)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:65  %tmp_9_4 = icmp ult i6 %knn_set_V_load_12, %p_080_2_3_2
+
+ST_10: p_080_2_4 (119)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:66  %p_080_2_4 = select i1 %tmp_9_4, i6 %knn_set_V_load_12, i6 %p_080_2_3_2
+
+ST_10: knn_set_V_load_13 (120)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:67  %knn_set_V_load_13 = load i6* %knn_set_V_addr_13, align 1
+
+ST_10: tmp_9_4_1 (121)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:68  %tmp_9_4_1 = icmp ult i6 %knn_set_V_load_13, %p_080_2_4
+
+ST_10: knn_set_V_load_13_080_2_4 (122)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:69  %knn_set_V_load_13_080_2_4 = select i1 %tmp_9_4_1, i6 %knn_set_V_load_13, i6 %p_080_2_4
+
+ST_10: knn_set_V_load_14 (129)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:76  %knn_set_V_load_14 = load i6* %knn_set_V_addr_14, align 1
+
+ST_10: knn_set_V_load_15 (132)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:79  %knn_set_V_load_15 = load i6* %knn_set_V_addr_15, align 1
+
+
+ <State 11>: 2.67ns
+ST_11: p_072_2_2_2_cast_cast (103)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_4)
+.preheader.preheader.0:50  %p_072_2_2_2_cast_cast = select i1 %tmp_9_3, i4 3, i4 2
+
+ST_11: p_072_2_3 (105)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_4)
+.preheader.preheader.0:52  %p_072_2_3 = select i1 %tmp_11, i4 %p_072_2_2_2_cast_cast, i4 %p_072_2_2
+
+ST_11: tmp_12 (114)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:61  %tmp_12 = or i1 %tmp_9_3_2, %tmp_9_3_1
+
+ST_11: p_min_dist_record_2_3_cast_cast (115)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_4)
+.preheader.preheader.0:62  %p_min_dist_record_2_3_cast_cast = select i1 %tmp_9_3_2, i3 2, i3 1
+
+ST_11: min_dist_record_2_3_2 (116)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_4)
+.preheader.preheader.0:63  %min_dist_record_2_3_2 = select i1 %tmp_12, i3 %p_min_dist_record_2_3_cast_cast, i3 %min_dist_record_2_3
+
+ST_11: tmp_13 (123)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:70  %tmp_13 = or i1 %tmp_9_4_1, %tmp_9_4
+
+ST_11: p_072_2_3_2_cast (124)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_4)
+.preheader.preheader.0:71  %p_072_2_3_2_cast = select i1 %tmp_13, i4 4, i4 3
+
+ST_11: tmp_14 (125)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_4)
+.preheader.preheader.0:72  %tmp_14 = or i1 %tmp_13, %tmp_12
+
+ST_11: p_072_2_4 (126)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:73  %p_072_2_4 = select i1 %tmp_14, i4 %p_072_2_3_2_cast, i4 %p_072_2_3
+
+ST_11: min_dist_record_2_4_cast (127)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_4)
+.preheader.preheader.0:74  %min_dist_record_2_4_cast = zext i1 %tmp_9_4_1 to i3
+
+ST_11: p_min_dist_record_2_4 (128)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:75  %p_min_dist_record_2_4 = select i1 %tmp_13, i3 %min_dist_record_2_4_cast, i3 %min_dist_record_2_3_2
+
+ST_11: knn_set_V_load_14 (129)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:76  %knn_set_V_load_14 = load i6* %knn_set_V_addr_14, align 1
+
+ST_11: tmp_9_4_2 (130)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:77  %tmp_9_4_2 = icmp ult i6 %knn_set_V_load_14, %knn_set_V_load_13_080_2_4
+
+ST_11: p_080_2_4_2 (131)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:78  %p_080_2_4_2 = select i1 %tmp_9_4_2, i6 %knn_set_V_load_14, i6 %knn_set_V_load_13_080_2_4
+
+ST_11: knn_set_V_load_15 (132)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:79  %knn_set_V_load_15 = load i6* %knn_set_V_addr_15, align 1
+
+ST_11: tmp_9_5 (133)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:80  %tmp_9_5 = icmp ult i6 %knn_set_V_load_15, %p_080_2_4_2
+
+ST_11: p_080_2_5 (134)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:81  %p_080_2_5 = select i1 %tmp_9_5, i6 %knn_set_V_load_15, i6 %p_080_2_4_2
+
+ST_11: knn_set_V_load_16 (140)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:87  %knn_set_V_load_16 = load i6* %knn_set_V_addr_16, align 1
+
+ST_11: knn_set_V_load_17 (143)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:90  %knn_set_V_load_17 = load i6* %knn_set_V_addr_17, align 1
+
+
+ <State 12>: 2.67ns
+ST_12: knn_set_V_load_16 (140)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:87  %knn_set_V_load_16 = load i6* %knn_set_V_addr_16, align 1
+
+ST_12: tmp_9_5_1 (141)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:88  %tmp_9_5_1 = icmp ult i6 %knn_set_V_load_16, %p_080_2_5
+
+ST_12: knn_set_V_load_16_080_2_5 (142)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:89  %knn_set_V_load_16_080_2_5 = select i1 %tmp_9_5_1, i6 %knn_set_V_load_16, i6 %p_080_2_5
+
+ST_12: knn_set_V_load_17 (143)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:90  %knn_set_V_load_17 = load i6* %knn_set_V_addr_17, align 1
+
+ST_12: tmp_9_5_2 (144)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:91  %tmp_9_5_2 = icmp ult i6 %knn_set_V_load_17, %knn_set_V_load_16_080_2_5
+
+ST_12: p_080_2_5_2 (145)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:92  %p_080_2_5_2 = select i1 %tmp_9_5_2, i6 %knn_set_V_load_17, i6 %knn_set_V_load_16_080_2_5
+
+ST_12: knn_set_V_load_18 (149)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:96  %knn_set_V_load_18 = load i6* %knn_set_V_addr_18, align 1
+
+ST_12: knn_set_V_load_19 (152)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:99  %knn_set_V_load_19 = load i6* %knn_set_V_addr_19, align 1
+
+
+ <State 13>: 2.67ns
+ST_13: tmp_15 (136)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:83  %tmp_15 = or i1 %tmp_9_5, %tmp_9_4_2
+
+ST_13: min_dist_record_2_4_2_cast_cast (138)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_5_2)
+.preheader.preheader.0:85  %min_dist_record_2_4_2_cast_cast = select i1 %tmp_9_5, i3 0, i3 2
+
+ST_13: min_dist_record_2_5 (139)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_5_2)
+.preheader.preheader.0:86  %min_dist_record_2_5 = select i1 %tmp_15, i3 %min_dist_record_2_4_2_cast_cast, i3 %p_min_dist_record_2_4
+
+ST_13: tmp_16 (146)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:93  %tmp_16 = or i1 %tmp_9_5_2, %tmp_9_5_1
+
+ST_13: p_min_dist_record_2_5_cast_cast (147)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_5_2)
+.preheader.preheader.0:94  %p_min_dist_record_2_5_cast_cast = select i1 %tmp_9_5_2, i3 2, i3 1
+
+ST_13: min_dist_record_2_5_2 (148)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:95  %min_dist_record_2_5_2 = select i1 %tmp_16, i3 %p_min_dist_record_2_5_cast_cast, i3 %min_dist_record_2_5
+
+ST_13: knn_set_V_load_18 (149)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:96  %knn_set_V_load_18 = load i6* %knn_set_V_addr_18, align 1
+
+ST_13: tmp_9_6 (150)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:97  %tmp_9_6 = icmp ult i6 %knn_set_V_load_18, %p_080_2_5_2
+
+ST_13: p_080_2_6 (151)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:98  %p_080_2_6 = select i1 %tmp_9_6, i6 %knn_set_V_load_18, i6 %p_080_2_5_2
+
+ST_13: knn_set_V_load_19 (152)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:99  %knn_set_V_load_19 = load i6* %knn_set_V_addr_19, align 1
+
+ST_13: tmp_9_6_1 (153)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:100  %tmp_9_6_1 = icmp ult i6 %knn_set_V_load_19, %p_080_2_6
+
+ST_13: knn_set_V_load_19_080_2_6 (154)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:101  %knn_set_V_load_19_080_2_6 = select i1 %tmp_9_6_1, i6 %knn_set_V_load_19, i6 %p_080_2_6
+
+ST_13: knn_set_V_load_20 (161)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:108  %knn_set_V_load_20 = load i6* %knn_set_V_addr_20, align 1
+
+ST_13: knn_set_V_load_21 (164)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:111  %knn_set_V_load_21 = load i6* %knn_set_V_addr_21, align 1
+
+
+ <State 14>: 2.67ns
+ST_14: p_072_2_4_2_cast_cast (135)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_6)
+.preheader.preheader.0:82  %p_072_2_4_2_cast_cast = select i1 %tmp_9_5, i4 5, i4 4
+
+ST_14: p_072_2_5 (137)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_6)
+.preheader.preheader.0:84  %p_072_2_5 = select i1 %tmp_15, i4 %p_072_2_4_2_cast_cast, i4 %p_072_2_4
+
+ST_14: tmp_17 (155)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:102  %tmp_17 = or i1 %tmp_9_6_1, %tmp_9_6
+
+ST_14: p_072_2_5_2_cast (156)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_6)
+.preheader.preheader.0:103  %p_072_2_5_2_cast = select i1 %tmp_17, i4 6, i4 5
+
+ST_14: tmp_18 (157)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_6)
+.preheader.preheader.0:104  %tmp_18 = or i1 %tmp_17, %tmp_16
+
+ST_14: p_072_2_6 (158)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:105  %p_072_2_6 = select i1 %tmp_18, i4 %p_072_2_5_2_cast, i4 %p_072_2_5
+
+ST_14: knn_set_V_load_20 (161)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:108  %knn_set_V_load_20 = load i6* %knn_set_V_addr_20, align 1
+
+ST_14: tmp_9_6_2 (162)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:109  %tmp_9_6_2 = icmp ult i6 %knn_set_V_load_20, %knn_set_V_load_19_080_2_6
+
+ST_14: p_080_2_6_2 (163)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:110  %p_080_2_6_2 = select i1 %tmp_9_6_2, i6 %knn_set_V_load_20, i6 %knn_set_V_load_19_080_2_6
+
+ST_14: knn_set_V_load_21 (164)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:111  %knn_set_V_load_21 = load i6* %knn_set_V_addr_21, align 1
+
+ST_14: tmp_9_7 (165)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:112  %tmp_9_7 = icmp ult i6 %knn_set_V_load_21, %p_080_2_6_2
+
+ST_14: p_080_2_7 (166)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:113  %p_080_2_7 = select i1 %tmp_9_7, i6 %knn_set_V_load_21, i6 %p_080_2_6_2
+
+ST_14: knn_set_V_load_22 (172)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:119  %knn_set_V_load_22 = load i6* %knn_set_V_addr_22, align 1
+
+ST_14: knn_set_V_load_23 (175)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:122  %knn_set_V_load_23 = load i6* %knn_set_V_addr_23, align 1
+
+
+ <State 15>: 2.67ns
+ST_15: min_dist_record_2_6_cast (159)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_7)
+.preheader.preheader.0:106  %min_dist_record_2_6_cast = zext i1 %tmp_9_6_1 to i3
+
+ST_15: p_min_dist_record_2_6 (160)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_7)
+.preheader.preheader.0:107  %p_min_dist_record_2_6 = select i1 %tmp_17, i3 %min_dist_record_2_6_cast, i3 %min_dist_record_2_5_2
+
+ST_15: tmp_19 (168)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:115  %tmp_19 = or i1 %tmp_9_7, %tmp_9_6_2
+
+ST_15: min_dist_record_2_6_2_cast_cast (170)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node min_dist_record_2_7)
+.preheader.preheader.0:117  %min_dist_record_2_6_2_cast_cast = select i1 %tmp_9_7, i3 0, i3 2
+
+ST_15: min_dist_record_2_7 (171)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:118  %min_dist_record_2_7 = select i1 %tmp_19, i3 %min_dist_record_2_6_2_cast_cast, i3 %p_min_dist_record_2_6
+
+ST_15: knn_set_V_load_22 (172)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:119  %knn_set_V_load_22 = load i6* %knn_set_V_addr_22, align 1
+
+ST_15: tmp_9_7_1 (173)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:120  %tmp_9_7_1 = icmp ult i6 %knn_set_V_load_22, %p_080_2_7
+
+ST_15: knn_set_V_load_22_080_2_7 (174)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:121  %knn_set_V_load_22_080_2_7 = select i1 %tmp_9_7_1, i6 %knn_set_V_load_22, i6 %p_080_2_7
+
+ST_15: knn_set_V_load_23 (175)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:122  %knn_set_V_load_23 = load i6* %knn_set_V_addr_23, align 1
+
+ST_15: tmp_9_7_2 (176)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:123  %tmp_9_7_2 = icmp ult i6 %knn_set_V_load_23, %knn_set_V_load_22_080_2_7
+
+ST_15: p_080_2_7_2 (177)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:124  %p_080_2_7_2 = select i1 %tmp_9_7_2, i6 %knn_set_V_load_23, i6 %knn_set_V_load_22_080_2_7
+
+ST_15: knn_set_V_load_24 (181)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:128  %knn_set_V_load_24 = load i6* %knn_set_V_addr_24, align 1
+
+ST_15: knn_set_V_load_25 (184)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:131  %knn_set_V_load_25 = load i6* %knn_set_V_addr_25, align 1
+
+
+ <State 16>: 2.67ns
+ST_16: knn_set_V_load_24 (181)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:128  %knn_set_V_load_24 = load i6* %knn_set_V_addr_24, align 1
+
+ST_16: tmp_9_8 (182)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:129  %tmp_9_8 = icmp ult i6 %knn_set_V_load_24, %p_080_2_7_2
+
+ST_16: p_080_2_8 (183)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:130  %p_080_2_8 = select i1 %tmp_9_8, i6 %knn_set_V_load_24, i6 %p_080_2_7_2
+
+ST_16: knn_set_V_load_25 (184)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:131  %knn_set_V_load_25 = load i6* %knn_set_V_addr_25, align 1
+
+ST_16: tmp_9_8_1 (185)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:132  %tmp_9_8_1 = icmp ult i6 %knn_set_V_load_25, %p_080_2_8
+
+ST_16: knn_set_V_load_25_080_2_8 (186)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:133  %knn_set_V_load_25_080_2_8 = select i1 %tmp_9_8_1, i6 %knn_set_V_load_25, i6 %p_080_2_8
+
+ST_16: knn_set_V_load_26 (193)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:140  %knn_set_V_load_26 = load i6* %knn_set_V_addr_26, align 1
+
+ST_16: knn_set_V_load_27 (196)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:143  %knn_set_V_load_27 = load i6* %knn_set_V_addr_27, align 1
+
+
+ <State 17>: 2.67ns
+ST_17: p_072_2_6_2_cast_cast (167)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_8)
+.preheader.preheader.0:114  %p_072_2_6_2_cast_cast = select i1 %tmp_9_7, i4 7, i4 6
+
+ST_17: p_072_2_7 (169)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_8)
+.preheader.preheader.0:116  %p_072_2_7 = select i1 %tmp_19, i4 %p_072_2_6_2_cast_cast, i4 %p_072_2_6
+
+ST_17: tmp_20 (178)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:125  %tmp_20 = or i1 %tmp_9_7_2, %tmp_9_7_1
+
+ST_17: p_min_dist_record_2_7_cast_cast (179)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_8)
+.preheader.preheader.0:126  %p_min_dist_record_2_7_cast_cast = select i1 %tmp_9_7_2, i3 2, i3 1
+
+ST_17: min_dist_record_2_7_2 (180)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_8)
+.preheader.preheader.0:127  %min_dist_record_2_7_2 = select i1 %tmp_20, i3 %p_min_dist_record_2_7_cast_cast, i3 %min_dist_record_2_7
+
+ST_17: tmp_21 (187)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:134  %tmp_21 = or i1 %tmp_9_8_1, %tmp_9_8
+
+ST_17: p_072_2_7_2 (188)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_8)
+.preheader.preheader.0:135  %p_072_2_7_2 = select i1 %tmp_21, i4 -8, i4 7
+
+ST_17: tmp_22 (189)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_8)
+.preheader.preheader.0:136  %tmp_22 = or i1 %tmp_21, %tmp_20
+
+ST_17: p_072_2_8 (190)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:137  %p_072_2_8 = select i1 %tmp_22, i4 %p_072_2_7_2, i4 %p_072_2_7
+
+ST_17: min_dist_record_2_8_cast (191)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_min_dist_record_2_8)
+.preheader.preheader.0:138  %min_dist_record_2_8_cast = zext i1 %tmp_9_8_1 to i3
+
+ST_17: p_min_dist_record_2_8 (192)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:139  %p_min_dist_record_2_8 = select i1 %tmp_21, i3 %min_dist_record_2_8_cast, i3 %min_dist_record_2_7_2
+
+ST_17: knn_set_V_load_26 (193)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:140  %knn_set_V_load_26 = load i6* %knn_set_V_addr_26, align 1
+
+ST_17: tmp_9_8_2 (194)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:141  %tmp_9_8_2 = icmp ult i6 %knn_set_V_load_26, %knn_set_V_load_25_080_2_8
+
+ST_17: p_080_2_8_2 (195)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:142  %p_080_2_8_2 = select i1 %tmp_9_8_2, i6 %knn_set_V_load_26, i6 %knn_set_V_load_25_080_2_8
+
+ST_17: knn_set_V_load_27 (196)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:143  %knn_set_V_load_27 = load i6* %knn_set_V_addr_27, align 1
+
+ST_17: tmp_9_9 (197)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:144  %tmp_9_9 = icmp ult i6 %knn_set_V_load_27, %p_080_2_8_2
+
+ST_17: p_080_2_9 (198)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:145  %p_080_2_9 = select i1 %tmp_9_9, i6 %knn_set_V_load_27, i6 %p_080_2_8_2
+
+ST_17: knn_set_V_load_28 (204)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:151  %knn_set_V_load_28 = load i6* %knn_set_V_addr_28, align 1
+
+ST_17: knn_set_V_load_29 (207)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:154  %knn_set_V_load_29 = load i6* %knn_set_V_addr_29, align 1
+
+
+ <State 18>: 2.16ns
+ST_18: tmp_23 (200)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:147  %tmp_23 = or i1 %tmp_9_9, %tmp_9_8_2
+
+ST_18: knn_set_V_load_28 (204)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:151  %knn_set_V_load_28 = load i6* %knn_set_V_addr_28, align 1
+
+ST_18: tmp_9_9_1 (205)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:152  %tmp_9_9_1 = icmp ult i6 %knn_set_V_load_28, %p_080_2_9
+
+ST_18: knn_set_V_load_28_080_2_9 (206)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node tmp_9_9_2)
+.preheader.preheader.0:153  %knn_set_V_load_28_080_2_9 = select i1 %tmp_9_9_1, i6 %knn_set_V_load_28, i6 %p_080_2_9
+
+ST_18: knn_set_V_load_29 (207)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:154  %knn_set_V_load_29 = load i6* %knn_set_V_addr_29, align 1
+
+ST_18: tmp_9_9_2 (208)  [1/1] 0.62ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:155  %tmp_9_9_2 = icmp ult i6 %knn_set_V_load_29, %knn_set_V_load_28_080_2_9
+
+ST_18: tmp_24 (209)  [1/1] 0.33ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72
+.preheader.preheader.0:156  %tmp_24 = or i1 %tmp_9_9_2, %tmp_9_9_1
+
+
+ <State 19>: 2.64ns
+ST_19: p_072_2_8_2 (199)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_9_2)
+.preheader.preheader.0:146  %p_072_2_8_2 = select i1 %tmp_9_9, i4 -7, i4 -8
+
+ST_19: p_072_2_9 (201)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node p_072_2_9_2)
+.preheader.preheader.0:148  %p_072_2_9 = select i1 %tmp_23, i4 %p_072_2_8_2, i4 %p_072_2_8
+
+ST_19: min_dist_record_2_8_2_cast_cast (202)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:149  %min_dist_record_2_8_2_cast_cast = select i1 %tmp_9_9, i3 0, i3 2
+
+ST_19: min_dist_record_2_9 (203)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:150  %min_dist_record_2_9 = select i1 %tmp_23, i3 %min_dist_record_2_8_2_cast_cast, i3 %p_min_dist_record_2_8
+
+ST_19: p_072_2_9_2 (210)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (out node of the LUT)
+.preheader.preheader.0:157  %p_072_2_9_2 = select i1 %tmp_24, i4 -7, i4 %p_072_2_9
+
+ST_19: p_min_dist_record_2_9_cast_cast (211)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:158  %p_min_dist_record_2_9_cast_cast = select i1 %tmp_9_9_2, i3 2, i3 1
+
+ST_19: min_dist_record_2_9_2 (212)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:159  %min_dist_record_2_9_2 = select i1 %tmp_24, i3 %p_min_dist_record_2_9_cast_cast, i3 %min_dist_record_2_9
+
+ST_19: tmp_2 (213)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:160  %tmp_2 = zext i4 %p_072_2_9_2 to i64
+
+ST_19: score_addr_2 (214)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:161  %score_addr_2 = getelementptr inbounds [10 x i32]* %score, i64 0, i64 %tmp_2
+
+ST_19: score_load (215)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:162  %score_load = load i32* %score_addr_2, align 4
+
+ST_19: lhs_V_cast2 (218)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:165  %lhs_V_cast2 = zext i4 %p_072_2_9_2 to i7
+
+ST_19: p_shl2 (219)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:166  %p_shl2 = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %p_072_2_9_2, i2 0)
+
+ST_19: p_shl2_cast (220)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:167  %p_shl2_cast = zext i6 %p_shl2 to i7
+
+ST_19: r_V (221)  [1/1] 0.71ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:168  %r_V = sub i7 %p_shl2_cast, %lhs_V_cast2
+
+ST_19: r_V_cast (222)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:169  %r_V_cast = sext i7 %r_V to i36
+
+ST_19: lhs_V (223)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:170  %lhs_V = zext i36 %r_V_cast to i37
+
+ST_19: rhs_V (224)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82 (grouped into LUT with out node r_V_1)
+.preheader.preheader.0:171  %rhs_V = zext i3 %min_dist_record_2_9_2 to i37
+
+ST_19: r_V_1 (225)  [1/1] 0.92ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82 (out node of the LUT)
+.preheader.preheader.0:172  %r_V_1 = add nsw i37 %lhs_V, %rhs_V
+
+ST_19: tmp_4 (226)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:173  %tmp_4 = sext i37 %r_V_1 to i64
+
+ST_19: knn_set_V_addr_30 (227)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:174  %knn_set_V_addr_30 = getelementptr [30 x i6]* %knn_set_V, i64 0, i64 %tmp_4
+
+ST_19: StgValue_272 (228)  [1/1] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82
+.preheader.preheader.0:175  store i6 -14, i6* %knn_set_V_addr_30, align 1
+
+
+ <State 20>: 2.07ns
+ST_20: StgValue_273 (53)  [1/1] 0.00ns
+.preheader.preheader.0:0  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str16)
+
+ST_20: empty_8 (54)  [1/1] 0.00ns
+.preheader.preheader.0:1  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)
+
+ST_20: score_load (215)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:162  %score_load = load i32* %score_addr_2, align 4
+
+ST_20: tmp_3 (216)  [1/1] 0.88ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:163  %tmp_3 = add nsw i32 %score_load, 1
+
+ST_20: StgValue_277 (217)  [1/1] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80
+.preheader.preheader.0:164  store i32 %tmp_3, i32* %score_addr_2, align 4
+
+ST_20: StgValue_278 (229)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:65
+.preheader.preheader.0:176  br label %.preheader118
+
+
+ <State 21>: 0.60ns
+ST_21: StgValue_279 (231)  [1/1] 0.60ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88
+.preheader3.preheader:0  br label %.preheader3
+
+
+ <State 22>: 0.71ns
+ST_22: agg_result_V (233)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+.preheader3:0  %agg_result_V = phi i4 [ %min_index_V_agg_result_V, %._crit_edge119 ], [ 0, %.preheader3.preheader ]
+
+ST_22: max_score (234)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+.preheader3:1  %max_score = phi i32 [ %max_score_2_max_score, %._crit_edge119 ], [ 0, %.preheader3.preheader ]
+
+ST_22: min_index_V (235)  [1/1] 0.00ns
+.preheader3:2  %min_index_V = phi i4 [ %i_2, %._crit_edge119 ], [ 0, %.preheader3.preheader ]
+
+ST_22: exitcond (236)  [1/1] 0.66ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88
+.preheader3:3  %exitcond = icmp eq i4 %min_index_V, -6
+
+ST_22: i_2 (237)  [1/1] 0.71ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88
+.preheader3:4  %i_2 = add i4 %min_index_V, 1
+
+ST_22: StgValue_285 (238)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88
+.preheader3:5  br i1 %exitcond, label %3, label %._crit_edge119
+
+ST_22: tmp_s (242)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:2  %tmp_s = zext i4 %min_index_V to i64
+
+ST_22: score_addr_1 (243)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:3  %score_addr_1 = getelementptr inbounds [10 x i32]* %score, i64 0, i64 %tmp_s
+
+ST_22: max_score_1 (244)  [2/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:4  %max_score_1 = load i32* %score_addr_1, align 4
+
+
+ <State 23>: 1.87ns
+ST_23: StgValue_289 (240)  [1/1] 0.00ns
+._crit_edge119:0  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str17)
+
+ST_23: empty_9 (241)  [1/1] 0.00ns
+._crit_edge119:1  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_23: max_score_1 (244)  [1/2] 0.59ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:4  %max_score_1 = load i32* %score_addr_1, align 4
+
+ST_23: tmp_1 (245)  [1/1] 0.86ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:5  %tmp_1 = icmp sgt i32 %max_score_1, %max_score
+
+ST_23: min_index_V_agg_result_V (246)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:6  %min_index_V_agg_result_V = select i1 %tmp_1, i4 %min_index_V, i4 %agg_result_V
+
+ST_23: max_score_2_max_score (247)  [1/1] 0.42ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89
+._crit_edge119:7  %max_score_2_max_score = select i1 %tmp_1, i32 %max_score_1, i32 %max_score
+
+ST_23: StgValue_295 (248)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88
+._crit_edge119:8  br label %.preheader3
+
+
+ <State 24>: 0.00ns
+ST_24: StgValue_296 (250)  [1/1] 0.00ns  loc: /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:94
+:0  ret i4 %agg_result_V
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 1.08ns.
+
+ <State 1>: 0.603ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61) [5]  (0.603 ns)
+
+ <State 2>: 0.708ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61) [5]  (0 ns)
+	'add' operation ('i', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:61) [8]  (0.708 ns)
+
+ <State 3>: 0.594ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [55]  (0.594 ns)
+
+ <State 4>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [55]  (0.594 ns)
+	'icmp' operation ('tmp_9', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [56]  (0.619 ns)
+	'select' operation ('p_080_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [57]  (0.42 ns)
+	'icmp' operation ('tmp_9_0_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [59]  (0.619 ns)
+	'select' operation ('knn_set_V_load_1_080_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [60]  (0.42 ns)
+
+ <State 5>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [65]  (0.594 ns)
+	'icmp' operation ('tmp_9_0_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [66]  (0.619 ns)
+	'select' operation ('p_080_2_0_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [67]  (0.42 ns)
+	'icmp' operation ('tmp_9_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [69]  (0.619 ns)
+	'select' operation ('p_080_2_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [70]  (0.42 ns)
+
+ <State 6>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_4', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [76]  (0.594 ns)
+	'icmp' operation ('tmp_9_1_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [77]  (0.619 ns)
+	'select' operation ('knn_set_V_load_4_080_2_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [78]  (0.42 ns)
+	'icmp' operation ('tmp_9_1_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [80]  (0.619 ns)
+	'select' operation ('p_080_2_1_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [81]  (0.42 ns)
+
+ <State 7>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_6', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [85]  (0.594 ns)
+	'icmp' operation ('tmp_9_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [86]  (0.619 ns)
+	'select' operation ('p_080_2_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [87]  (0.42 ns)
+	'icmp' operation ('tmp_9_2_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [89]  (0.619 ns)
+	'select' operation ('knn_set_V_load_7_080_2_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [90]  (0.42 ns)
+
+ <State 8>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_8', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [97]  (0.594 ns)
+	'icmp' operation ('tmp_9_2_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [98]  (0.619 ns)
+	'select' operation ('p_080_2_2_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [99]  (0.42 ns)
+	'icmp' operation ('tmp_9_3', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [101]  (0.619 ns)
+	'select' operation ('p_080_2_3', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [102]  (0.42 ns)
+
+ <State 9>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_10', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [108]  (0.594 ns)
+	'icmp' operation ('tmp_9_3_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [109]  (0.619 ns)
+	'select' operation ('knn_set_V_load_10_080_2_3', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [110]  (0.42 ns)
+	'icmp' operation ('tmp_9_3_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [112]  (0.619 ns)
+	'select' operation ('p_080_2_3_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [113]  (0.42 ns)
+
+ <State 10>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_12', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [117]  (0.594 ns)
+	'icmp' operation ('tmp_9_4', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [118]  (0.619 ns)
+	'select' operation ('p_080_2_4', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [119]  (0.42 ns)
+	'icmp' operation ('tmp_9_4_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [121]  (0.619 ns)
+	'select' operation ('knn_set_V_load_13_080_2_4', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [122]  (0.42 ns)
+
+ <State 11>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_14', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [129]  (0.594 ns)
+	'icmp' operation ('tmp_9_4_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [130]  (0.619 ns)
+	'select' operation ('p_080_2_4_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [131]  (0.42 ns)
+	'icmp' operation ('tmp_9_5', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [133]  (0.619 ns)
+	'select' operation ('p_080_2_5', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [134]  (0.42 ns)
+
+ <State 12>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_16', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [140]  (0.594 ns)
+	'icmp' operation ('tmp_9_5_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [141]  (0.619 ns)
+	'select' operation ('knn_set_V_load_16_080_2_5', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [142]  (0.42 ns)
+	'icmp' operation ('tmp_9_5_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [144]  (0.619 ns)
+	'select' operation ('p_080_2_5_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [145]  (0.42 ns)
+
+ <State 13>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_18', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [149]  (0.594 ns)
+	'icmp' operation ('tmp_9_6', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [150]  (0.619 ns)
+	'select' operation ('p_080_2_6', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [151]  (0.42 ns)
+	'icmp' operation ('tmp_9_6_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [153]  (0.619 ns)
+	'select' operation ('knn_set_V_load_19_080_2_6', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [154]  (0.42 ns)
+
+ <State 14>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_20', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [161]  (0.594 ns)
+	'icmp' operation ('tmp_9_6_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [162]  (0.619 ns)
+	'select' operation ('p_080_2_6_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [163]  (0.42 ns)
+	'icmp' operation ('tmp_9_7', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [165]  (0.619 ns)
+	'select' operation ('p_080_2_7', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [166]  (0.42 ns)
+
+ <State 15>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_22', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [172]  (0.594 ns)
+	'icmp' operation ('tmp_9_7_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [173]  (0.619 ns)
+	'select' operation ('knn_set_V_load_22_080_2_7', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [174]  (0.42 ns)
+	'icmp' operation ('tmp_9_7_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [176]  (0.619 ns)
+	'select' operation ('p_080_2_7_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [177]  (0.42 ns)
+
+ <State 16>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_24', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [181]  (0.594 ns)
+	'icmp' operation ('tmp_9_8', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [182]  (0.619 ns)
+	'select' operation ('p_080_2_8', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [183]  (0.42 ns)
+	'icmp' operation ('tmp_9_8_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [185]  (0.619 ns)
+	'select' operation ('knn_set_V_load_25_080_2_8', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [186]  (0.42 ns)
+
+ <State 17>: 2.67ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_26', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [193]  (0.594 ns)
+	'icmp' operation ('tmp_9_8_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [194]  (0.619 ns)
+	'select' operation ('p_080_2_8_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [195]  (0.42 ns)
+	'icmp' operation ('tmp_9_9', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [197]  (0.619 ns)
+	'select' operation ('p_080_2_9', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [198]  (0.42 ns)
+
+ <State 18>: 2.16ns
+The critical path consists of the following:
+	'load' operation ('knn_set_V_load_28', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) on array 'knn_set_V' [204]  (0.594 ns)
+	'icmp' operation ('tmp_9_9_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [205]  (0.619 ns)
+	'select' operation ('knn_set_V_load_28_080_2_9', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [206]  (0 ns)
+	'icmp' operation ('tmp_9_9_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [208]  (0.619 ns)
+	'or' operation ('tmp_24', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [209]  (0.333 ns)
+
+ <State 19>: 2.64ns
+The critical path consists of the following:
+	'select' operation ('p_072_2_8_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [199]  (0 ns)
+	'select' operation ('p_072_2_9', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [201]  (0 ns)
+	'select' operation ('p_072_2_9_2', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:72) [210]  (0.42 ns)
+	'sub' operation ('r.V', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) [221]  (0.706 ns)
+	'add' operation ('r.V', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) [225]  (0.922 ns)
+	'getelementptr' operation ('knn_set_V_addr_30', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) [227]  (0 ns)
+	'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:82) of constant 50 on array 'knn_set_V' [228]  (0.594 ns)
+
+ <State 20>: 2.07ns
+The critical path consists of the following:
+	'load' operation ('score_load', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80) on array 'score', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:59 [215]  (0.594 ns)
+	'add' operation ('tmp_3', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80) [216]  (0.88 ns)
+	'store' operation (/home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80) of variable 'tmp_3', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:80 on array 'score', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:59 [217]  (0.594 ns)
+
+ <State 21>: 0.603ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('agg_result_V', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89) with incoming values : ('min_index_V_agg_result_V', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89) [233]  (0.603 ns)
+
+ <State 22>: 0.708ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88) [235]  (0 ns)
+	'add' operation ('i', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:88) [237]  (0.708 ns)
+
+ <State 23>: 1.87ns
+The critical path consists of the following:
+	'load' operation ('max_score', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89) on array 'score', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:59 [244]  (0.594 ns)
+	'icmp' operation ('tmp_1', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89) [245]  (0.859 ns)
+	'select' operation ('min_index_V_agg_result_V', /home/centos/src/project_data/AWS_Projects/lab2/src/ocl/digitrec.cpp:89) [246]  (0.42 ns)
+
+ <State 24>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
