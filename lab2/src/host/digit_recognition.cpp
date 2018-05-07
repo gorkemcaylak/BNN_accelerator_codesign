@@ -23,6 +23,12 @@
   using namespace rosetta;
 #endif
 
+#ifdef K_CONST
+  printf("K_CONST is defined!!!!!!!!!!!!!!!!!! K_CONST=%d \n", K_CONST);
+#else 
+  printf("K_CONST is not defined!!!!!!!!!!!!!!!!!!");
+#endif
+
 // other headers
 #include "utils.h"
 #include "typedefs.h"
