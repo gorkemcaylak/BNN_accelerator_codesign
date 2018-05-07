@@ -23,6 +23,15 @@
   using namespace rosetta;
 #endif
 
+// #ifdef K_CONST
+//   void p(){
+//     printf("K_CONST is defined!!!!!!!!!!!!!!!!!! K_CONST=%d \n", K_CONST);
+//   }
+// #else 
+//   void p(){
+//     printf("K_CONST is not defined!!!!!!!!!!!!!!!!!!");
+//   }
+// #endif
 
 // other headers
 #include "utils.h"
@@ -35,9 +44,9 @@
 
 int main(int argc, char ** argv) 
 {
-
+  //p();
   printf("Digit Recognition Application\n");
-  printf("in hostfile, K_CONST is set to %d\n", K_CONST);
+  printf("K_CONST is set to %d\n", K_CONST);
 
   #ifdef OCL
     // parse command line arguments for opencl version
