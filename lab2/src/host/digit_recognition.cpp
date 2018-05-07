@@ -24,9 +24,13 @@
 #endif
 
 #ifdef K_CONST
-  printf("K_CONST is defined!!!!!!!!!!!!!!!!!! K_CONST=%d \n", K_CONST);
+  void p(){
+    printf("K_CONST is defined!!!!!!!!!!!!!!!!!! K_CONST=%d \n", K_CONST);
+  }
 #else 
-  printf("K_CONST is not defined!!!!!!!!!!!!!!!!!!");
+  void p(){
+    printf("K_CONST is not defined!!!!!!!!!!!!!!!!!!");
+  }
 #endif
 
 // other headers
@@ -40,6 +44,7 @@
 
 int main(int argc, char ** argv) 
 {
+  p();
   printf("Digit Recognition Application\n");
   printf("K_CONST is set to %d\n", K_CONST);
 
