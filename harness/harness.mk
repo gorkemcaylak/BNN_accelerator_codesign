@@ -71,6 +71,7 @@ else
 endif
 
 XCLBIN_FLAGS += $(OCL_KERNEL_ARGS)
+XCLBIN_FLAGS += -DK_CONST=$(K_CONST)
 
 # host exe
 OCL_HOST_EXE        = $(KERNEL_NAME)_host.exe
