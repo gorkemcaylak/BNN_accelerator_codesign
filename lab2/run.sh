@@ -14,6 +14,7 @@ echo ""
 echo "#################################################"
 echo "Compiling project..."
 echo "#################################################"
+make clean
 make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=2
 
 echo ""
