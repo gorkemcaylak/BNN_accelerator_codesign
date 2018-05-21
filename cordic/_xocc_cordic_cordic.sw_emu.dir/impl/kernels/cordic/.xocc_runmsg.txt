@@ -1,2 +1,0 @@
-performing high-level synthesis for kernel: cordic
-Log file:/home/centos/src/project_data/AWS_Projects/cordic/_xocc_cordic_cordic.sw_emu.dir/impl/kernels/cordic/vivado_hls.log
