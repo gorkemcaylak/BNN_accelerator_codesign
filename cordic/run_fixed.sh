@@ -24,7 +24,7 @@ echo "####################################################"
 echo " Compiling project using fixed point"
 echo "####################################################"
 make clean
-make -f fixed_type.mk ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM FIXED_TYPE
+make -f fixed_type.mk ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM 
 
 ### EXECUTION
 echo ""; echo ""; echo "" ; echo ""

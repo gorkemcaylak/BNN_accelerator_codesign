@@ -57,16 +57,19 @@ OCL_HARNESS_SRC_H   = $(OCL_HARNESS_DIR)/CLKernel.h   $(OCL_HARNESS_DIR)/CLMemOb
 # host compilation flags
 OCL_HOST_FLAGS = -DOCL -g -lxilinxopencl -I$(OPENCL_INC) $(HOST_INC) -L$(OPENCL_LIB) $(HOST_LIB) -I$(OCL_HARNESS_DIR) -I$(APPLICATION_DIR)
 
+# xclbin compilation flags
+XCLBIN_FLAGS = -s -t $(OCL_TARGET) -g 
+
+# change OCL_HOST_FLAG
 ifdef K_CONST
  OCL_HOST_FLAGS += -DK_CONST=$(K_CONST)
 endif
-
 ifdef NUM_ITER 
-OCL_HOST_FLAGS += -DNUM_ITER=$(NUM_ITER)
+ OCL_HOST_FLAGS += -DNUM_ITER=$(NUM_ITER)
 endif
-
-# xclbin compilation flags
-XCLBIN_FLAGS = -s -t $(OCL_TARGET) -g 
+ifdef FIXED_FLAG
+ OCL_HOST_FLAGS += -DFIXED_TYPE
+endif
 
 
 ifneq ($(KERNEL_TYPE),ocl)
@@ -79,13 +82,18 @@ else
   XCLBIN_FLAGS += --platform $(OCL_PLATFORM)
 endif
 
+
+# change XCLBIN_FLAGS
 ifdef K_CONST
  XCLBIN_FLAGS += -DK_CONST=$(K_CONST)
 endif
-
 ifdef NUM_ITER
   XCLBIN_FLAGS += -DNUM_ITER=$(NUM_ITER)
 endif
+ifdef FIXED_FLAG
+  XCLBIN_FLAGS += -DFIXED_TYPE
+endif
+
 
 XCLBIN_FLAGS += $(OCL_KERNEL_ARGS)
 
@@ -138,11 +146,11 @@ ocl: $(OCL_HOST_EXE) $(XCLBIN)
 
 # ocl secondary rule: host executable
 $(OCL_HOST_EXE): $(HOST_SRC_CPP) $(HOST_SRC_H) $(OCL_HARNESS_SRC_CPP) $(OCL_HARNESS_SRC_H) $(DATA)
-	$(OCL_CXX) $(OCL_HOST_FLAGS) $(FIXED_FLAG) -o $@ $(HOST_SRC_CPP) $(OCL_HARNESS_SRC_CPP) 
+	$(OCL_CXX) $(OCL_HOST_FLAGS) -o $@ $(HOST_SRC_CPP) $(OCL_HARNESS_SRC_CPP) 
 
 # ocl secondary rule: xclbin 
 $(XCLBIN): $(OCL_KERNEL_SRC) $(OCL_KERNEL_H)
-	$(XOCC) $(XCLBIN_FLAGS) $(FIXED_FLAG) -o $@ $(OCL_KERNEL_SRC)
+	$(XOCC) $(XCLBIN_FLAGS)  -o $@ $(OCL_KERNEL_SRC)
 
 # sdsoc rules
 sdsoc: $(SDSOC_EXE)
