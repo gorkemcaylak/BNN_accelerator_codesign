@@ -95,19 +95,7 @@
   }
 
 
-
-extern "C" 
-{
-  //----------------------------------------------------------
-  // Digitrec
-  //----------------------------------------------------------
-  // The is the top function of the kernel, reads in the training 
-  // data and testing data, return an array of the recognized labels
-  //
-  // @param[in] : input - the testing instance
-  // @return : the recognized digit (0~9)
-  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
-  { 
+  void helper(digit* training_data, digit* testing_data, bit4_t* results){
     #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=results offset=slave bundle=gmem
@@ -138,6 +126,23 @@ extern "C"
       // collect the results
       results[k] = knn_vote(knn_set);
     }
+  }
+
+
+
+extern "C" 
+{
+  //----------------------------------------------------------
+  // Digitrec
+  //----------------------------------------------------------
+  // The is the top function of the kernel, reads in the training 
+  // data and testing data, return an array of the recognized labels
+  //
+  // @param[in] : input - the testing instance
+  // @return : the recognized digit (0~9)
+  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
+  { 
+    helper( training_data, testing_data, results);
   }
 
 }
