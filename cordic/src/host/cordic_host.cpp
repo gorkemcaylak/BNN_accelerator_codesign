@@ -13,15 +13,14 @@
 #include <string>
 #include <time.h>
 #include <sys/time.h>
+#include <math.h>
 
-#ifdef OCL
-  // harness headers
-  #include "CLWorld.h"
-  #include "CLKernel.h"
-  #include "CLMemObj.h"
-  // harness namespace
-  using namespace rosetta;
-#endif
+// harness headers
+#include "CLWorld.h"
+#include "CLKernel.h"
+#include "CLMemObj.h"
+// harness namespace
+using namespace rosetta;
 
 // other headers
 #include "typedefs.h"
@@ -33,23 +32,25 @@ int main(int argc, char ** argv)
 {
   printf("cordic Application\n");
 
-  #ifdef OCL
-    // parse command line arguments for opencl version
-    std::string kernelFile("");
-    parse_sdaccel_command_line_args(argc, argv, kernelFile);
-  #endif
+  // parse command line arguments for opencl version
+  std::string kernelFile("");
+  parse_sdaccel_command_line_args(argc, argv, kernelFile);
 
   // timers
   struct timeval start, end;
 
   // opencl version host code
-  #ifdef OCL
 
     // create space for input and output
     theta_type* theta  = new theta_type[NUM_DEGREE];
     cos_sin_type* s = new cos_sin_type[NUM_DEGREE];
     cos_sin_type* c = new cos_sin_type[NUM_DEGREE];
-  
+
+    for (int i = 1; i <= NUM_DEGREE; i++) {
+      theta_type radian = i * M_PI / 180; 
+      theta[i-1] = radian;
+    }
+
     // create OpenCL world
     CLWorld cordic_world = CLWorld(TARGET_DEVICE, CL_DEVICE_TYPE_ACCELERATOR);
   
@@ -97,17 +98,14 @@ int main(int argc, char ** argv)
     
     // end timer
     gettimeofday(&end, 0);
-  #endif
 
     check_results(s, c);
 
   // cleanup
-  #ifdef OCL
     cordic_world.releaseWorld();
     delete []theta;
     delete []s;
     delete []c;
-  #endif
 
   return EXIT_SUCCESS;
 

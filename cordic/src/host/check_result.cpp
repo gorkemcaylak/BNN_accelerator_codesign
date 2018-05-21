@@ -13,10 +13,6 @@
 
 #include <math.h>
 #include "cordic.h"
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <typedefs.h>
-
 #include <iostream>
 #include <fstream>
 
@@ -67,21 +63,42 @@ void check_results(cos_sin_type *s,cos_sin_type *c)
         m_s = sin( radian );
         m_c = cos( radian );
         
-        // Calculate normalized error
-        err_ratio_sin = ( abs_double( (double)s[i-1] - m_s) / (m_s) ) * 100.0;
-        err_ratio_cos = ( abs_double( (double)c[i-1] - m_c) / (m_c) ) * 100.0;
-        
-        // Accumulate error ratios
-        accum_err_sin += err_ratio_sin * err_ratio_sin;
-        accum_err_cos += err_ratio_cos * err_ratio_cos;
+        // Fixed point to double
+        #ifdef FIXED_TYPE
+          
+          // Calculate normalized error
+          err_ratio_sin = ( abs_double( s[i-1].to_double() - m_s) / (m_s) ) * 100.0;
+          err_ratio_cos = ( abs_double( c[i-1].to_double() - m_c) / (m_c) ) * 100.0;
 
-        // Print to output file
-        fp << "degree = " << i << " radian = " << (double)radian << " "
-           << "sin = " << (double)s[i-1] << " : " << m_s << " "           
-           << "cos = " << (double)c[i-1] << " : " << m_c << " "
-           << "sin_error = " << err_ratio_sin << " "
-           << "cos_error = " << err_ratio_cos << " "
-           << "\n";
+          // Accumulate error ratios
+          accum_err_sin += err_ratio_sin * err_ratio_sin;
+          accum_err_cos += err_ratio_cos * err_ratio_cos;
+
+          // Print to output file
+          fp << "fixed_degree = " << i << " radian = " << (double)radian << " "
+             << "sin = " << s[i-1].to_double() << " : " << m_s << " "
+             << "cos = " << c[i-1].to_double() << " : " << m_c << " "
+             << "sin_error = " << err_ratio_sin << " "
+             << "cos_error = " << err_ratio_cos << " "
+             << "\n";
+        #else 
+
+          // Calculate normalized error
+          err_ratio_sin = ( abs_double( (double)s[i-1] - m_s) / (m_s) ) * 100.0;
+          err_ratio_cos = ( abs_double( (double)c[i-1] - m_c) / (m_c) ) * 100.0;
+        
+          // Accumulate error ratios
+          accum_err_sin += err_ratio_sin * err_ratio_sin;
+          accum_err_cos += err_ratio_cos * err_ratio_cos;
+
+          // Print to output file
+          fp << "double_degree = " << i << " radian = " << (double)radian << " "
+             << "sin = " << (double)s[i-1] << " : " << m_s << " "           
+             << "cos = " << (double)c[i-1] << " : " << m_c << " "
+             << "sin_error = " << err_ratio_sin << " "
+             << "cos_error = " << err_ratio_cos << " "
+             << "\n";
+        #endif
     }
 
     //------------------------------------------------------------ 

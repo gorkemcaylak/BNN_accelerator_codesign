@@ -6,6 +6,10 @@
 #ifndef __CORDIC_H__
 #define __CORDIC_H__
 
+// Specify the bitwidth here
+#define TOT_WIDTH 32
+#define INT_WIDTH 16		
+
 #include "../host/typedefs.h"
 
 // Number of iterations
