@@ -56,7 +56,6 @@ extern "C"
     #pragma HLS INTERFACE s_axilite port=testing_data bundle=control
     #pragma HLS INTERFACE s_axilite port=results bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
-
     
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];

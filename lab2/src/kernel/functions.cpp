@@ -1,3 +1,10 @@
+//==========================================================================
+// functions.cpp
+//==========================================================================
+// @brief: the two functions that you need to implement: update_knn and knn_vote
+
+
+
 
  // #include "../host/typedefs.h"
 
