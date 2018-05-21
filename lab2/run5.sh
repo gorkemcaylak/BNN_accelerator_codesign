@@ -17,6 +17,9 @@ echo "#################################################"
 export  XCL_EMULATION_MODE=true
 emconfigutil --platform=$AWS_PLATFORM
 
+# the directory of this lab
+app_dir=`pwd`
+
 # make results directory to store the results
 if [ ! -d ./results ]; then
 	mkdir results
@@ -39,7 +42,7 @@ do
 	echo " Compiling project with K_CONST=$index"
 	echo "####################################################"
 	make clean
-	make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=$index
+	make ocl OCL_TARGET=sw_emu APPLICATION_DIR=$app_dir OCL_PLATFORM=$AWS_PLATFORM K_CONST=$index
 
 	### EXECUTION
 	echo ""; echo ""; echo "" ; echo ""

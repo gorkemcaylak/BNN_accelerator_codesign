@@ -19,7 +19,7 @@ emconfigutil --platform=$AWS_PLATFORM
 
 # the k value of KNN, default is 3
 k_value=3
-#
+# the directory of this lab
 app_dir=`pwd`
 
 ### COMPILATION

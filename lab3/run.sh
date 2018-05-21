@@ -1,6 +1,6 @@
 #===============================================================#
 #                                                               #
-#                       	run.sh                          	#
+#                       	run1.sh                         	#
 #                                                               #
 #   	A bash script to run the software emulation 			#
 #																#
@@ -19,6 +19,8 @@ emconfigutil --platform=$AWS_PLATFORM
 
 # the k value of KNN, default is 3
 k_value=3
+# the directory of this lab
+app_dir=`pwd`
 
 ### COMPILATION
 # create some blank-line space for easy readability
@@ -27,7 +29,7 @@ echo "####################################################"
 echo " Compiling project with K_CONST=$k_value"
 echo "####################################################"
 make clean
-make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM K_CONST=$k_value
+make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM APPLICATION_DIR=$app_dir K_CONST=$k_value
 
 ### EXECUTION
 echo ""; echo ""; echo "" ; echo ""
