@@ -96,13 +96,6 @@
 
 
   void helper(digit* training_data, digit* testing_data, bit4_t* results){
-    #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
-    #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
-    #pragma HLS INTERFACE m_axi port=results offset=slave bundle=gmem
-    #pragma HLS INTERFACE s_axilite port=training_data bundle=control
-    #pragma HLS INTERFACE s_axilite port=testing_data bundle=control
-    #pragma HLS INTERFACE s_axilite port=results bundle=control
-    #pragma HLS INTERFACE s_axilite port=return bundle=control
 
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
@@ -142,6 +135,13 @@ extern "C"
   // @return : the recognized digit (0~9)
   void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
   { 
+    #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
+    #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
+    #pragma HLS INTERFACE m_axi port=results offset=slave bundle=gmem
+    #pragma HLS INTERFACE s_axilite port=training_data bundle=control
+    #pragma HLS INTERFACE s_axilite port=testing_data bundle=control
+    #pragma HLS INTERFACE s_axilite port=results bundle=control
+    #pragma HLS INTERFACE s_axilite port=return bundle=control
     helper( training_data, testing_data, results);
   }
 
