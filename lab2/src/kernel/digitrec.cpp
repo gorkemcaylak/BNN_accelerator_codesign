@@ -4,7 +4,7 @@
 // @brief: A k-nearest-neighbor kernel for digit recognition 
 
 #include "../host/typedefs.h"
-#include "./functions.h"
+#include "./functions.cpp"
 
 
   // void helper(digit* training_data, digit* testing_data, bit4_t* results){
