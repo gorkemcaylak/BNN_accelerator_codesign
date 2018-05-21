@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1_sdx_AR70350 (64-bit)
+# SW Build 1933108 on Fri Jul 14 11:54:19 MDT 2017
+# IP Build 1908669 on Fri Jul 14 13:31:24 MDT 2017
+# Start of session at: Mon Apr 30 23:14:44 2018
+# Process ID: 5446
+# Current directory: /home/centos/src/project_data/AWS_Projects/cordic/_xocc_cordic_cordic.sw_emu.dir/impl/kernels/cordic/cordic/solution_OCL_REGION_0/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/centos/src/project_data/AWS_Projects/cordic/_xocc_cordic_cordic.sw_emu.dir/impl/kernels/cordic/cordic/solution_OCL_REGION_0/impl/ip/vivado.log
+# Journal file: /home/centos/src/project_data/AWS_Projects/cordic/_xocc_cordic_cordic.sw_emu.dir/impl/kernels/cordic/cordic/solution_OCL_REGION_0/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

@@ -1,0 +1,56 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="theta"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="gmem"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="s"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="gmem"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="c"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="gmem"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="theta"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="s"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="c"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="cordic" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

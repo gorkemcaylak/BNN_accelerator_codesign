@@ -1,0 +1,8 @@
+cordic_dadddsub_64ns_64ns_64_13_full_dsp
+cordic_dmul_64ns_64ns_64_15_max_dsp
+cordic_ddiv_64ns_64ns_64_59
+cordic_dcmp_64ns_64ns_1_2
+cordic_sitodp_32ns_64_8
+cordic_control_s_axi
+cordic_gmem_m_axi
+cordic
