@@ -138,11 +138,11 @@ ocl: $(OCL_HOST_EXE) $(XCLBIN)
 
 # ocl secondary rule: host executable
 $(OCL_HOST_EXE): $(HOST_SRC_CPP) $(HOST_SRC_H) $(OCL_HARNESS_SRC_CPP) $(OCL_HARNESS_SRC_H) $(DATA)
-	$(OCL_CXX) $(OCL_HOST_FLAGS) -o $@ $(HOST_SRC_CPP) $(OCL_HARNESS_SRC_CPP) 
+	$(OCL_CXX) $(OCL_HOST_FLAGS) $(FIXED_FLAG) -o $@ $(HOST_SRC_CPP) $(OCL_HARNESS_SRC_CPP) 
 
 # ocl secondary rule: xclbin 
 $(XCLBIN): $(OCL_KERNEL_SRC) $(OCL_KERNEL_H)
-	$(XOCC) $(XCLBIN_FLAGS) -o $@ $(OCL_KERNEL_SRC)
+	$(XOCC) $(XCLBIN_FLAGS) $(FIXED_FLAG) -o $@ $(OCL_KERNEL_SRC)
 
 # sdsoc rules
 sdsoc: $(SDSOC_EXE)
