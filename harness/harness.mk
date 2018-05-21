@@ -61,8 +61,13 @@ ifdef K_CONST
  OCL_HOST_FLAGS += -DK_CONST=$(K_CONST)
 endif
 
+ifdef NUM_ITER 
+OCL_HOST_FLAGS += -DNUM_ITER=$(NUM_ITER)
+endif
+
 # xclbin compilation flags
 XCLBIN_FLAGS = -s -t $(OCL_TARGET) -g 
+
 
 ifneq ($(KERNEL_TYPE),ocl)
   XCLBIN_FLAGS += --kernel $(KERNEL_NAME)
@@ -76,6 +81,10 @@ endif
 
 ifdef K_CONST
  XCLBIN_FLAGS += -DK_CONST=$(K_CONST)
+endif
+
+ifdef NUM_ITER
+  XCLBIN_FLAGS += -DNUM_ITER=$(NUM_ITER)
 endif
 
 XCLBIN_FLAGS += $(OCL_KERNEL_ARGS)
