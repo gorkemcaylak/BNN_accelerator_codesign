@@ -20,7 +20,7 @@ emconfigutil --platform=$AWS_PLATFORM
 # the k value of KNN, default is 3
 k_value=3
 #
-app_dir=`pwd`/../.. 
+app_dir=`pwd`/src/host/
 
 ### COMPILATION
 # create some blank-line space for easy readability
@@ -29,7 +29,7 @@ echo "####################################################"
 echo " Compiling project with K_CONST=$k_value"
 echo "####################################################"
 make clean
-make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM APPLICATION_DIR=$app_dir K_CONST=$k_value
+make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM HOST_DIR=$app_dir K_CONST=$k_value
 
 ### EXECUTION
 echo ""; echo ""; echo "" ; echo ""
