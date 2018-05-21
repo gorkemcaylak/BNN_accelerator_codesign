@@ -12,7 +12,7 @@ HOST_INC = -I$(XILINX_SDX)/Vivado_HLS/include
 HOST_LIB = -L$(XILINX_SDX)/Vivado_HLS/lib
 
 # Set kernel file
-OCL_KERNEL_SRC = ./src/kernel/digitrec.cpp
+OCL_KERNEL_SRC = ./src/kernel/digitrec.cpp ./src/kernel/functions.cpp 
 OCL_KERNEL_H = ./src/host/typedefs.h
 # SDSOC_KERNEL_SRC = ./src/sdsoc/digitrec.cpp
 # SDSOC_KERNEL_H = ./src/host/typedefs.h
