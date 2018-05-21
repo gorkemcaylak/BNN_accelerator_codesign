@@ -15,7 +15,7 @@ OCL_KERNEL_SRC = ./src/ocl/cordic.cpp
 OCL_KERNEL_H = ./src/host/typedefs.h
 
 # Set opencl kernel arguments
-OCL_KERNEL_ARGS = --max_memory_ports all --report system
+OCL_KERNEL_ARGS = --max_memory_ports all 
 
 #-------------------------
 # Leave the rest to harness
