@@ -20,7 +20,8 @@ OCL_KERNEL_H = ./src/host/typedefs.h
 # SW_KERNEL_H = ./src/host/typedefs.h ./src/sw/digitrec_sw.h
 
 # Set opencl kernel arguments
-OCL_KERNEL_ARGS = --max_memory_ports all --report system
+# log: removed --report system
+OCL_KERNEL_ARGS = --max_memory_ports all 
 
 
 
