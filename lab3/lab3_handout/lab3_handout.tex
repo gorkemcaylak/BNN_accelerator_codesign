@@ -18,7 +18,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=letter, fontsize=11.6pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[paper=letter, fontsize=10pt]{scrartcl} % A4 paper and 11pt font size
 
 %\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 %\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
@@ -63,7 +63,7 @@
 \textsc{ECE5775 High-Level Digital Design Automation, Fall 2017} \\  
 School of Electrical Computer Engineering, Cornell University \\ [11pt]% Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\large Lab 3: Digit Recognition System (Part 2) \\ % The assignment title
+\large Lab 3: Digit Recognition System (Phase 2) \\ % The assignment title
 \small Due Friday, October 6, 2018, 11:59pm
 \horrule{0.5pt} \\[0.5cm] % Thick bottom horizontal rule
 \vspace{-15ex}}
@@ -85,7 +85,7 @@ School of Electrical Computer Engineering, Cornell University \\ [11pt]% Your un
 
 \section{Introduction}
 
-In \textit{Lab 1: Software-Hardware Codesign with CORDIC}, we introduced how to actually run the application on hardware.
+In the previous lab, we introduced how to actually deploy applications on AWS FPGA.
 In this lab, you will be responsible for implementing your \texttt{digitrec}
 design from Lab 2 on the AWS FPGA instance.
 Furthermore, you will apply \textbf{loop pipelining}
@@ -96,7 +96,7 @@ to estimate the runtime of the FPGA designs and compare your numbers
 with measurements made on the actual FPGA hardware.
 
 \section{Materials}
-Similar to lab2, you are given a zip file named 
+You are given a zip file named 
 $lab3.zip$ on $ecelinux$ under $/classes/ece5775/labs$. It contains two directories: \textbf{lab3} and \textbf{harness}.The directory \textbf{harness} is the same as before, actually you should placed it in your working directory and reuse for all the labs.
 
 \begin{itemize}
@@ -119,11 +119,12 @@ The structure of directory \textbf{lab3} is described as following:
 				\item \texttt{training\_data.h}: combines all the training data sets (i.e., data/testing set.dat) into a constant array. 
 				\item \texttt{typedefs.h}: the constant definitions and typedefs for the host. 
 				\item \texttt{utils.cpp}: contains the functions to print usage and parse the command line arguments
-				\item \texttt{utils.h}: the header file of 
+				\item \texttt{utils.h}: the header file of utils.cpp.
 			\end{itemize}
 		\item \textbf{ocl}: contains the actual kernel file.
 		 	\begin{itemize}
-	 			\item \texttt{digitrec.cpp}: \textbf{an incomplete} file that defines the kernel function Digitrec.
+	 			\item \texttt{digitrec.cpp}: top level kernel file, student \textbf{do not need} to understand the details of this file.
+				\item \texttt{functions.cpp}: an \textbf{ incomplete} file of the functions used in \texttt{digitrec.cpp}.
 			\end{itemize}
 	\end{itemize}
   \item \textbf{data}:
@@ -133,7 +134,7 @@ The structure of directory \textbf{lab3} is described as following:
 		\item \texttt{expected.dat}: the expected labels of the testing set.
 	\end{itemize}
   \item \textbf{makefile}: the makefile to compile the this application.
-  \item \textbf{run.sh}: this script runs the emulation with k value set to 3 by default.
+  \item \textbf{run.sh}: this script runs the \textbf{software emulation} with k value set to 3 by default.
 \end{itemize}
 
 %Before starting your assignment, please be sure to source the class setup script using the following command before compiling your source code: source /classes/ece5775/setup-ece5775.sh.
@@ -149,11 +150,12 @@ You will implement and evaluate the performance for three designs:
   \item A \textbf{pipelined} \texttt{digitrec} design which applies loop pipelining in addition to the previous optimizations.
 \end{itemize}
 You will need to apply HLS optimazation directives in the kernel and then run each design on the hardware.
-You will use the information from the Vivado HLS synthesis report
+You will use the information from the Vivado HLS synthesis reportet
+
 to \textbf{estimate} the performance of your hardware design, and verify that the
 physical hardware achieves a performance close to the estimate.
 Also, you will measure the performances of the software execution 
-on both the \textbf{AWS f1 instance} and \textbf{AWS m4 instance} for comparison.
+on both the \textbf{AWS f1 instance} and \textbf{m4 instance} for comparison.
 
 \section{Guidelines and Hints}
 \subsection{Coding and Debugging}

@@ -55,6 +55,12 @@
 \setlength{\parskip}{3pt}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
+
+%macro for the name of the AWS FPGA Guide
+\def\awstutorial{\textit{AWS FPGA Instance Configuration Guide }}
+
+
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -69,7 +75,7 @@
 \textsc{ECE5775 High-Level Digital Design Automation, Fall 2017} \\  
 School of Electrical Computer Engineering, Cornell University \\ [11pt]% Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\large Lab 2: Digit Recognition System (Part 1) \\ % The assignment title
+\large Lab 2: Digit Recognition System (Phase 1) \\ % The assignment title
 \small Due Wednesday, September 27, 11:59pm
 \horrule{0.5pt} \\[0.5cm] % Thick bottom horizontal rule
 \vspace{-15ex}}
@@ -86,13 +92,15 @@ School of Electrical Computer Engineering, Cornell University \\ [11pt]% Your un
 %----------------------------------------------------------------------------------------
 \section{Introduction}
 
-Handwriting recognition refers to the computer's ability to intelligently interpret handwritten inputs and is broadly applied in document processing, signature verification, and bank check clearing. An important step in handwriting recognition is classification, which classifies data into one of a fixed number of classes. In this lab, you will design and implement a handwritten digit recognition system based on the \textbf{k-nearest-neighbors (k-NN)} classifier algorithm \cite{knn}, and eventually implement it on AWS FPGA instance. 
+
+Handwriting recognition refers to the computer's ability to intelligently interpret handwritten inputs and is broadly applied in document processing, signature verification, and bank check clearing. An important step in handwriting recognition is classification, which classifies data into one of a fixed number of classes. In this lab, you will design and implement a handwritten digit recognition system based on the \textbf{k-nearest-neighbors (k-NN)} classifier algorithm \cite{knn}. 
 
 %Specifically, we are provided with 10 sets of already classified handwritten digits (called the training sets), and would like to implement a k-NN algorithm that is able to identify any input handwritten digit (called the testing instance) using the training sets. 
 % This assignment is meant to help you build up the necessary foundation for the course project.
 
-In the first part of this lab (this particular assignment), you are provided with a set of already classified handwritten digits (called the training sets), and will implement a k-NN algorithm in C++ that is able to identify any input handwritten digit (called the testing instance) using the training sets. In addition, you will use two commonly-used high-level synthesis (HLS) optimizations to parallelize the synthesized hardware and explore design trade-offs in performance and area. Later in the second part of this lab (Lab 3), you will further optimize the performance of your hardware design and implement the complete digital recognition system on the AWS FPGA instance.
+There all two Phases for this lab. In the Phase 1, which is this lab 2 you are doing, you will first design and implement a handwritten digit recognition system based on the \textbf{k-nearest-neighbors (k-NN)} classifier algorithm \cite{knn} on our local server, after that, you are going to learn how to configure AWS(Amazon Web Services) FPGA instance using the previous lab 1 \textit{Cordic} as an example. In Phase 2, which is your next lab following this one, you will utilize what you have learned and implement the complete handwriting recognition application on the AWS FPGA instance and further optimize the performance of your hardware design.
 
+To be more specific about your tasks in this lab, you are provided with a set of already classified handwritten digits (called the training sets), and will implement a k-NN algorithm in C++ that is able to identify any input handwritten digit (called the testing instance) using the training sets. In addition, you will use two commonly-used high-level synthesis (HLS) optimizations to parallelize the synthesized hardware and explore design trade-offs in performance and area. After that,  you are to learn how to configure the AWS FPGA instance as a preparation for lab3. You will follow a step-by-step tutorial \awstutorial  and use your lab 1 as an example and port it onto the AWS.
 %Please be sure to read the entire assignment carefully before proceeding.
 
 \section{Materials}
@@ -102,16 +110,16 @@ In the first part of this lab (this particular assignment), you are provided wit
 %\item
 
 You are given a zip file named 
-$lab2.zip$ on $ecelinux$ under $/classes/ece5775/labs$. It contains two directories: \textbf{lab2} and \textbf{harness}. 
+$lab2.zip$ on $ecelinux$ under $/classes/ece5775/labs$. It contains three directories: \textbf{lab2-1}, \textbf{lab2-2} and \textbf{harness}. 
 
 \begin{itemize}
-	\item \textbf{lab2}: contains all the codes and data of this lab.
-	\item \textbf{harness}: contains the wrapper code of OpenCL APIs and top-level makefile. Students are \textbf{not required} to understand the content of this directory.
+	\item \textbf{lab2-1} corresponds to your first task, which is to design and implement the Digit Recognition on our own server.
+	\item \textbf{lab2-2} corresponds to your second task, which is to learn how to use AWS FPGA instance.
+	\item \textbf{harness}: contains the wrapper code of OpenCL APIs and a top-level makefile. Students are \textbf{not required} to understand the content of this directory.
 \end{itemize}
 %\item $setup$: a bash script to set up Xilinx tools in your environment. You can either source this script manually per login (. ./$setup$) or add it to your $.bashrc$ file. Note that there are \textbf{two dots} separated by a space in the script sourcing command.
 
-The structure of directory \textbf{lab2} is described as following:
-
+The structure of directory \textbf{lab2-1} is described as following:
 \begin{itemize}
   \item \textbf{src}: 
    	\begin{itemize}
@@ -124,11 +132,12 @@ The structure of directory \textbf{lab2} is described as following:
 				\item \texttt{training\_data.h}: combines all the training data sets (i.e., data/testing set.dat) into a constant array. 
 				\item \texttt{typedefs.h}: the constant definitions and typedefs for the host. 
 				\item \texttt{utils.cpp}: contains the functions to print usage and parse the command line arguments
-				\item \texttt{utils.h}: the header file of 
+				\item \texttt{utils.h}: the header file of utils.cpp.
 			\end{itemize}
-		\item \textbf{ocl}: contains the actual kernel file.
+		\item \textbf{kernel}: contains the actual kernel files.
 		 	\begin{itemize}
-	 			\item \texttt{digitrec.cpp}: \textbf{an incomplete} file that defines the kernel function Digitrec.
+	 			\item \texttt{digitrec.cpp}: top level kernel file, student \textbf{do not need} to understand the details of this file.
+				\item \texttt{functions.cpp}: an \textbf{ incomplete} file of the functions used in \texttt{digitrec.cpp}.
 			\end{itemize}
 	\end{itemize}
   \item \textbf{data}:
@@ -142,9 +151,7 @@ The structure of directory \textbf{lab2} is described as following:
   \item \textbf{run5.sh}: this script runs the application for 5 times with the k value of KNN from 1 to 5.
 \end{itemize}
 
-
-Before starting your assignment, please copy and unzip the zip file to the correct director on your AWS instance, e.g. $\sim/src/project\_data/$ . 
-
+The structure of directory \textbf{lab2-2} is almost the same with that in lab 1, you can refer to the handout of lab 1 if needed.
 
 \section{Design Overview}
 
@@ -227,10 +234,15 @@ As shown in the block digram, there is a hierarchical dependence between the dif
 
 \section{Guidelines and Hints}
 
+\subsection{Before You Start}
+Before you start your digit recognition design, take a few minutes to finish the first of the three sections of \awstutorial, for the reason that we will to need contact with the customer service to increase the instance limit of our account, and this takes about 2-3 days for them to process. We need this limit increased for the second task of this lab.
+
+Check the \awstutorial in \textbf{lab2-2} and finish \textbf{the first section} before you proceed. This only takes around 15 minutes to finish.
+
 \subsection{Coding and Debugging}
 %The first part of this assignment is to implement a functional digit recognition core as your baseline design. 
 
-Your first task is to complete the digit recognition algorithm based on the code skeleton provided in $src/ocl/digitrec.cpp$. 
+Your first task is to complete the digit recognition algorithm in $src/kernel/functions.cpp$. Note that $src/kernel/functions.cpp$ contains all the work you need to do while $src/kernel/digitrec.cpp$ is a complete top function. 
 %Your \textit{nearest\_neighbor} function should iterate through the 10 training sets and find the training set $S$ that contains the training instance that is closest in distance to the testing instance. The function then returns the digit corresponding to the specific training set $S$.
 %If you like, you may consider implementing the design hierarchically by defining and calling the following helper functions.
 In particular, you are expected to fill in the code for the following functions:
@@ -247,7 +259,7 @@ Be aware that a bash script \textit{run1.sh} is provided for you to run the soft
 
 \subsection{Design Exploration}
 \label{design-expl}
-The second part of the assignment is to explore the impact of the $k$ value on your digit recognition design. Specifically, \textbf{you are expected to experiment with the $k$ values ranging from 1 through 5, and collect the performance and area numbers of the synthesized design for each specific $k$.} 
+The second part of the design is to explore the impact of the $k$ value on your digit recognition design. Specifically, \textbf{you are expected to experiment with the $k$ values ranging from 1 through 5, and collect the performance and area numbers of the synthesized design for each specific $k$.} 
 
     The actual $k$ value can be specified in $run5.sh$. You can run the software emulation in batch with $./run5.sh$. This script will also automatically collect the 5 estimation reports and combine them in a single file under $results$ folder. You are going to look into the stats to analyze the impact of different k values.
     %This script will also automatically collect important stats (i.e., accuracy, performance, and resource usage) from the Vivado HLS reports and generate a $knn\_result.csv$ file under the $result$ folder.
@@ -255,7 +267,7 @@ The second part of the assignment is to explore the impact of the $k$ value on y
 
 \subsection{Design Optimization}
 \label{design-opt}
-The third part of the assignment is to optimize the design with HLS pragmas or directives. In particular, we will focus on exploring the effect of the following optimizations in our design and apply them appropriately to \textbf{minimize the latency of the synthesized design (Hint: the final optimized latency should be roughly one order of magnitude lower than the baseline you obtained from experimentation described in Section~\ref{design-expl}).} 
+The third part of the design is to optimize the design with HLS pragmas or directives. In particular, we will focus on exploring the effect of the following optimizations in our design and apply them appropriately to \textbf{minimize the latency of the synthesized design (Hint: the final optimized latency should be roughly one order of magnitude lower than the baseline you obtained from experimentation described in Section~\ref{design-expl}).} 
 \begin{itemize}
 \item \textbf{loop unrolling} unfolds a loop by creating multiple copies of its loop body and reducing its trip count accordingly. This technique is often used to achieve shorter latency when loop iterations can be executed in parallel. 
 %\item \textbf{loop pipelining}: enables the loop to process a new iteration every II clock cycles, where II is the initiation interval.
@@ -277,6 +289,11 @@ You may insert pragmas or set directives to apply these optimizations. You can f
 \textbf{Other than the added pragmas/directives, your program should look the same with baseline.}
 
 In this experiment, please avoid unrolling the outermost loop (i.e., the one that iterate 1800 times) so your design would not require excessive chip area. Also for the sake of simplicity, please try to only use fixed-bound $for$ loop(s) in your program. Note that $while$ loops are synthesizable but may lead to a variable-latency design that would  complicate your reporting. \footnote{You will need to enable C-RTL co-simulation to get the actual cycle count for a design with data-dependent loop bounds.} 
+
+\subsection{AWS FPGA Configuration}
+Now that you have completed the first task to design and implement digit recognition system, now it is time to learn how to deploy application onto the AWS FPGA instance. We will do our lab 3 and lab 4 on AWS, therefore please make sure you fully understand the content of the section.
+
+We have asked you to finish the first section of the \awstutorial, therefore we assume that your instance limit is already increased. So now your task is to finish the rest of \awstutorial in the first place. You can find this tutorial in \textbf{lab2-2}.
 
 \subsection{Report}
 (not updated yet, will be updated after the previous parts are settled)
