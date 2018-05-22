@@ -15,7 +15,7 @@ echo "#################################################"
 echo " Setting emulation configuration..."
 echo "#################################################"
 export  XCL_EMULATION_MODE=true
-emconfigutil --platform=$AWS_PLATFORM
+emconfigutil --xdevice=xilinx:adm-pcie-7v3:1ddr:3.0
 
 # the directory of this lab
 app_dir=`pwd`
@@ -42,7 +42,7 @@ do
 	echo " Compiling project with K_CONST=$index"
 	echo "####################################################"
 	make clean
-	make ocl OCL_TARGET=sw_emu APPLICATION_DIR=$app_dir OCL_PLATFORM=$AWS_PLATFORM K_CONST=$index
+	make ocl OCL_TARGET=sw_emu APPLICATION_DIR=$app_dir OCL_DEVICE=xilinx:adm-pcie-7v3:1ddr:3.0 K_CONST=$index
 
 	### EXECUTION
 	echo ""; echo ""; echo "" ; echo ""

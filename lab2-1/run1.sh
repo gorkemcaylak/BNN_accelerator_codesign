@@ -15,7 +15,7 @@ echo "#################################################"
 echo " Setting emulation configuration..."
 echo "#################################################"
 export  XCL_EMULATION_MODE=true
-emconfigutil --platform=$AWS_PLATFORM
+emconfigutil --xdevice=xilinx:adm-pcie-7v3:1ddr:3.0
 
 # the k value of KNN, default is 3
 k_value=3
@@ -29,7 +29,7 @@ echo "####################################################"
 echo " Compiling project with K_CONST=$k_value"
 echo "####################################################"
 make clean
-make ocl OCL_TARGET=sw_emu OCL_PLATFORM=$AWS_PLATFORM APPLICATION_DIR=$app_dir K_CONST=$k_value
+make ocl OCL_TARGET=sw_emu OCL_DEVICE=xilinx:adm-pcie-7v3:1ddr:3.0 APPLICATION_DIR=$app_dir K_CONST=$k_value
 
 ### EXECUTION
 echo ""; echo ""; echo "" ; echo ""

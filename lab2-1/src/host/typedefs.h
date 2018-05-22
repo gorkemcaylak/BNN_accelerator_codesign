@@ -27,6 +27,9 @@ typedef ap_uint<64> digit;
 
 #include <string>
 // target device
-const std::string TARGET_DEVICE = "xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0";
+// ECE Server: OCL_DEVICE=xilinx:adm-pcie-7v3:1ddr:3.0
+const std::string TARGET_DEVICE = "xilinx:adm-pcie-7v3:1ddr:3.0";
+
+
 
 #endif
