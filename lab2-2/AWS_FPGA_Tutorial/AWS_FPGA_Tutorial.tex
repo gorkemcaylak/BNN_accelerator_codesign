@@ -1,0 +1,773 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\usepackage{geometry}
+\geometry{a4paper, scale=0.75}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\hypertarget{header-n0}{%
+\section{AWS FPGA INSTANCE CONFIGURATION GUIDE}\label{header-n0}}
+
+By \textbf{Kyle Lu} based on the original version by \textbf{Joseph
+Featherston}
+
+Last Updated on \textbf{May 19th, 2018}
+
+\tableofcontents
+
+\hypertarget{header-n13}{%
+\section{0. Preamble}\label{header-n13}}
+
+Special credits go to XXX who created the original version of
+\texttt{aws\_f1\_user\_guide\_v1}. It was a great guide for setting up
+the AWS FPGA instances.
+
+However when I was following this original guide to set up my first
+instance, I found there were some places of ambiguity, omission and
+minor mistakes, which cause me some detour.
+
+To save you from the trouble and confusion, I created this guide based
+on the original version, and tried my best to make it beginner-friendly.
+Major changes includes:
+
+\begin{itemize}
+\item
+  Added more detailed instructions 
+\item
+  Added explanation for those abbreviation that user might not be
+  familiar with.
+\item
+  Corrected the minor mistakes
+\item
+  Eliminated the ambiguity and provided missing information
+\item
+  Language is written in a beginner's perspective to avoid unnecessary
+  confusion.
+\end{itemize}
+
+Hope this guide gives you a concise and clear start with minimum time
+and maximum efficacy.
+
+Enjoy your journey!
+
+\hypertarget{header-n42}{%
+\section{1. AWS Account Setup}\label{header-n42}}
+
+\hypertarget{header-n45}{%
+\subsubsection{1.1 Creating a New AWS Account}\label{header-n45}}
+
+\begin{itemize}
+\item
+  Create a new \textbf{AWS account} using
+  \href{https://portal.aws.amazon.com/billing/signup\#/start}{this link}
+\item
+  You should use your @edu email address
+\item
+  You will need to add a credit card when creating an account
+\end{itemize}
+
+\hypertarget{header-n56}{%
+\subsubsection{1.2 Apply for AWS Educate with \$100 Free
+Credits}\label{header-n56}}
+
+\begin{itemize}
+\item
+  Go to \href{https://aws.amazon.com/education/awseducate/}{this page}
+  to apply for \textbf{AWS Educate for student}
+\item
+  Do not choose "AWS Educate Starter Account", you need a regular
+  account instead of a "Starter Account" for full access to the
+  resources
+\item
+  After filling out all the forms, you will receive an email with a
+  promotion code of \textbf{\$100 credits}, this took about 10 minutes
+  in my case
+\item
+  Apply the promotion code following the steps in the email
+\end{itemize}
+
+\hypertarget{header-n70}{%
+\subsubsection{1.3 Setting up Billing Alarm}\label{header-n70}}
+
+\begin{itemize}
+\item
+  The \textbf{AWS Console} is where you can manage basically everything
+  of your AWS account, use \href{https://console.aws.amazon.com/}{this
+  link} to go to your AWS Console
+\item
+  Navigate through
+  \texttt{Services\ —\textgreater{}\ Billing\ —\textgreater{}\ Preferences},
+  and then click on "Receive Billing Alerts"
+\item
+  At this Point, you should navigate through the AWS Console to get
+  yourself familiar with its layout and setting
+\end{itemize}
+
+\hypertarget{header-n534}{%
+\subsubsection{1.4 Plan Ahead: Increase the Instance
+limit}\label{header-n534}}
+
+\begin{itemize}
+\item
+  We will need an m4 instance and an F1 instance for this course,
+  however our account type only allows us to use 1 instance. So we have
+  to increase this limit before we can proceed
+\item
+  Use
+  \href{https://console.aws.amazon.com/support/v1\#/case/create}{this
+  link} to reach out to the customer service for raising the limit
+\item
+  Fill out the form and wait for AWS staff to process your request
+\item
+  Please be aware that this could take \textbf{2\textasciitilde{}3 days}
+  for the request to be processed. So, \textbf{plan ahead} for your time
+\end{itemize}
+
+\hypertarget{header-n84}{%
+\section{2. Launching Development Instance}\label{header-n84}}
+
+\hypertarget{header-n85}{%
+\subsubsection{2.1 Launching New Instance}\label{header-n85}}
+
+\hypertarget{header-n86}{%
+\paragraph{2.1.1 Find the Launch Entry}\label{header-n86}}
+
+\begin{itemize}
+\item
+  Use \href{https://console.aws.amazon.com/}{this link} to open AWS
+  Console
+\item
+  Navigate through \texttt{Services\ —\textgreater{}\ EC2} 
+\item
+  Check your zone on the top right, ensure you are in
+  \texttt{US\ East\ (N.\ Virginia)}
+\item
+  Click on "\textbf{Launch Instance}"
+\end{itemize}
+
+\hypertarget{header-n100}{%
+\paragraph{2.1.2 Choose Amazon Machine Image (AMI)}\label{header-n100}}
+
+\begin{itemize}
+\item
+  Click on "\textbf{AWS Marketplace}" on the left, and enter
+  "\textbf{FPGA}" in the search bar
+\item
+  Select \texttt{FPGA\ Developer\ AMI} to start configuration
+\item
+  Scan through the pop-up window and hit "\textbf{continue}"
+\end{itemize}
+
+\hypertarget{header-n111}{%
+\paragraph{2.1.3 Choose Instance Type}\label{header-n111}}
+
+\begin{itemize}
+\item
+  The lowest recommended instance is \texttt{t2.xlarge} (4CPU/16GB ram)
+\item
+  If you want to run multiple builds in parallel, you probably want one
+  with more RAM, like \texttt{m4.2xlarge/m4.4xlarge}, in the course, we
+  recommend to use \texttt{m4.2xlarge}
+\item
+  \textbf{A word on why choosing this instance}: In fact, only the f1
+  series instances are actually connected to a real FPGA, however f1
+  instances are expensive, given we only have \$100 credits so far.
+  Therefore, we start with non-f1 instances and continue with f1 only
+  when we finished all the pre-work
+\item
+  Hit "\textbf{Next: Configure Instance Details}", no need to change
+  anything on this page
+\item
+  Hit "\textbf{Next: add Storage}"
+\end{itemize}
+
+\hypertarget{header-n128}{%
+\paragraph{2.1.4 Add Storage}\label{header-n128}}
+
+\begin{itemize}
+\item
+  There are two volumes shown on this page 
+\item
+  \textbf{The First Volume} is the 70GB root drive
+
+  \begin{itemize}
+  \item
+    This is where OS and Vivado is installed. Do not modify this volume
+    or save things here. This volume will be deleted once the instance
+    is terminated
+  \end{itemize}
+\item
+  \textbf{The Second Volume} is where you will store your work
+
+  \begin{itemize}
+  \item
+    The size should be increased to 30 GB (After building all the
+    rosetta projects I have used \textasciitilde{}20 GB)
+  \item
+    For your information, EBS refers tp "Elastic Blocking Store", you do
+    not need to understand this though
+  \end{itemize}
+\item
+  Hit "\textbf{Review and Launch}", since you don't need to change
+  anything in the sections afterwards.
+\item
+  Review the summary and hit "\textbf{Launch}" (It is normal that there
+  is a warning message saying "Your instance configuration is not
+  eligible for the free usage tier")
+\end{itemize}
+
+\hypertarget{header-n156}{%
+\paragraph{2.1.5 Create Key Pair}\label{header-n156}}
+
+\begin{itemize}
+\item
+  There will be a pop-up window
+\item
+  If this is your first time,
+
+  \begin{itemize}
+  \item
+    Select "\textbf{Create a new key pair}"
+  \item
+    Name it something permanent, you will need to reuse it afterwards
+  \item
+    Carefully download and store it in a safe place on your laptop(or
+    PC), for example \texttt{.ssh/}
+  \item
+    Put down your \texttt{path\ to\ the\ key\ pair} somewhere handy for
+    later use 
+  \item
+    Never let anyone else access this file
+  \end{itemize}
+\item
+  If this is not your first time,
+
+  \begin{itemize}
+  \item
+    you may want to use your existing key pair
+  \end{itemize}
+\item
+  Hit "\textbf{Launch Instance}"
+\end{itemize}
+
+\hypertarget{header-n190}{%
+\paragraph{2.1.6 Check Your Instance}\label{header-n190}}
+
+\begin{itemize}
+\item
+  Go back to your EC2 Console (Services/EC2)
+\item
+  Click on "\textbf{Instances}" on the left, and you will see you
+  instance showing up there
+\item
+  Select it and put down the \texttt{public\ DNS} aside with the your
+  key pair path for later use
+\end{itemize}
+
+\hypertarget{header-n203}{%
+\subsubsection{2.2 Creating AWS Credentials}\label{header-n203}}
+
+\begin{itemize}
+\item
+  Go back to your AWS Console
+\item
+  Click on your name on the top right, then click on"\textbf{Your
+  Securtiy Credentials}"
+\item
+  In the pop-up window, hit "\textbf{Get Started with IAM users}"
+\item
+  Hit "\textbf{Add user}", enter a name and select "\textbf{Programmatic
+  Access}"
+\item
+  Add \texttt{AmazonEC2FullAccess} and \texttt{AmazonS3FullAccess}
+  Permissions
+\item
+  Copy the \texttt{Secret\ Access\ key} and \texttt{Access\ Key\ ID} to
+  a secure location,
+
+  \begin{itemize}
+  \item
+    This is the only time you will be able to access the Secure Access
+    Key if you lose it yßou will need to create a new user
+  \item
+    These keys will let someone create instances and cause things to be
+    billed to your account so be somewhat careful with them
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{header-n232}{%
+\subsubsection{2.3 Create S3 Bucket}\label{header-n232}}
+
+The S3 bucket will be used later by the AWS SDAccel scripts to upload
+your DCP to AWS for AFI generation which will be packaged into a tar
+file.
+
+\begin{itemize}
+\item
+  Open terminal on your laptop (or something alike on PC), ssh into your
+  instance using the following command
+
+\begin{verbatim}
+$ ssh –i <path-to-key-pair> centos@<public dns address>
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Install \texttt{AWS\ Command\ Line\ Interface\ (CLI)}, please follow
+  \href{http://docs.aws.amazon.com/cli/latest/userguide/installing.html}{this
+  tutorial}
+\item
+  Configure AWS
+
+\begin{verbatim}
+$ aws configure
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  When prompted, enter as follows:
+
+\begin{verbatim}
+AWS Access Key ID [None]: <Access Key ID from last step>
+AWS Secret Access Key [None]: <Secure Access Key from last step>
+Default region name [None]: us-east-1
+Default output format [None]: json
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Create bucket and relevant folders, the bucket name should be
+  different from any other bucket.
+
+\begin{verbatim}
+# Create an S3 bucket 
+$ aws s3 mb s3://<bucket-name> --region us-east-1
+# Create folder for your tar files
+$ aws s3 mb s3://<bucket-name>/<dcp-folder-name> 
+# Create a temp file
+$ touch FILES_GO_HERE.txt    
+# Put the file in the S3 folder
+$ aws s3 cp FILES_GO_HERE.txt s3://<bucket-name>/<dcp-folder-name>/  
+\end{verbatim}
+
+\begin{verbatim}
+# Create a folder to keep your logs
+$ aws s3 mb s3://<bucket-name>/<logs-folder-name>  
+# Create a temp file
+$ touch LOGS_FILES_GO_HERE.txt    
+# Put the file in the S3 folder
+$ aws s3 cp LOGS_FILES_GO_HERE.txt s3://<bucket-name>/<logs-folder-name>/  
+\end{verbatim}
+\end{itemize}
+
+\hypertarget{header-n266}{%
+\subsubsection{2.4 Initial Setup}\label{header-n266}}
+
+\begin{itemize}
+\item
+  Check the "\textbf{Instance status}" on your EC2 console, proceed to
+  next step when it finishes initialization
+
+  \begin{itemize}
+  \item
+    This takes several minutes from the time it is launched 
+  \end{itemize}
+\item
+  Open terminal on your laptop (or something alike on PC), ssh into your
+  instance using the following command
+
+\begin{verbatim}
+$ ssh –i <path-to-key-pair> centos@<public dns address>
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  The 30GB volume is mounted here
+  \texttt{\textasciitilde{}/src/project\_data}
+
+\begin{verbatim}
+$ cd ~/src/project_data
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Clone \texttt{aws-fpga\ tools}
+
+\begin{verbatim}
+$ git clone https://github.com/aws/aws-fpga.git
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Copy \texttt{lab\ 2-2} and \texttt{harness} here
+
+  \begin{itemize}
+  \item
+    You can use either \texttt{scp} or \texttt{git\ clone} to do this.
+  \end{itemize}
+\item
+  Run the \texttt{SDACCEL\ setup\ script}, this must be done from the
+  aws-fpga root directory
+
+\begin{verbatim}
+$ cd aws-fpga
+$ source sdaccel_setup.sh
+$ source $XILINX_SDX/settings64.sh
+\end{verbatim}
+\end{itemize}
+
+\hypertarget{header-n299}{%
+\subsubsection{2.5 Run Hardware Synthesis}\label{header-n299}}
+
+\begin{itemize}
+\item
+  Go to your working directory and find the \texttt{typedefs.h} file in
+  src, make sure \texttt{TARGET\_DEVICE} is
+  \texttt{xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0}
+
+\begin{verbatim}
+$ cd ~/src/project_data/lab2-2/
+$ cd src/host
+$ vi typedefs.h
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Run the hardware synthesis
+
+  \begin{itemize}
+  \item
+    This takes about \textbf{4 hours}
+  \item
+    Do not disconnect from the instance while doing this
+  \end{itemize}
+
+\begin{verbatim}
+$ make ocl OCL_TARGET=hw OCL_PLATFORM=$AWS_PLATFORM
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  If you run into problem while doing this, and you are using a fairly
+  new laptop, try run the following commands, and then restart from
+  Section 2.2
+
+\begin{verbatim}
+$ export LC_CTYPE=en_US.UTF-8
+$ export LC_ALL=en_US.UTF-8
+\end{verbatim}
+\item
+  You can add these lines to \texttt{/etc/environment} to fix this
+  problem permanently
+
+\begin{verbatim}
+  LANG=en_US.utf-8
+  LC_ALL=en_US.utf-8
+\end{verbatim}
+\end{itemize}
+
+\hypertarget{header-n338}{%
+\subsubsection{2.6 Generating Amazon FPGA Image
+(AFI)}\label{header-n338}}
+
+\begin{itemize}
+\item
+  Run \texttt{Configure\ AWS} again if you started a new terminal
+  session
+
+\begin{verbatim}
+$ aws configure
+AWS Access Key ID [None]: <Access Key ID from last step>
+AWS Secret Access Key [None]: <Secure Access Key from last step>
+Default region name [None]: us-east-1
+Default output format [None]: json
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Submit the job to create FPGA image by running
+
+\begin{verbatim}
+$ $SDACCEL_DIR/tools/create_sdaccel_afi.sh \
+-xclbin= <input_xilinx_fpga_binary_xclbin_filename> \
+-o=<output_aws_fpga_binary_awsxclbin_filename_root> \
+-s3_bucket=<bucket-name> \
+-s3_dcp_key=<dcp-folder-name> \
+-s3_logs_key=<logs-folder-name>
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  You can check the status of the run by running the following command,
+  it lists all your fpga images
+
+\begin{verbatim}
+$ aws ec2 describe-fpga-images --owners self
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Alternatively, you can look up specific pga image by its
+  \texttt{\textless{}AFI\ ID\textgreater{}}, which is shown in
+  \texttt{\textless{}timestamp\textgreater{}\_afi\_id.txt} created when
+  script runs
+
+\begin{verbatim}
+$ aws ec2 describe-fpga-images –fpga-image-ids <AFI ID>
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  You need to wait for ``\textbf{State}'' to change from
+  "\textbf{pending}" into ``\textbf{available}'' before you can use the
+  image
+
+  \begin{itemize}
+  \item
+    This could take about \textbf{1 hour}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{header-n373}{%
+\subsubsection{2.7 Stopping the Instance}\label{header-n373}}
+
+\begin{itemize}
+\item
+  Go back to AWS Console and navigate to the instances page
+\item
+  Stopping or termination instances
+
+  \begin{itemize}
+  \item
+    You can stop or terminate the instance by right click on the
+    instance and select corresponding action
+  \item
+    You can resume stopped instances while terminated instances are gone
+  \end{itemize}
+\item
+  Charges
+
+  \begin{itemize}
+  \item
+    You are not charged for an instance in stopped or terminated state
+  \item
+    You are charged for instances in the running state, volumes and
+    snapshots(i.e. backups) so you should check that there isn't
+    anything there you don't need
+  \item
+    You do need to pay for the 70GB whenever the instance is in the
+    stopped state The price of EBS is \textasciitilde{}\$0.10/GB-month,
+    so the volume will cost \$7/month, while it is probably worth
+    spending the \$3/month to keep your work volume around if you are
+    using it relatively frequently
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{header-n404}{%
+\section{3. Running on Hardware}\label{header-n404}}
+
+\hypertarget{header-n419}{%
+\subsubsection{3.1 Launch F1 Instance}\label{header-n419}}
+
+\begin{itemize}
+\item
+  The process is the same with \texttt{Section\ 2.1}, except the
+  following:
+\item
+  At "Step 2: Choose an Instance Type": choose \texttt{f1.2xlarge}
+  instead of previous instance type
+
+  \begin{itemize}
+  \item
+    These instances cost \$1.65/hour so try to limit how long you have
+    them running
+  \end{itemize}
+\item
+  At "Step 3: Configure Instance Details": in the subset dropdown, make
+  sure you select the same availability zone as the previous 30GB volume
+
+  \begin{itemize}
+  \item
+    You can check the availability zone of the previous 30GB volume from
+    \texttt{EC2\ Console\ —\textgreater{}\ Volume}
+  \end{itemize}
+\item
+  At "Step 4: Add Storage": we are going to use the previous 30GB volume
+  we have created, therefore we don't need the second 5GB volume that
+  added by default. So remove the second volume.
+\end{itemize}
+
+\hypertarget{header-n441}{%
+\subsubsection{3.2 Mount Previous Volume}\label{header-n441}}
+
+\begin{itemize}
+\item
+  Navigate to to volume page
+  \texttt{EC2\ Console\ —\textgreater{}\ Volume}
+\item
+  Right click your 30GB volume, click on "\textbf{Detach}"
+\item
+  Go back to your instances and figure out the id of you f1.2 instance (
+  you don't need to memorize the id, you only need to be able to tell
+  which id is of your f1.2 instance, which one is of you m4.2 instance)
+\item
+  Right click your 30GB volume, click on "\textbf{Attach}", then select
+  the id of your f1 instance
+\item
+  Open terminal on your laptop (or something alike on PC), ssh into your
+  f1 instance using the following command with correct
+  \texttt{public\ dns\ address}
+
+\begin{verbatim}
+$ ssh –i <path-to-key-pair> centos@<public dns address>
+\end{verbatim}
+\item
+  Run the following command to see the block devices, find the one which
+  is 30GB, put down the \texttt{path\ of\ your\ block}, which in my case
+  is \texttt{/dev/xvdf}
+
+\begin{verbatim}
+$ lsblk
+\end{verbatim}
+\item
+  We would like to mount our previous 30GB volume to the same directory
+  with before for consistency, which is
+  \texttt{\textasciitilde{}/src/project\_data}, however the AWS f1
+  instance won't let us do it for whatever reason it is. So we are using
+  the following steps to work it around
+
+  \begin{itemize}
+  \item
+    Go to \texttt{\textasciitilde{}/src/} and create a new directory
+    named \texttt{project}
+
+\begin{verbatim}
+$ cd ~/src
+$ mkdir project
+\end{verbatim}
+  \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Mount the 30GB volume to \texttt{\textasciitilde{}/src/project}
+
+\begin{verbatim}
+$ sudo mount /dev/xvdf ~/src/project
+\end{verbatim}
+\item
+  Copy the fold \texttt{aws-fpga} from
+  \texttt{\textasciitilde{}/src/project} to
+  \texttt{\textasciitilde{}/src/project\_data}
+
+\begin{verbatim}
+$ cp -r aws-fpga/ ../project_data/
+\end{verbatim}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Note that we only need fold \texttt{aws-fpga} to be in directory
+  \texttt{\textasciitilde{}/src/project\_data}, because some inner codes
+  of \texttt{aws-fpga} are hard-coded and bonded up to this directory
+  (not our fault), we can surely change the inner code, however it is to
+  much work to do so, therefore we are doing this as a workaround.
+\end{itemize}
+
+\hypertarget{header-n486}{%
+\subsubsection{3.3 Run Instance}\label{header-n486}}
+
+\begin{itemize}
+\item
+  Run SDAccel Setup if you haven't since rebooting
+
+\begin{verbatim}
+$ source ~/src/project_data/aws-fpga/sdaccel_setup.sh
+\end{verbatim}
+\item
+  Switch to root shell
+
+\begin{verbatim}
+$ sudo sh
+$ source /opt/Xilinx/SDx/2017.1.rte.4ddr/setup.sh
+\end{verbatim}
+\item
+  Go to your working directory and run the application following the
+  instruction in \texttt{README.md}, which is shown below in our case
+  \texttt{lab2-2}
+
+\begin{verbatim}
+$ cd /home/centos/src/project/lab2-2
+$ ./Digitrec_host.exe -f <path_to_xclbin_file>
+\end{verbatim}
+\end{itemize}
+
+\end{document}
