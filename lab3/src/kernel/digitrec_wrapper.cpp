@@ -29,5 +29,5 @@ extern "C"
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
     digitrec(training_data, testing_data, results);
-
+  }
 }
