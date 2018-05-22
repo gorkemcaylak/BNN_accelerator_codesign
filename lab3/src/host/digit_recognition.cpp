@@ -54,7 +54,7 @@ int main(int argc, char ** argv)
   digit_rec_world.addProgram(kernelFile);
 
   // create kernels
-  CLKernel digitrec_wrapper(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
+  CLKernel digitrec_wrapper(digit_rec_world.getContext(), digit_rec_world.getProgram(), "digitrec_wrapper", digit_rec_world.getDevice());
 
   // create mem objects
   CLMemObj training_mem ( (void*)training_data,  sizeof(digit),  NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
