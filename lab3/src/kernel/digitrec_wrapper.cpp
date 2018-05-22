@@ -9,14 +9,14 @@
 extern "C" 
 {
   //----------------------------------------------------------
-  // Digitrec
+  // DigitRec
   //----------------------------------------------------------
   // The is the top function of the kernel, reads in the training 
   // data and testing data, return an array of the recognized labels
   //
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
-  void digitRec_wrapper( digit* training_data, digit* testing_data, bit4_t* results) 
+  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
   {  
     // connection settings:
     // students DO NOT need to understand this
@@ -29,5 +29,5 @@ extern "C"
     #pragma HLS INTERFACE s_axilite port=return bundle=control
 
     digitrec(training_data, testing_data, results);
-  }
+
 }
