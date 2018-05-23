@@ -92,7 +92,7 @@ bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
 
 
 //----------------------------------------------------------
-// Digitrec
+// digitrec
 //----------------------------------------------------------
 // The is the top function of the kernel, reads in the training 
 // data and testing data, return an array of the recognized labels

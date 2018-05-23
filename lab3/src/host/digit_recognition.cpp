@@ -54,7 +54,7 @@ int main(int argc, char ** argv)
   digit_rec_world.addProgram(kernelFile);
 
   // create kernels
-  CLKernel digitrec_wrapper(digit_rec_world.getContext(), digit_rec_world.getProgram(), "digitrec_wrapper", digit_rec_world.getDevice());
+  CLKernel DigitRec(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
 
   // create mem objects
   CLMemObj training_mem ( (void*)training_data,  sizeof(digit),  NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
@@ -73,11 +73,11 @@ int main(int argc, char ** argv)
   // set work size
   int global_size[3] = {1, 1, 1};
   int local_size[3] = {1, 1, 1};
-  digitrec_wrapper.set_global(global_size);
-  digitrec_wrapper.set_local(local_size);
+  DigitRec.set_global(global_size);
+  DigitRec.set_local(local_size);
 
   // add them to the world
-  digit_rec_world.addKernel(digitrec_wrapper);
+  digit_rec_world.addKernel(DigitRec);
 
   // set kernel arguments
   digit_rec_world.setMemKernelArg(0, 0, 0);
