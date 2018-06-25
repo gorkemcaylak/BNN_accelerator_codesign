@@ -9,8 +9,8 @@ HOST_SRC_H   = ./src/host/utils.h ./src/host/cordic.h ./src/host/check_result.h 
 DATA         = 
 
 # Set host code include paths
-HOST_INC = 
-HOST_LIB = 
+HOST_INC = -I$(XILINX_SDX)/Vivado_HLS/include 
+HOST_LIB = -L$(XILINX_SDX)/Vivado_HLS/lib
 
 # Set kernel file
 OCL_KERNEL_SRC = ./src/kernel/cordic.cpp
