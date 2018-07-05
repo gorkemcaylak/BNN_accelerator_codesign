@@ -46,11 +46,6 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-
-\usepackage{geometry}
-\geometry{a4paper,scale=0.75}
-
-
 % set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
@@ -109,8 +104,8 @@ Enjoy your journey!
 \hypertarget{header-n42}{%
 \section{1. AWS Account Setup}\label{header-n42}}
 
-\hypertarget{header-n45}{%
-\subsubsection{1.1 Creating a New AWS Account}\label{header-n45}}
+\hypertarget{header-n43}{%
+\subsubsection{1.1 Creating a New AWS Account}\label{header-n43}}
 
 \begin{itemize}
 \item
@@ -122,9 +117,9 @@ Enjoy your journey!
   You will need to add a credit card when creating an account
 \end{itemize}
 
-\hypertarget{header-n56}{%
+\hypertarget{header-n54}{%
 \subsubsection{1.2 Apply for AWS Educate with \$100 Free
-Credits}\label{header-n56}}
+Credits}\label{header-n54}}
 
 \begin{itemize}
 \item
@@ -142,8 +137,8 @@ Credits}\label{header-n56}}
   Apply the promotion code following the steps in the email
 \end{itemize}
 
-\hypertarget{header-n70}{%
-\subsubsection{1.3 Setting up Billing Alarm}\label{header-n70}}
+\hypertarget{header-n68}{%
+\subsubsection{1.3 Setting up Billing Alarm}\label{header-n68}}
 
 \begin{itemize}
 \item
@@ -159,9 +154,9 @@ Credits}\label{header-n56}}
   yourself familiar with its layout and setting
 \end{itemize}
 
-\hypertarget{header-n534}{%
+\hypertarget{header-n79}{%
 \subsubsection{1.4 Plan Ahead: Increase the Instance
-limit}\label{header-n534}}
+limit}\label{header-n79}}
 
 \begin{itemize}
 \item
@@ -179,14 +174,14 @@ limit}\label{header-n534}}
   for the request to be processed. So, \textbf{plan ahead} for your time
 \end{itemize}
 
-\hypertarget{header-n84}{%
-\section{2. Launching Development Instance}\label{header-n84}}
+\hypertarget{header-n96}{%
+\section{2. Launching Development Instance}\label{header-n96}}
 
-\hypertarget{header-n85}{%
-\subsubsection{2.1 Launching New Instance}\label{header-n85}}
+\hypertarget{header-n97}{%
+\subsubsection{2.1 Launching New Instance}\label{header-n97}}
 
-\hypertarget{header-n86}{%
-\paragraph{2.1.1 Find the Launch Entry}\label{header-n86}}
+\hypertarget{header-n98}{%
+\paragraph{2.1.1 Find the Launch Entry}\label{header-n98}}
 
 \begin{itemize}
 \item
@@ -201,8 +196,8 @@ limit}\label{header-n534}}
   Click on "\textbf{Launch Instance}"
 \end{itemize}
 
-\hypertarget{header-n100}{%
-\paragraph{2.1.2 Choose Amazon Machine Image (AMI)}\label{header-n100}}
+\hypertarget{header-n112}{%
+\paragraph{2.1.2 Choose Amazon Machine Image (AMI)}\label{header-n112}}
 
 \begin{itemize}
 \item
@@ -214,8 +209,8 @@ limit}\label{header-n534}}
   Scan through the pop-up window and hit "\textbf{continue}"
 \end{itemize}
 
-\hypertarget{header-n111}{%
-\paragraph{2.1.3 Choose Instance Type}\label{header-n111}}
+\hypertarget{header-n123}{%
+\paragraph{2.1.3 Choose Instance Type}\label{header-n123}}
 
 \begin{itemize}
 \item
@@ -237,8 +232,8 @@ limit}\label{header-n534}}
   Hit "\textbf{Next: add Storage}"
 \end{itemize}
 
-\hypertarget{header-n128}{%
-\paragraph{2.1.4 Add Storage}\label{header-n128}}
+\hypertarget{header-n140}{%
+\paragraph{2.1.4 Add Storage}\label{header-n140}}
 
 \begin{itemize}
 \item
@@ -271,8 +266,8 @@ limit}\label{header-n534}}
   eligible for the free usage tier")
 \end{itemize}
 
-\hypertarget{header-n156}{%
-\paragraph{2.1.5 Create Key Pair}\label{header-n156}}
+\hypertarget{header-n168}{%
+\paragraph{2.1.5 Create Key Pair}\label{header-n168}}
 
 \begin{itemize}
 \item
@@ -305,8 +300,8 @@ limit}\label{header-n534}}
   Hit "\textbf{Launch Instance}"
 \end{itemize}
 
-\hypertarget{header-n190}{%
-\paragraph{2.1.6 Check Your Instance}\label{header-n190}}
+\hypertarget{header-n202}{%
+\paragraph{2.1.6 Check Your Instance}\label{header-n202}}
 
 \begin{itemize}
 \item
@@ -319,8 +314,8 @@ limit}\label{header-n534}}
   key pair path for later use
 \end{itemize}
 
-\hypertarget{header-n203}{%
-\subsubsection{2.2 Creating AWS Credentials}\label{header-n203}}
+\hypertarget{header-n215}{%
+\subsubsection{2.2 Creating AWS Credentials}\label{header-n215}}
 
 \begin{itemize}
 \item
@@ -350,8 +345,8 @@ limit}\label{header-n534}}
   \end{itemize}
 \end{itemize}
 
-\hypertarget{header-n232}{%
-\subsubsection{2.3 Create S3 Bucket}\label{header-n232}}
+\hypertarget{header-n244}{%
+\subsubsection{2.3 Create S3 Bucket}\label{header-n244}}
 
 The S3 bucket will be used later by the AWS SDAccel scripts to upload
 your DCP to AWS for AFI generation which will be packaged into a tar
@@ -418,8 +413,8 @@ $ aws s3 cp LOGS_FILES_GO_HERE.txt s3://<bucket-name>/<logs-folder-name>/
 \end{verbatim}
 \end{itemize}
 
-\hypertarget{header-n266}{%
-\subsubsection{2.4 Initial Setup}\label{header-n266}}
+\hypertarget{header-n278}{%
+\subsubsection{2.4 Initial Setup}\label{header-n278}}
 
 \begin{itemize}
 \item
@@ -460,12 +455,12 @@ $ git clone https://github.com/aws/aws-fpga.git
 
 \begin{itemize}
 \item
-  Copy \texttt{lab\ 2-2} and \texttt{harness} here
+  Copy \texttt{lab\_aws} and \texttt{harness} here
+\end{itemize}
 
-  \begin{itemize}
-  \item
-    You can use either \texttt{scp} or \texttt{git\ clone} to do this.
-  \end{itemize}
+\begin{itemize}
+\item
+  You can use either \texttt{scp} or \texttt{git\ clone} to do this.
 \item
   Run the \texttt{SDACCEL\ setup\ script}, this must be done from the
   aws-fpga root directory
@@ -477,8 +472,8 @@ $ source $XILINX_SDX/settings64.sh
 \end{verbatim}
 \end{itemize}
 
-\hypertarget{header-n299}{%
-\subsubsection{2.5 Run Hardware Synthesis}\label{header-n299}}
+\hypertarget{header-n319}{%
+\subsubsection{2.5 Run Hardware Synthesis}\label{header-n319}}
 
 \begin{itemize}
 \item
@@ -487,7 +482,7 @@ $ source $XILINX_SDX/settings64.sh
   \texttt{xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0}
 
 \begin{verbatim}
-$ cd ~/src/project_data/lab2-2/
+$ cd ~/src/project_data/lab_aws/
 $ cd src/host
 $ vi typedefs.h
 \end{verbatim}
@@ -526,12 +521,13 @@ $ export LC_ALL=en_US.UTF-8
 \begin{verbatim}
   LANG=en_US.utf-8
   LC_ALL=en_US.utf-8
+  LC_CTYPE=en_US.UTF-8
 \end{verbatim}
 \end{itemize}
 
-\hypertarget{header-n338}{%
+\hypertarget{header-n354}{%
 \subsubsection{2.6 Generating Amazon FPGA Image
-(AFI)}\label{header-n338}}
+(AFI)}\label{header-n354}}
 
 \begin{itemize}
 \item
@@ -595,8 +591,8 @@ $ aws ec2 describe-fpga-images –fpga-image-ids <AFI ID>
   \end{itemize}
 \end{itemize}
 
-\hypertarget{header-n373}{%
-\subsubsection{2.7 Stopping the Instance}\label{header-n373}}
+\hypertarget{header-n389}{%
+\subsubsection{2.7 Stopping the Instance}\label{header-n389}}
 
 \begin{itemize}
 \item
@@ -630,11 +626,11 @@ $ aws ec2 describe-fpga-images –fpga-image-ids <AFI ID>
   \end{itemize}
 \end{itemize}
 
-\hypertarget{header-n404}{%
-\section{3. Running on Hardware}\label{header-n404}}
+\hypertarget{header-n420}{%
+\section{3. Running on Hardware}\label{header-n420}}
 
-\hypertarget{header-n419}{%
-\subsubsection{3.1 Launch F1 Instance}\label{header-n419}}
+\hypertarget{header-n421}{%
+\subsubsection{3.1 Launch F1 Instance}\label{header-n421}}
 
 \begin{itemize}
 \item
@@ -664,8 +660,8 @@ $ aws ec2 describe-fpga-images –fpga-image-ids <AFI ID>
   added by default. So remove the second volume.
 \end{itemize}
 
-\hypertarget{header-n441}{%
-\subsubsection{3.2 Mount Previous Volume}\label{header-n441}}
+\hypertarget{header-n443}{%
+\subsubsection{3.2 Mount Previous Volume}\label{header-n443}}
 
 \begin{itemize}
 \item
@@ -741,8 +737,8 @@ $ cp -r aws-fpga/ ../project_data/
   much work to do so, therefore we are doing this as a workaround.
 \end{itemize}
 
-\hypertarget{header-n486}{%
-\subsubsection{3.3 Run Instance}\label{header-n486}}
+\hypertarget{header-n488}{%
+\subsubsection{3.3 Run Instance}\label{header-n488}}
 
 \begin{itemize}
 \item
@@ -761,10 +757,10 @@ $ source /opt/Xilinx/SDx/2017.1.rte.4ddr/setup.sh
 \item
   Go to your working directory and run the application following the
   instruction in \texttt{README.md}, which is shown below in our case
-  \texttt{lab2-2}
+  `lab\_aws
 
 \begin{verbatim}
-$ cd /home/centos/src/project/lab2-2
+$ cd /home/centos/src/project/lab_aws
 $ ./cordic_host.exe -f <path_to_xclbin_file>
 \end{verbatim}
 \end{itemize}
