@@ -34,15 +34,14 @@
 
 int main(int argc, char ** argv) 
 {
-  printf("Digit Recognition Application\n");
+  std::cout<<"Digit Recognition Application\n";
 
   #ifdef OCL
     // parse command line arguments for opencl version
     std::string kernelFile("");
     parse_sdaccel_command_line_args(argc, argv, kernelFile);
   #endif
-  // sw and sdsoc version have no additional command line arguments
-
+    
   // for this benchmark, data is already included in arrays:
   //   training_data: contains 18000 training samples, with 1800 samples for each digit class
   //   testing_data:  contains 2000 test samples
@@ -54,7 +53,7 @@ int main(int argc, char ** argv)
   // opencl version host code
   #ifdef OCL
     // create space for the result
-    bit4_t* results = new bit4_t[NUM_TEST];
+    bit8_t* results = new bit8_t[NUM_TEST];
 
     // create OpenCL world
     CLWorld digit_rec_world = CLWorld(TARGET_DEVICE, CL_DEVICE_TYPE_ACCELERATOR);
@@ -66,10 +65,10 @@ int main(int argc, char ** argv)
     CLKernel DigitRec(digit_rec_world.getContext(), digit_rec_world.getProgram(), "DigitRec", digit_rec_world.getDevice());
 
     // create mem objects
-    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * 10 , CL_MEM_READ_ONLY);
-    CLMemObj testing_mem  ( (void*)testing_data ,  sizeof(digit), NUM_TEST     , CL_MEM_READ_ONLY);
-    CLMemObj result_mem   ( (void*)results       ,  sizeof(bit4_t), NUM_TEST,     CL_MEM_WRITE_ONLY);
-
+    CLMemObj training_mem ( (void*)training_data,  sizeof(digit), NUM_TRAINING * 10, CL_MEM_READ_ONLY);
+    CLMemObj testing_mem  ( (void*)testing_data,   sizeof(digit), NUM_TEST,          CL_MEM_READ_ONLY);
+    CLMemObj result_mem   ( (void*)results,        sizeof(bit8_t),  NUM_TEST,          CL_MEM_WRITE_ONLY);
+    
     // start timer
     gettimeofday(&start, 0);
 
@@ -104,14 +103,13 @@ int main(int argc, char ** argv)
   #endif
 
 
-
   // check results
-  printf("Checking results:\n");
+  std::cout<<"Checking results:\n";
   check_results( results, expected, NUM_TEST );
     
   // print time
   long long elapsed = (end.tv_sec - start.tv_sec) * 1000000LL + end.tv_usec - start.tv_usec;   
-  printf("elapsed time: %lld us\n", elapsed);
+  std::cout<<"elapsed time: "<<elapsed<<" us\n";
 
   // cleanup
   #ifdef OCL

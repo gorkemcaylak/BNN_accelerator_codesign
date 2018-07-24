@@ -121,10 +121,9 @@ The structure of directory \textbf{lab3} is described as following:
 				\item \texttt{utils.cpp}: contains the functions to print usage and parse the command line arguments
 				\item \texttt{utils.h}: the header file of utils.cpp.
 			\end{itemize}
-		\item \textbf{ocl}: contains the actual kernel file.
+		\item \textbf{kernel}: contains the actual kernel file.
 		 	\begin{itemize}
-	 			\item \texttt{digitrec.cpp}: top level kernel file, student \textbf{do not need} to understand the details of this file.
-				\item \texttt{functions.cpp}: an \textbf{ incomplete} file of the functions used in \texttt{digitrec.cpp}.
+	 			\item \texttt{digitrec.cpp}: \textbf{ incomplete} kernel file, student \textbf{do not need} to understand the interfacing done in DigitRec function.
 			\end{itemize}
 	\end{itemize}
   \item \textbf{data}:
@@ -150,9 +149,7 @@ You will implement and evaluate the performance for three designs:
   \item A \textbf{pipelined} \texttt{digitrec} design which applies loop pipelining in addition to the previous optimizations.
 \end{itemize}
 You will need to apply HLS optimazation directives in the kernel and then run each design on the hardware.
-You will use the information from the Vivado HLS synthesis reportet
-
-to \textbf{estimate} the performance of your hardware design, and verify that the
+You will use the information from the Vivado HLS synthesis report to \textbf{estimate} the performance of your hardware design, and verify that the
 physical hardware achieves a performance close to the estimate.
 Also, you will measure the performances of the software execution 
 on both the \textbf{AWS f1 instance} and \textbf{m4 instance} for comparison.
@@ -166,7 +163,7 @@ If you add print statements to debug your code, make sure to remove them before
 doing runtime measurement.
 %Also note that you don't need to manually insert any directives or pragmas. Those are already 
 
-Your next task is do the hardware synthesis and then run the application on the AWS F1 instance.The process to run application on hardware is exactly the same as in lab1.
+Your next task is do the hardware synthesis and then run the application on the AWS F1 instance. The process to run application on hardware is exactly the same as in lab1.
  Please be sure to finish your designing and debugging on the m4 instance, run software emulation to make sure your 
 implementation is correct and then start the hardware synthesis, because \textbf{the hardware synthesis could take around three hours to generate the xclbin file}.
 

@@ -6,6 +6,4 @@
 /*                                                               */
 /*===============================================================*/
 
-// void check_results(LabelType* result, const LabelType* expected, int cnt);
-
-void check_results(bit4_t * result, const bit4_t * expected, int cnt);
+void check_results(bit8_t * result, const bit8_t * expected, int cnt);

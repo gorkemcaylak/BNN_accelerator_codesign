@@ -25,32 +25,29 @@
   {
     // Compute the difference using XOR
     digit diff = test_inst ^ train_inst;
-
+      
     bit6_t dist = 0;
     // Count the number of set bits
-    for ( int i = 0; i < 64; i++ ) { 
+    for ( int i = 0; i < 64; i++ )
+    {
       dist += diff[i];
     }
     bit6_t max_dist = 0;
     int max_dist_id = K_CONST+1; 
 
     // Find the max distance
-    for ( int k = 0; k < K_CONST; k++ ) {
-      if ( min_distances[k] > max_dist ) {
+    for ( int k = 0; k < K_CONST; k++ )
+    {
+      if ( min_distances[k] > max_dist )
+      {
         max_dist = min_distances[k];
         max_dist_id = k;
       }
     }
-    
-    // for( int i = 0 ; i < K_CONST; i++){
-
-    // }
-
-
     // Replace the entry with the max distance
     if ( dist < max_dist )
       min_distances[max_dist_id] = dist;
-
+      
   }
 
 
@@ -66,9 +63,9 @@
   // @return : the recognized digit
   // 
 
-  bit4_t knn_vote( bit6_t knn_set[10 * K_CONST] )
+  bit8_t knn_vote( bit6_t knn_set[10 * K_CONST] )
   { 
-    bit4_t min_index = 0;
+    bit8_t min_index = 0;
     // This array keeps keeps of the occurences
     // of each digit in the knn_set
     int score[10]; 
@@ -77,14 +74,19 @@
     for ( int i = 0; i < 10; i++ )
         score[i] = 0; 
     // Find the K nearest neighbors
-    for ( int k = 0; k < K_CONST; k++ ) { 
+    for ( int k = 0; k < K_CONST; k++ )
+    {
       bit6_t min_dist = 50;
       bit4_t min_dist_id = 10;
       int  min_dist_record = K_CONST + 1;
+
       // find the min distance in knn_set[10 * K_CONST]
-      for ( int i = 0; i < 10; i++ ) {
-        for (int j = 0; j < K_CONST; j++ ) {
-          if ( knn_set[i* K_CONST + j] < min_dist ) {
+      for ( int i = 0; i < 10; i++ )
+      {
+        for (int j = 0; j < K_CONST; j++ )
+        {
+          if ( knn_set[i* K_CONST + j] < min_dist )
+          {
             min_dist = knn_set[i* K_CONST + j];
             min_dist_id = i;
             min_dist_record = j;
@@ -99,8 +101,10 @@
 
     // Calculate the maximum score
     int max_score = 0; 
-    for ( int i = 0; i < 10; ++i ) {
-      if ( score[i] > max_score ) {
+    for ( int i = 0; i < 10; ++i )
+    {
+      if ( score[i] > max_score )
+      {
         max_score = score[i];
         min_index = i;
       }
@@ -116,7 +120,7 @@ extern "C"
   //----------------------------------------------------------
   // @param[in] : input - the testing instance
   // @return : the recognized digit (0~9)
-  void DigitRec( digit* training_data, digit* testing_data, bit4_t* results) 
+  void DigitRec( digit* training_data, digit* testing_data, bit8_t* results)
   { 
     #pragma HLS INTERFACE m_axi port=training_data offset=slave bundle=gmem
     #pragma HLS INTERFACE m_axi port=testing_data offset=slave bundle=gmem
@@ -129,31 +133,29 @@ extern "C"
     // This array stores K minimum distances per training set
     bit6_t knn_set[10 * K_CONST];
 
+        // for each of the test data
+L180:   for ( int k = 0 ; k < NUM_TEST; k++)
+        {
+            digit testing_instance = testing_data[k];
+            // Initialize the knn set
+            for ( int i = 0; i < 10 * K_CONST; i++ )
+                // Note that the max distance is 49
+                knn_set[i] = 50;
 
-
-    // for each of the test data
-    L180: for ( int k = 0 ; k < NUM_TEST; k++){
-      digit testing_instance = testing_data[k];
-      // Initialize the knn set
-      for ( int i = 0; i < 10 * K_CONST; i++ )
-          // Note that the max distance is 49
-          knn_set[i] = 50; 
-
-      // for each training set
-      L1800: for ( int i = 0; i < NUM_TRAINING; i++ ){
-        // for each of the trainging data
-        L10: for ( int j = 0; j < 10; j++ ){
-        digit training_instance =  training_data[j* NUM_TRAINING + i];
-        // Update the KNN set
-        update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
+            // for each training set
+L1800:      for ( int i = 0; i < NUM_TRAINING; i++ )
+            {
+                // for each of the training data
+L10:            for ( int j = 0; j < 10; j++ )
+                {
+                    digit training_instance =  training_data[j* NUM_TRAINING + i];
+                    // Update the KNN set
+                    update_knn( testing_instance, training_instance, &knn_set[j * K_CONST] );
+                }
+            }
+            // collect the results
+            results[k] = knn_vote(knn_set);
         }
-      } 
-      // collect the results
-      results[k] = knn_vote(knn_set);
     }
-  }
-
-
-
 
 }

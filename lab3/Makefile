@@ -19,7 +19,7 @@ OCL_KERNEL_H = ./src/host/typedefs.h
 # SW_KERNEL_SRC = ./src/sw/digitrec_sw.cpp
 # SW_KERNEL_H = ./src/host/typedefs.h ./src/sw/digitrec_sw.h
 
-# Set opencl kernel arguments
+# Set opencl kernel arguments   
 OCL_KERNEL_ARGS = --max_memory_ports all --report system
 
 

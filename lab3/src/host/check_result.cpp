@@ -9,18 +9,15 @@
 #include <cstdio>
 #include "typedefs.h"
 
-void check_results(bit4_t * result, const bit4_t * expected, int cnt)
+void check_results(bit8_t * result, const bit8_t * expected, int cnt)
 {
   int correct_cnt = 0;
-
   for (int i = 0; i < cnt; i ++ )
   {
     if (result[i] != expected[i])
-      printf("Test %d: expected = %d, result = %d\n", i, expected[i], result[i]);
+        std::cout<<"Test "<<i<<": expected= "<<expected[i]<<", result= "<<result[i]<<std::endl;
     else
-      correct_cnt ++;
+        correct_cnt++;
   }
-
-  printf("\n\t %d / %d correct!\n", correct_cnt, cnt);  
-
+  std::cout<<"\n\t "<<correct_cnt<<" / "<<cnt<<" correct!"<<std::endl;
 }
