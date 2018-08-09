@@ -41,6 +41,7 @@ void perform_conv(float input[MAX_FMAP], float output[MAX_FMAP], const float wei
                 for (int y = 0; y < O; y++) {
                     for (int c = 0; c < K; c++) {
                         for (int r = 0; r < K; r++) {
+#pragma HLS UNROLL
                             int i_index = x + c + (y + r) * I + m * ifmap_size;
                             int w_index = c + r * K + (n * M + m) * FILTER_SIZE;
                             int o_index = x + y * O + n * ofmap_size;
@@ -56,6 +57,7 @@ void perform_conv(float input[MAX_FMAP], float output[MAX_FMAP], const float wei
     for (int n = 0; n < N; n++) {
         for (int x = 0; x < O; x++) {
             for (int y = 0; y < O; y++) {
+#pragma HLS UNROLL
                 int index = x + y * O + n * ofmap_size;
                 float biased = output[index] + bias[n];
                 output[index] = (biased > 0) ? biased : 0;
@@ -117,7 +119,7 @@ void CNN(bit64_t in[1], bit32_t out[576])
   cnn_xcel(digit, result);
 
   // write out the result
-  for (int i = 0; i < 576; i++)out[i]=result[i];
+  for (int i = 0; i < 576; i++) out[i] = result[i];
 
  }
 }
