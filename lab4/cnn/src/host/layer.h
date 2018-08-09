@@ -7,6 +7,7 @@
 #define LAYER_H
 
 #include "typedefs.h"
+#include "model_conv.h"
 
 // Perform convolution kernel
 //void perform_conv(float* input, float* output, const float* weight, const float* bias, int in_channel, int out_channel, int out_width);

@@ -3,9 +3,13 @@
 //=========================================================================
 // @brief: testbench for k-nearest-neighbor digit recongnition application
 
-#include <stdio.h>
+#include <sstream>
+#include <stdint.h>
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <getopt.h>
 #include <string>
 #include <time.h>
 #include <sys/time.h>
@@ -17,13 +21,16 @@
 #include "CLKernel.h"
 #include "CLMemObj.h"
 // harness namespace
-using namespace rosetta;
+//using namespace rosetta;
 #endif
 
 #include "cnn.h"
 #include "model_dense.h"
 #include "layer.h"
 #include "utils.h"
+
+// Number of test instances
+ const int N = 180;
 
 //------------------------------------------------------------------------
 // Helper function for hex to int conversion
@@ -54,8 +61,8 @@ int main(int argc, char ** argv)
   // Output file that saves the test bench results
 
     
-    std::ofstream outfile;
-  outfile.open("out.dat");
+  //  std::ofstream outfile;
+//  outfile.open("out.dat");
   
   // Read input file for the testing set
   std::string line;
@@ -64,20 +71,13 @@ int main(int argc, char ** argv)
   size_t len = 0;
   fp = fopen("data/testing_set.dat", "r");
   
-  // HLS streams for communicating with the cordic block
-  /*
-    hls::stream<bit32_t> digitrec_in;
-  hls::stream<bit32_t> digitrec_out;
-  */
-  // Number of test instances
-  const int N = 180;
   
-    
   // Arrays to store test data and expected results
   digit* inputs = new digit[N];
-  int* outputs = new int[N];
+  bit32_t output[576];
+  int* outputs  = new int[N];
   int* expected  = new int[N];
-
+    bit64_t temp_in[1];
     
   
   int nbytes;
@@ -109,8 +109,12 @@ long long total_elapsed=0;
       struct timeval start, end;
       
         for (int i = 0; i < N; ++i ) {
+            temp_in[0]=inputs[i];
 #ifdef OCL
-      // create OpenCL world
+   
+    using namespace rosetta;
+            
+    // create OpenCL world
       CLWorld cnn_world = CLWorld(TARGET_DEVICE, CL_DEVICE_TYPE_ACCELERATOR);
       
       // add the bitstream file
@@ -120,8 +124,8 @@ long long total_elapsed=0;
       CLKernel CNN(cnn_world.getContext(), cnn_world.getProgram(), "CNN", cnn_world.getDevice());
       
       // create mem objects
-      CLMemObj inputs_mem   ( (void*)&(inputs[i]),    sizeof(bit64_t), 1 , CL_MEM_READ_ONLY);
-      CLMemObj outputs_mem  ( (void*)outputs,   sizeof(bit32_t),   576 , CL_MEM_WRITE_ONLY);
+      CLMemObj inputs_mem   ( (void*)temp_in,    sizeof(bit64_t), 1 , CL_MEM_READ_ONLY);
+      CLMemObj outputs_mem  ( (void*)output,   sizeof(bit32_t),   576 , CL_MEM_WRITE_ONLY);
       
       // Timer
       
@@ -164,8 +168,7 @@ long long total_elapsed=0;
       // Read result
       union_f_i val;
       for (int j = 0; j < 576; j++) {
-          val.i =outputs[j]; //??????
-          //(digitrec_out.read()).to_int();
+          val.i =output[j];
           conv_result[j] = val.f;
       }
 
@@ -200,8 +203,6 @@ long long total_elapsed=0;
     }   
      
 
-    //timer.stop();
-
     //--------------------------------------------------------------------
     // Verify results
     //--------------------------------------------------------------------
@@ -209,11 +210,10 @@ long long total_elapsed=0;
       // Print result messages to console
       std::cout << "#" << std::dec << i+1;
       std::cout << ": \tTestInstance=" << std::hex << inputs[i];
-      std::cout << " \tInterpreted=" << outputs[i] 
-                << " \tExpected=" << expected[i];
+      std::cout << " \tInterpreted=" << outputs[i] << " \tExpected=" << expected[i];
       outfile << "#" << std::dec << i+1;
       outfile << ": \tTestInstance=" << std::hex << inputs[i];
-      outfile << " \tInterpreted=" << outputs[i] 
+      outfile << " \tInterpreted=" << outputs[i]
               << " \tExpected=" << expected[i];
       
       // Check for any difference between k-NN interpreted digit vs. expected digit
@@ -228,13 +228,13 @@ long long total_elapsed=0;
     }
     
     // Report overall error out of all testing instances
-    std::cout << "Number of test instances = " << std::dec << num_test_insts << std::endl;
+    std::cout << "Number of test instances = " << std::dec << num_test_insts <<std::endl;
     std::cout << "Overall Error Rate = " << std::setprecision(3)
               << ( (double)error / num_test_insts ) * 100
               << "%" << std::endl;
     outfile << "Number of test instances = " << std::dec << num_test_insts << std::endl;
     outfile << "Overall Error Rate = " << std::setprecision(3)
-            << ( (double) error / num_test_insts ) * 100 
+            << ( (double) error / num_test_insts ) * 100
             << "%" << std::endl;
     
     // Close input file for the testing set

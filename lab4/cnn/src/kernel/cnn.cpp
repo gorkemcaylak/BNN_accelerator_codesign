@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <iostream>
 
+using namespace std;
+
 //----------------------------------------------------------
 // Perform Convolution Layer
 //----------------------------------------------------------
@@ -25,9 +27,9 @@
 
 void perform_conv(float input[MAX_FMAP], float output[MAX_FMAP], const float weight[MAX_W_CONV], const float bias[MAX_B_CONV], int M, int N, int O) {
     
-    int I = O+K-1;
-    int ifmap_size = I*I;
-    int ofmap_size = O*O;
+    const int I = O+K-1;
+    const int ifmap_size = I*I;
+    const int ofmap_size = O*O;
     
     // initialize output fmaps
     for (int i = 0; i < MAX_FMAP; i++) output[i] = 0;
@@ -70,7 +72,6 @@ void perform_conv(float input[MAX_FMAP], float output[MAX_FMAP], const float wei
 
 void cnn_xcel(digit input , bit32_t* output)
 {
-#include "../host/model_conv.h"
     
     float mem_conv1[800];
     float mem_conv2[800];
@@ -98,10 +99,8 @@ void cnn_xcel(digit input , bit32_t* output)
 //----------------------------------------------------------
 extern "C"
 {
-void CNN(bit64_t* in, bit32_t* out)
+void CNN(bit64_t in[1], bit32_t out[576])
 {
-    
-    
 #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem
 #pragma HLS INTERFACE s_axilite port=in bundle=control
@@ -109,25 +108,18 @@ void CNN(bit64_t* in, bit32_t* out)
 #pragma HLS INTERFACE s_axilite port=return bundle=control
     
     
-  digit digit[300];
+  digit digit;
   bit4_t nearest;
   bit32_t result[576];
-
- // bit32_t input_lo = in
- // bit32_t input_hi = strm_in.read();
-  
-  // read two 32-bit input words into digit
-   for (int i = 0; i < I_WIDTH1; i++)
-    digit = in;
+  digit = in[0];
 
   // call digitrec
   cnn_xcel(digit, result);
 
   // write out the result
-    for (int i = 0; i < 576; i++)out[i]=result[i];
- // for (int i = 0; i < 576; i++)
- //   strm_out.write(result[i]);
- //}
+  for (int i = 0; i < 576; i++)out[i]=result[i];
+
+ }
 }
 
 

@@ -4,11 +4,12 @@
 // @brief: this file contains all layers
 
 #include <stdio.h>
-
+#include <cmath>
+#include "typedefs.h"
 #include "model_conv.h"
 #include "layer.h"
 
-
+using namespace std;
 
 //----------------------------------------------------------
 // Reshpae the Output from Conv Layer
